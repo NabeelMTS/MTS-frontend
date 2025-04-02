@@ -71,32 +71,36 @@ export default function Header({ logoSrc, variant }) {
                             Clinical Services
                           </span>
                           <li>
-                            <Link to="/careers">Care Management</Link>
+                            <Link to="/care-management-service">Care Management</Link>
                           </li>
                           <li>
-                            <Link to="/careers">
+                            <Link to="/clinical-pharmacist-services">
                               Clinical Pharmacist Services
                             </Link>
                           </li>
                           <li>
-                            <Link to="/careers">Medical Scribing Services</Link>
+                            <Link to="/medical-scribing-services">Medical Scribing Services</Link>
                           </li>
                           <li>
-                            <Link to="/careers">
+                            <Link to="/medical-record-keeping">
                               Medical Record Keeping & Documentation
                             </Link>
                           </li>
                           <li>
-                            <Link to="/careers">
+                            <Link to="/telemedicine">
                               Telemedicine & Virtual Care Services
                             </Link>
                           </li>
                           <li>
-                            <Link to="/careers">
+                            <Link to="/clinical-data-analysis-and-reporting">
                               Clinical Data Analysis & Reporting
                             </Link>
                           </li>
-
+                          <li>
+                            <Link to="/services">
+                              Services
+                            </Link>
+                          </li>
                           <li>
                             <Link to="/digital-health-marketing">
                               <span className="d-block text-decoration-underline fw-bold">

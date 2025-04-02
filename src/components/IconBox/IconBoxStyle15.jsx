@@ -1,4 +1,5 @@
 import React from 'react';
+import Cta from '../Cta';
 export default function IconBoxStyle10({ title, iconUrl, subTitle }) {
   return (
     <div className="cs_iconbox cs_style_10 cs_radius_20 cs_white_bg text-center">
@@ -7,6 +8,9 @@ export default function IconBoxStyle10({ title, iconUrl, subTitle }) {
       </div>
       <h2 className="cs_iconbox_title">{title}</h2>
       <p className="cs_iconbox_subtitle mb-0">{subTitle}</p>
+      <Cta
+      btnText={"Get Started"}
+      ></Cta>
     </div>
   );
 }

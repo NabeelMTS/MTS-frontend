@@ -6,6 +6,7 @@ import FeaturesSectionStyle2 from "../Section/FeaturesSection/FeaturesSectionSty
 import FunFactSection from "../Section/FunFactSection";
 import FeaturesSectionStyle4 from "../Section/FeaturesSection/FeaturesSectionStyle4";
 import BannerSectionStyle4 from "../Section/BannerSection/BannerSectionStyle4";
+import Hero from "../Hero";
 
 import DepartmentSectionStyle2 from "../Section/DepartmentSection/DepartmentSectionStyle2";
 import GallerySection from "../Section/GallerySection";
@@ -17,7 +18,7 @@ const departmentData = [
 		subTitle:
 			"Comprehensive financial solutions that include medical billing, revenue cycle management (RCM), and provider credentialing to maximize profitability and streamline healthcare financial operations.",
 		iconUrl: "/images/icons/calendar_white.svg",
-		href: "/departments/department-details",
+		href: "/medical-billing",
 	},
 
 	{
@@ -25,28 +26,28 @@ const departmentData = [
 		subTitle:
 			"Enhance patient care with specialized clinical services, including clinical data analysis, medication reviews, and support for evidence-based decision-making.",
 		iconUrl: "/images/icons/calendar_white.svg",
-		href: "/departments/department-details",
+		href: "/clinical-data-analysis-and-reporting",
 	},
 	{
 		title: "Healthcare IT Solutions",
 		subTitle:
 			"Empower healthcare providers with cutting-edge IT services, including EHR implementation, cybersecurity, and AI-driven solutions tailored for modern practices.",
 		iconUrl: "/images/icons/calendar_white.svg",
-		href: "/departments/department-details",
+		href: "/medical-scribing-services",
 	},
 	{
 		title: "Business Development",
 		subTitle:
 			"Elevate your healthcare practice with strategic business development. We help expand services, optimize operations, and unlock growth opportunities to maximize your potential.",
 		iconUrl: "/images/icons/calendar_white.svg",
-		href: "/departments/department-details",
+		href: "/business-growth",
 	},
 	{
 		title: "Healthcare Digital Marketing",
 		subTitle:
 			"Transform your practice with strategic digital marketing that helps you stand out in a competitive healthcare market. We provide tailored marketing campaigns to attract new patients, retain existing ones, and build a strong online presence.",
 		iconUrl: "/images/icons/calendar_white.svg",
-		href: "/departments/department-details",
+		href: "/digital-health-marketing",
 	},
 	{
 		title: "Outsourcing Solutions",
@@ -83,11 +84,12 @@ const featureListData = [
 	},
 ];
 const galleryData = [
-	{ imgUrl: "/images/about/portfolio_2_lg.jpeg" },
-	{ imgUrl: "/images/about/portfolio_3_lg.jpeg" },
-	{ imgUrl: "/images/about/portfolio_1_lg.jpeg" },
-	{ imgUrl: "/images/about/portfolio_4_lg.jpeg" },
-	{ imgUrl: "/images/about/portfolio_5_lg.jpeg" },
+	{ imgUrl: "/images/new_images/Blog1.png" },
+	{ imgUrl: "/images/new_images/Blog2.png" },
+	{ imgUrl: "/images/new_images/Blog3.png" },
+	{ imgUrl: "/images/new_images/Blog4.png" },
+	{ imgUrl: "/images/new_images/Outsourcing.png" },
+	
 ];
 const awardData = [
 	{
@@ -153,12 +155,33 @@ export default function About() {
 	pageTitle("About");
 	return (
 		<>
-			<BannerSectionStyle3
-				bgUrl="/images/about/banner_bg.svg"
-				imgUrl="/images/about/about-banner.png"
-				title="Welcome to MedicoTech Solutions (MTS)"
-				subTitle="Where Innovation Driving Revenue Growth!"
-			/>
+			<Hero
+					title="Your Partner in Health and Wellness"
+					subTitle="We are committed to providing you with the best medical and healthcare services to help you live healthier and happier."
+					bgUrl="/images/home_1/hero_bg.jpeg"
+					imgUrl="/images/home_1/hero-new.png"
+					videoBtnText="See how we work"
+					videoUrl="https://www.youtube.com/embed/VcaAVWtP48A"
+					infoList={[
+					  {
+						title: 'Hotline',
+						subTitle: '123-456-7890',
+						iconUrl: '/images/contact/icon_1.svg',
+					  },
+					  {
+						title: 'Ambulance',
+						subTitle: '876-256-876',
+						iconUrl: '/images/icons/ambulance.svg',
+					  },
+					  {
+						title: 'Location',
+						subTitle: 'New York, US',
+						iconUrl: '/images/icons/pin.svg',
+					  },
+					]}
+					btnText="Book Now"
+					btnUrl="/appointments"
+				  />
 
 			<Section topMd={200} topLg={150} topXl={110}>
 				<DepartmentSectionStyle2
@@ -170,7 +193,7 @@ export default function About() {
 			<Section topMd={175} topLg={125} topXl={85} bottomMd={100} bottomLg={110}>
 				<FeaturesSectionStyle2
 					sectionTitle="Why Choose MedicoTech Solutions?"
-					imgUrl="images/about/why_choose_us.jpeg"
+					imgUrl="images/about/about-banner.png"
 					data={featureListData}
 				/>
 			</Section>

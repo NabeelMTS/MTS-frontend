@@ -9,7 +9,7 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 const silderData = [
 	{
-		title: ["Innovation Driving", "Revenue Growth"],
+		title: [<i>Innovation Driving</i>, <i>Revenue Growth</i>],
 		subTitle:
 			"Embrace the future of healthcare with innovative solutions. From efficient medical billing to expert IT consultation, we empower you to enhance patient care and boost revenue with cutting-edge technology.",
 		bgUrl: "/images/home_2/hero_bg.jpeg",

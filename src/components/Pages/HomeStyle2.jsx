@@ -246,6 +246,11 @@ export default function HomeStyle2() {
 					titleUp="About Us"
 					title="MedicoTech Solutions (MTS): Expert Healthcare IT, Clinical, and Billing Solutions Provider"
 					subTitle="We provide innovative, hassle-free medical billing, coding, and IT solutions designed to streamline processes and enhance efficiency."
+					subTitle2="Trusted by numerous healthcare providers, MTS empowers organizations with top-tier IT consultation and cutting-edge
+										healthcare technologies, enabling providers to focus on
+										delivering exceptional patient care. Our goal is to simplify
+										operations, reduce administrative burdens, and drive better
+										healthcare outcomes."
 					supportTitle="24/7 Support"
 					supportSubTitle="We are available when you want"
 				/>

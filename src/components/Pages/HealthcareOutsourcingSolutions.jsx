@@ -114,7 +114,7 @@ export default function About() {
 
       <Section bottomMd={190} bottomLg={145} bottomXl={105}>
         <AboutSectionStyle3
-          titleUp="Abour Us"
+          titleUp="About Us"
           title="MedicoTech Solutions: Startups to Brands"
           subTitle="Our Business Growth Services empower healthcare practices to overcome today’s challenges. We streamline operations, optimize revenue, and position your practice for sustainable success. Whether enhancing patient acquisition or improving operational efficiency, we provide the expertise and tools to accelerate growth."
           imgUrl="/images//home_2/about.jpeg"

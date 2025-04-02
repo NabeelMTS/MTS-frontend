@@ -11,6 +11,13 @@ import Partners from "./components/Pages/Partners";
 import TrainingBootcamps from "./components/Pages/TrainingBootcamps";
 import BusinessGrowth from "./components/Pages/BusinessGrowth";
 import HealthcareOutsourcingSolutions from "./components/Pages/HealthcareOutsourcingSolutions";
+import CareManagementService from "./components/Pages/CareManagementService";
+import ClinicalPharmacistServices from "./components/Pages/ClinicalPharmacistServices";
+import MedicalRecordKeeping from "./components/Pages/MedicalRecordKeeping";
+import Services from "./components/Pages/Services"
+
+
+
 
 import Careers from "./components/Pages/Careers";
 import MedicalBilling from "./components/Pages/MedicalBilling";
@@ -22,6 +29,8 @@ import PrivacyDataProtectionPolicy from "./components/Pages/PrivacyDataProtectio
 import Faq from "./components/Pages/FAQ";
 import ProviderCredentialing from "./components/Pages/ProviderCredentialing";
 import DigitalHealthMarketing from "./components/Pages/DigitalHealthMarketing";
+import MedicalScribingServices from "./components/Pages/MedicalScribingServices";
+import Telemedicine from "./components/Pages/Telemedicine";
 
 import Blog from "./components/Pages/Blog";
 import Appointments from "./components/Pages/Appointments";
@@ -38,6 +47,9 @@ import Layout5 from "./components/Layout/Layout5";
 import HomeStyle5 from "./components/Pages/HomeStyle5";
 import HomeStyle6 from "./components/Pages/HomeStyle6";
 
+//new pages 
+import ClinicalDataAnalysisAndReporting from "./components/Pages/ClinicalDataAnalysis&Reporting";
+
 function App() {
 	const { pathname } = useLocation();
 
@@ -53,6 +65,13 @@ function App() {
 				<Route path="medical-billing" element={<MedicalBilling />} />
 				<Route path="medical-coding-services" element={<MedicalCoding />} />
 				<Route path="rcm-services" element={<RCMServices />} />
+				<Route path="/clinical-data-analysis-and-reporting" element={<ClinicalDataAnalysisAndReporting />} />
+				<Route path="/care-management-service" element={<CareManagementService />} />
+				<Route path="/clinical-pharmacist-services" element={<ClinicalPharmacistServices />} />
+				<Route path="/medical-record-keeping" element={<MedicalRecordKeeping />} />
+				<Route path="/telemedicine" element={<Telemedicine />} />
+				<Route path="/services" element={<Services />} />
+				<Route path="/medical-scribing-services" element={<MedicalScribingServices />} />
 				RCM Services
 				<Route
 					path="provider-credentialing"
@@ -103,6 +122,7 @@ function App() {
 				<Route index element={<HomeStyle5 />} />
 			</Route>
 			<Route path="*" element={<ErrorPage />} />
+			
 		</Routes>
 	);
 }

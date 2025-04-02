@@ -5,6 +5,7 @@ export default function AboutSectionStyle5({
 	titleUp,
 	title,
 	subTitle,
+	subTitle2,
 	supportTitle,
 	supportSubTitle,
 }) {
@@ -31,12 +32,7 @@ export default function AboutSectionStyle5({
 										{subTitle}
 										<br />
 										<br />
-										Trusted by numerous healthcare providers, MTS empowers
-										organizations with top-tier IT consultation and cutting-edge
-										healthcare technologies, enabling providers to focus on
-										delivering exceptional patient care. Our goal is to simplify
-										operations, reduce administrative burdens, and drive better
-										healthcare outcomes.
+										{subTitle2}
 									</p>
 								</div>
 							</div>
