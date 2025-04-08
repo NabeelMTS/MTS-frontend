@@ -141,40 +141,27 @@ export default function ClinicalDataAnalysis() {
         bgUrl="/images/about/banner_bg.svg"
         imgUrl="/images/training-bootcamps/banner_img.png"
         title="Clinical Data Analysis & Reporting "
-        subTitle="Where Innovation Driving Revenue Growth!"
+        subTitle="MedicoTech Solutions offers expert Clinical Data Analysis & Reporting, utilizing AI-driven insights to improve healthcare decision-making, patient outcomes, and operational efficiency."
       />
 
       <Section topMd={130} topLg={130} topXl={130}>
         <div className="container">
-          <h3>
-            Clinical Data Analysis & Reporting Services | Data-Driven Healthcare Insights
-          </h3>
-          <p>
-            <b>
-              <i>
-                &quot;MedicoTech Solutions offers expert Clinical Data Analysis & Reporting, utilizing AI-driven insights to improve healthcare decision-making, patient outcomes, and operational efficiency."&quot;
-              </i>
-            </b>
-          </p>
-          <p>
-            <b>
-              <i>
-                &quot;Harness the Power of Data to Drive Smarter Healthcare Decisions&quot;
-              </i>
-            </b>
-          </p>
-          <p>
-            <i>
-              &quot;Transform complex clinical data into actionable insights that enhance operational efficiency and improve patient outcomes.&quot;
-            </i>
-          </p>
-          <Cta
-            btnText="Request a Data Analysis Consultation" />
-          <p>
-            <i>
-              &quot;Start Harnessing Data for Better Healthcare Decisions&quot;
-            </i>
-          </p>
+
+          <Section
+            topMd={50}
+            topLg={50}
+            topXl={50}
+            bottomMd={50}
+            bottomLg={50}
+            bottomXl={50}>
+            <Cta
+              title="Harness the Power of Data to Drive Smarter Healthcare Decisions"
+              subTitle="Transform complex clinical data into actionable insights that enhance operational efficiency and improve patient outcomes"
+              bgUrl="/images/cta_bg.jpeg"
+              btnUrl="/appointments"
+              btnText="Request a Data Analysis Consultation"
+            />
+          </Section>
           {/* Start Introduction Section */}
           <Section topMd={170} topLg={120} topXl={100}>
             <AboutSectionStyle5
@@ -230,9 +217,7 @@ export default function ClinicalDataAnalysis() {
             topMd={195}
             topLg={145}
             topXl={105}
-            bottomMd={200}
-            bottomLg={150}
-            bottomXl={110}
+           
           >
             <TeamSectionStyle4
               sectionTitle="Leading the Way in Data-Driven Healthcare"

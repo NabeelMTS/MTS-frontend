@@ -143,10 +143,21 @@ export default function ClinicalDataAnalysis() {
                 subTitle="Leverage the Expertise of Licensed Clinical Pharmacists to Improve Medication Safety, Boost Efficacy, and Ensure Patient Adherence with MedicoTech Solutions"
 
             />
-            <Cta
-                btnText="Partner with Our Expert Clinical Pharmacists Today"
-            >
-            </Cta>
+             <Section
+                        topMd={190}
+                        topLg={145}
+                        topXl={105}
+                        bottomMd={200}
+                        bottomLg={150}
+                        bottomXl={110}>
+                        <Cta
+                          title="Partner with Our Expert Clinical Pharmacists Today"
+                          subTitle=""
+                          bgUrl="/images/cta_bg.jpeg"
+                          btnUrl="/appointments"
+                          btnText="Request a free Demo"
+                        />
+                      </Section>
             <Section >
                 <div className="container">
                     {/* Start Introduction Section */}
@@ -229,10 +240,37 @@ export default function ClinicalDataAnalysis() {
                         />
                     </Section>
                     {/* End Testimonial */}
-                    <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                        <Cta btnText="Schedule a Consultation Now" style={{ whiteSpace: 'nowrap' }} />
-                        <Cta btnText="Learn More About Our Clinical Services" style={{ whiteSpace: 'nowrap' }} />
-                    </div>
+                    
+                    <Section
+                        topMd={50}
+                        topLg={50}
+                        topXl={50}
+                        bottomMd={50}
+                        bottomLg={50}
+                        bottomXl={50}>
+                        <Cta
+                          title="Enhance Medication Management with MedicoTech Solutions"
+                          subTitle=""
+                          bgUrl="/images/cta_bg.jpeg"
+                          btnUrl="/appointments"
+                          btnText="Schedule a Consultation Now"
+                        />
+                      </Section>
+                      <Section
+                      topMd={50}
+                      topLg={50}
+                      topXl={50}
+                      bottomMd={50}
+                      bottomLg={50}
+                      bottomXl={50}>
+                        <Cta
+                          title="Enhance Medication Management with MedicoTech Solutions"
+                          subTitle=""
+                          bgUrl="/images/cta_bg.jpeg"
+                          btnUrl="/appointments"
+                          btnText="Learn More About Our Clinical Services"
+                        />
+                      </Section>
 
 
                 </div>

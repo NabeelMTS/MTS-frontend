@@ -73,42 +73,42 @@ const testimonialData = [
   {
     text: "The bootcamp was a game-changer for me. The hands-on approach and real-world examples prepared me to jump straight into my new job!",
     ratingNumber: "5",
-    avatarImgUrl: "/images/home_1/avatar_2.png",
+    avatarImgUrl: "/images/new_images/avatar1.png",
     avatarName: "Emily S.",
     avatarDesignation: "Data Analyst",
   },
   {
     text: "I gained the confidence and skills I needed to make a career change into healthcare billing, and the job placement support helped me land my first position!",
     ratingNumber: "4.5",
-    avatarImgUrl: "/images/home_1/avatar_2.png",
+    avatarImgUrl: "/images/new_images/avatar2.png",
     avatarName: "John T.",
     avatarDesignation: "Medical Biller",
   },
   {
     text: "The program exceeded my expectations. The industry-experienced trainers provided valuable insights, and I secured a software engineering role with a top tech company. I’m now part of an exciting, innovative team!",
     ratingNumber: "5",
-    avatarImgUrl: "/images/home_1/avatar_2.png",
+    avatarImgUrl: "/images/new_images/avatar1.png",
     avatarName: "Sarah K.",
     avatarDesignation: "Software Engineer",
   },
   {
     text: "Thanks to the career support and networking opportunities, I transitioned into a project management role within six months. The program gave me the skills and confidence I needed to thrive in my new career!",
     ratingNumber: "4.5",
-    avatarImgUrl: "/images/home_1/avatar_2.png",
+    avatarImgUrl: "/images/new_images/avatar2.png",
     avatarName: "Michael P.",
     avatarDesignation: "Project Manager",
   },
   {
     text: "After completing the clinical services program, I was able to secure a position as a clinical coordinator at a major hospital. The practical experience I gained was invaluable in my new role!",
     ratingNumber: "4.5",
-    avatarImgUrl: "/images/home_1/avatar_2.png",
+    avatarImgUrl: "/images/new_images/avatar1.png",
     avatarName: "Lisa H.",
     avatarDesignation: "Clinical Coordinator",
   },
   {
     text: "The coding bootcamp was exactly what I needed to break into the healthcare IT field. I now work as a coding specialist and am already progressing toward more advanced roles!",
     ratingNumber: "4.5",
-    avatarImgUrl: "/images/home_1/avatar_2.png",
+    avatarImgUrl: "/images/new_images/avatar2.png",
     avatarName: "David M.",
     avatarDesignation: "Coding Specialist",
   },
@@ -127,7 +127,7 @@ export default function TrainingBootcamps() {
         <AboutSectionStyle2
           title="Fuel Your Vision, Shape Your Future"
           subTitle="At MedicoTech Solutions, we believe that great achievements begin with a powerful vision. Whether you're looking to excel in healthcare, medical billing and coding, artificial intelligence, digital marketing, mastering cutting-edge business skills, or revolutionizing clinical services, we’re here to empower your journey."
-          imgUrl="/images/departments/department_img_1.png"
+          imgUrl="/images/new_images/Blog3.png"
         />
       </Section>
 

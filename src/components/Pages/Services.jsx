@@ -110,7 +110,7 @@ export default function ClinicalDataAnalysis() {
                         bottomXl={110}
                     >
                         {/* experience */}
-                        <Section topMd={200} topLg={150} topXl={110}>
+                        <Section>
                             <FeaturesSectionStyle6
                                 sectionTitle="We have over 10+ years of experience with these content types"
                                 data={featureListData}
@@ -136,22 +136,19 @@ export default function ClinicalDataAnalysis() {
                             topMd={185}
                             topLg={140}
                             topXl={100}
-                            bottomMd={200}
-                            bottomLg={150}
-                            bottomXl={110}
                         >
 
                             <TeamSectionStyle4
                                 sectionTitle="Listen to those who we’ve transformed"
                             />
                             <TestimonialStyle4
-                                avatarImgUrl={"/images/testimonial/1.jpg"}
+                                avatarImgUrl={"/images/new_images/avatar1.png"}
                                 avatarName="Family Member"
                                 text="MedicoTech Solutions provided exceptional care coordination after my mother’s surgery. The seamless transition from hospital to home ensured she recovered faster and without complications."
                             ></TestimonialStyle4>
                             <br />
                             <TestimonialStyle4
-                                avatarImgUrl={"/images/testimonial/1.jpg"}
+                                avatarImgUrl={"/images/new_images/avatar2.png"}
                                 avatarName="Dr. John Smith, Primary Care Physician"
                                 text="Since implementing MedicoTech’s care management services, we’ve seen significant improvements in patient outcomes and a decrease in hospital readmissions. The platform is easy to use, and their team is always available for support."
                             ></TestimonialStyle4>
@@ -167,7 +164,11 @@ export default function ClinicalDataAnalysis() {
                             />
                         </Section>
                         {/* Contact */}
+                        
                         <Section topMd={130} topLg={130} topXl={130}>
+                        <TeamSectionStyle4
+                                sectionTitle="Contact Us Today to Schedule a Free Consultation"
+                            />
                             <AppointmentWithContactInfoSection />
                         </Section>
                     </Section>

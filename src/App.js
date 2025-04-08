@@ -15,7 +15,7 @@ import CareManagementService from "./components/Pages/CareManagementService";
 import ClinicalPharmacistServices from "./components/Pages/ClinicalPharmacistServices";
 import MedicalRecordKeeping from "./components/Pages/MedicalRecordKeeping";
 import Services from "./components/Pages/Services"
-
+import Specialties from "./components/Pages/Specialties";
 
 
 
@@ -71,6 +71,7 @@ function App() {
 				<Route path="/medical-record-keeping" element={<MedicalRecordKeeping />} />
 				<Route path="/telemedicine" element={<Telemedicine />} />
 				<Route path="/services" element={<Services />} />
+				<Route path="/specialties" element={<Specialties />} />
 				<Route path="/medical-scribing-services" element={<MedicalScribingServices />} />
 				RCM Services
 				<Route

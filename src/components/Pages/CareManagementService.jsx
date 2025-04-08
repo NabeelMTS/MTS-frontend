@@ -150,7 +150,7 @@ const featureListData2 = [
     title: "Chronic Care Management (CCM)",
     subTitle:
       "CCM is vital for patients managing long-term chronic conditions like diabetes, hypertension, heart disease, and COPD. This service helps providers deliver continuous, proactive care that reduces complications and minimizes hospital readmissions, thereby improving care quality while reducing overall healthcare costs.",
-    iconUrl: "images/home_3/value_icon_1.svg",
+    iconUrl: "/images/home_3/hero_img_4.svg",
   },
   {
     title: "Patient Care Management (PCM)",
@@ -171,9 +171,22 @@ export default function ClinicalDataAnalysis() {
         title="Optimize Patient Outcomes with MedicoTech Solutions"
         subTitle="Revolutionizing Healthcare Delivery with Advanced Chronic Care Management (CCM) and Patient Care Management (PCM) Solutions"
       />
-      <Cta
-        btnText="Partner with MedicoTech Solutions Today"
-      ></Cta>
+      <Section
+        topMd={190}
+        topLg={145}
+        topXl={105}
+        bottomMd={200}
+        bottomLg={150}
+        bottomXl={110}>
+        <Cta
+          title="Comprehensive Care Management: Optimize Patient Outcomes with MedicoTech Solutions"
+          subTitle="Revolutionizing Healthcare Delivery with Advanced Chronic Care Management (CCM) and Patient Care Management (PCM) Solutions"
+          bgUrl="/images/cta_bg.jpeg"
+          btnUrl="/appointments"
+          btnText="Partner with MedicoTech Solutions Today"
+        />
+      </Section>
+
       <Section >
         <div className="container">
           {/* Start Introduction Section */}
@@ -271,13 +284,13 @@ export default function ClinicalDataAnalysis() {
               sectionTitle="Delivering Results, Transforming Lives"
             />
             <TestimonialStyle4
-              avatarImgUrl={"/images/testimonial/1.jpg"}
+              avatarImgUrl={"/images/new_images/avatar1.png"}
               avatarName="Family Member"
               text="MedicoTech Solutions provided exceptional care coordination after my mother’s surgery. The seamless transition from hospital to home ensured she recovered faster and without complications."
             ></TestimonialStyle4>
             <br />
             <TestimonialStyle4
-              avatarImgUrl={"/images/testimonial/1.jpg"}
+              avatarImgUrl={"/images/new_images/avatar2.png"}
               avatarName="Dr. John Smith, Primary Care Physician"
               text="Since implementing MedicoTech’s care management services, we’ve seen significant improvements in patient outcomes and a decrease in hospital readmissions. The platform is easy to use, and their team is always available for support."
             ></TestimonialStyle4>
@@ -286,22 +299,62 @@ export default function ClinicalDataAnalysis() {
           <TeamSectionStyle4
             sectionTitle="Enhance Your Practice with MedicoTech Solutions"
           />
-          <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-            <Cta btnText="Get Started Today" style={{ whiteSpace: 'nowrap' }} />
-            <Cta btnText="Request a free Demo" style={{ whiteSpace: 'nowrap' }} />
-            <Cta btnText="Learn About CCM and PCM" style={{ whiteSpace: 'nowrap' }} />
-          </div>
-
+          <Section
+            topMd={50}
+            topLg={50}
+            topXl={50}
+            bottomMd={50}
+            bottomLg={50}
+            bottomXl={50}>
+            <Cta
+              title="Enhance Your Practice with MedicoTech Solutions"
+              subTitle=""
+              bgUrl="/images/cta_bg.jpeg"
+              btnUrl="/appointments"
+              btnText="Learn About CCM and PCM"
+            />
+          </Section>
+          <Section
+            topMd={50}
+            topLg={50}
+            topXl={50}
+            bottomMd={50}
+            bottomLg={50}
+            bottomXl={50}>
+            <Cta
+              title="Enhance Your Practice with MedicoTech Solutions"
+              subTitle=""
+              bgUrl="/images/cta_bg.jpeg"
+              btnUrl="/appointments"
+              btnText="Request a free Demo"
+            />
+          </Section>
+          <Section
+            topMd={50}
+            topLg={50}
+            topXl={50}
+            bottomMd={50}
+            bottomLg={50}
+            bottomXl={50}>
+            <Cta
+              title="Enhance Your Practice with MedicoTech Solutions"
+              subTitle=""
+              bgUrl="/images/cta_bg.jpeg"
+              btnUrl="/appointments"
+              btnText="Get Started Today"
+            />
+          </Section>
           
+
         </div>
       </Section>
       <Section className="cs_footer_margin_0">
-            <BannerSectionStyle4
-              bgUrl="/images/footer-top.jpeg"
-              title="Don’t Miss Out – Innovation <br/>That Drives Revenue Growth."
-              subTitle="Take the First Step Toward Growth – Schedule <br/> Your Free Consultation Now!"
-            />
-          </Section>
+        <BannerSectionStyle4
+          bgUrl="/images/footer-top.jpeg"
+          title="Don’t Miss Out – Innovation <br/>That Drives Revenue Growth."
+          subTitle="Take the First Step Toward Growth – Schedule <br/> Your Free Consultation Now!"
+        />
+      </Section>
     </>
   );
 }

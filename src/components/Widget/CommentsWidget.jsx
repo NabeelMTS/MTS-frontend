@@ -16,7 +16,7 @@ export default function CommentsWidget({ title }) {
             <div className="comment-author vcard">
               <img
                 className="avatar"
-                src="/images/blog/avatar_1.png"
+                src="/images/new_images/avatar1.png"
                 alt="Author"
               />
               <Link to="/" className="url">
@@ -44,7 +44,7 @@ export default function CommentsWidget({ title }) {
                 <div className="comment-author vcard">
                   <img
                     className="avatar"
-                    src="/images/blog/avatar_2.png"
+                    src="/images/new_images/avatar2.png"
                     alt="Author"
                   />
                   <Link to="/" className="url">
@@ -77,7 +77,7 @@ export default function CommentsWidget({ title }) {
             <div className="comment-author vcard">
               <img
                 className="avatar"
-                src="/images/blog/avatar_3.png"
+                src="/images/new_images/avatar1.png"
                 alt="Author"
               />
               <Link to="/" className="url">

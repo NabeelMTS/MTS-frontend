@@ -13,8 +13,7 @@ export default function MissionAndVision() {
           <Hero
         title="Your Partner in Health and Wellness"
         subTitle="We are committed to providing you with the best medical and healthcare services to help you live healthier and happier."
-        bgUrl="/images/home_1/hero_bg.jpeg"
-        imgUrl="/images/home_1/hero_img.png"
+        bgUrl="/images/home_2/hero_bg.jpeg"
         videoBtnText="See how we work"
         videoUrl="https://www.youtube.com/embed/VcaAVWtP48A"
         infoList={[]}
@@ -23,7 +22,7 @@ export default function MissionAndVision() {
       />  
    <Section>
         <AboutSection
-          imgUrl="/images/home_1/about.png"
+          imgUrl="/images/new_images/avatar1.png"
           spiningImgUrl="/images/home_1/about_mini.svg"
           title="Mission & Vision"
           subTitle=""
@@ -37,9 +36,9 @@ export default function MissionAndVision() {
           ]}
         />
       </Section>  
-      <Section>
+      <Section topMd={130} topLg={130} topXl={130}>
         <BannerSectionStyle2
-          bgUrl="/images/home_2/cta_bg.jpeg"
+          bgUrl="/images/healthcare-outsourcing-solutions/banner_bg_2.jpeg"
           title="Our Vision"
           subTitle="To lead the healthcare IT revolution by creating a globally connected, technology-driven ecosystem that prioritizes efficiency, transparency, and patient-focused care. We envision a future where AI, automation, and telemedicine seamlessly converge to redefine healthcare delivery, empowering providers and patients with intelligent, efficient, and innovative solutions."
         />

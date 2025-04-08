@@ -22,21 +22,21 @@ const relatedBlog = [
   {
     title:
       'The Importance of Mental Health: Understanding and Managing Anxiety Disorders',
-    thumbUrl: '/images/blog/post_1.jpeg',
+    thumbUrl: '/images/new_images/Blog1.png',
     date: 'March 12',
     btnText: 'Learn More',
     href: '/blog/blog-details',
   },
   {
     title: `A Parent's Guide to Childhood Vaccinations: What You Need to Know`,
-    thumbUrl: '/images/blog/post_2.jpeg',
+    thumbUrl: '/images/new_images/Blog2.png',
     date: 'March 11',
     btnText: 'Learn More',
     href: '/blog/blog-details',
   },
   {
     title: 'Preventing Heart Disease: Tips for a Heart-Healthy Lifestyle',
-    thumbUrl: '/images/blog/post_3.jpeg',
+    thumbUrl: '/images/new_images/Blog3.png',
     date: 'March 9',
     btnText: 'Learn More',
     href: '/blog/blog-details',
@@ -81,7 +81,7 @@ export default function BlogDetails() {
         </div>
         <Spacing md="55" />
         <img
-          src="/images/blog/blog_details_1.jpeg"
+          src="/images/healthcare-outsourcing-solutions/banner_bg_2.jpeg"
           alt="Blog Details"
           className="w-100 cs_radius_20"
         />
@@ -163,7 +163,7 @@ export default function BlogDetails() {
               </p>
               <blockquote
                 style={{
-                  backgroundImage: 'url("/images/blog/blog_details_2.jpeg")',
+                  backgroundImage: 'url("/images/healthcare-outsourcing-solutions/banner_bg_2.jpeg")',
                 }}
               >
                 <p>
@@ -243,7 +243,7 @@ export default function BlogDetails() {
             </div>
             <Spacing md="85" />
             <AuthorWidget
-              imgUrl="/images/blog/author.png"
+              imgUrl="/images/new_images/avatar1.png"
               name="Author Bio"
               description="John Smith is a freelance writer and content strategist with a passion for helping businesses tell their stories. With over 10 years of experience in the industry, John has worked with a wide range of clients, from startups to Fortune 500 companies. He holds a Bachelor's degree in English from the University of California, Los Angeles (UCLA), and is an avid reader and traveler in his free time. Follow him on Twitter @johnsmithwriter for the latest updates on his work."
             />
@@ -272,7 +272,7 @@ export default function BlogDetails() {
         <BannerSectionStyle9
           title="Don’t Let Your Health <br />Take a Backseat!"
           subTitle="Schedule an appointment with one of our experienced <br />medical professionals today!"
-          imgUrl="/images/doctors/banner_img_3.png"
+          imgUrl="/images/home_1/hero-new.png"
         />
       </Section>
     </>

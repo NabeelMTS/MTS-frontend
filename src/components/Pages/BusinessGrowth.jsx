@@ -46,25 +46,25 @@ const featureListData = [
     title: "Drive Strategic Growth with Expert Consulting",
     subTitle:
       "Develop a clear roadmap to meet your business goals. Our expert consultants identify growth opportunities, improve workflows, and enhance patient engagement.",
-    iconUrl: "images/icons/professional.svg",
+    iconUrl: "/images/home_3/value_icon_1.svg",
   },
   {
     title: "Optimize Revenue with RCM Solutions",
     subTitle:
       "Optimize billing and collections to reduce claim denials, improve cash flow, and ensure financial health for your practice.",
-    iconUrl: "images/icons/comprehensive.svg",
+    iconUrl: "/images/home_3/value_icon_2.svg",
   },
   {
     title: "Market Research & Competitive Analysis",
     subTitle:
       "Gain actionable insights into patient demographics, healthcare trends, and growth opportunities to position your practice for success.",
-    iconUrl: "images/icons/patient.svg",
+    iconUrl: "/images/home_3/value_icon_3.svg",
   },
   {
     title: "Financial Management & Optimization",
     subTitle:
       "Enhance your financial operations with strategies for budgeting, cost management, and revenue growth while maintaining quality patient care.",
-    iconUrl: "images/icons/facilities.svg",
+    iconUrl: "/images/home_3/value_icon_1.svg",
   },
   {
     title: "Branding & Positioning",
@@ -142,10 +142,10 @@ export default function About() {
 
       <Section bottomMd={190} bottomLg={145} bottomXl={105}>
         <AboutSectionStyle3
-          titleUp="Abour Us"
+          titleUp="About Us"
           title="MedicoTech Solutions: Startups to Brands"
           subTitle="Our Business Growth Services empower healthcare practices to overcome today’s challenges. We streamline operations, optimize revenue, and position your practice for sustainable success. Whether enhancing patient acquisition or improving operational efficiency, we provide the expertise and tools to accelerate growth."
-          imgUrl="/images//home_2/about.jpeg"
+          imgUrl="/images/new_images/Blog1.png"
         />
       </Section>
       <Section topMd={200} topLg={150} topXl={110}>

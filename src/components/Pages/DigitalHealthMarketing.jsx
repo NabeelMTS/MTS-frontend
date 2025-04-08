@@ -2,6 +2,7 @@ import React from "react";
 import BannerSectionStyle3 from "../Section/BannerSection/BannerSectionStyle3";
 import Section from "../Section";
 import BannerSectionStyle4 from "../Section/BannerSection/BannerSectionStyle4";
+import Cta from "../Cta";
 import { pageTitle } from "../../helpers/PageTitle";
 
 export default function DigitalHealthMarketing() {
@@ -34,9 +35,21 @@ export default function DigitalHealthMarketing() {
             patient engagement, and achieve sustainable growth for your
             healthcare practice
           </p>
-          <h3>CTA Button:</h3>
-          <p>Boost Your Digital Presence—Get Started Today!</p>
-          <h3>Introduction </h3>
+          <Section
+            topMd={50}
+            topLg={50}
+            topXl={50}
+            bottomMd={50}
+            bottomLg={50}
+            bottomXl={50}>
+            <Cta
+              title="Boost Your Digital Presence"
+              bgUrl="/images/cta_bg.jpeg"
+              btnUrl="/appointments"
+              btnText="Get Started Today!"
+            />
+          </Section>
+
           <p>
             <b>
               <i>
@@ -269,16 +282,35 @@ export default function DigitalHealthMarketing() {
             industry expertise, we’ll ensure your practice stands out in the
             competitive digital landscape.
           </p>
-
-          <h3>CTA Buttons:</h3>
-          <ul>
-            <li>
-              <i>Get a Free Digital Marketing Consultation</i>
-            </li>
-            <li>
-              <i>Discover More About Our Services</i>
-            </li>
-          </ul>
+          <Section
+            topMd={50}
+            topLg={50}
+            topXl={50}
+            bottomMd={50}
+            bottomLg={50}
+            bottomXl={50}>
+            <Cta
+              title="Get a Free Digital Marketing Consultation"
+              bgUrl="/images/cta_bg.jpeg"
+              btnUrl="/appointments"
+              btnText="Get Started Today!"
+            />
+          </Section>
+          <Section
+            topMd={50}
+            topLg={50}
+            topXl={50}
+            bottomMd={50}
+            bottomLg={50}
+            bottomXl={50}>
+            <Cta
+              title="Discover More About Our Services"
+              bgUrl="/images/cta_bg.jpeg"
+              btnUrl="/appointments"
+              btnText="Learn More!"
+            />
+          </Section>
+          
         </div>
       </Section>
       <Section className="cs_footer_margin_0">

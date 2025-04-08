@@ -48,7 +48,7 @@ export default function MissionAndVision() {
 		<>
 			<BannerSectionStyle3
 				bgUrl="/images/pricing_plan/banner_bg.svg"
-				imgUrl="/images/pricing_plan/banner_img.png"
+				imgUrl="/images/about/about-banner.png"
 				title="Collaborative Success Through Strategic Partnerships"
 				subTitle=""
 				btnText="Explore Partnerships"

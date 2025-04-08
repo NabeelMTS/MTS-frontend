@@ -1,10 +1,17 @@
 import Section from "../Section";
 import { pageTitle } from "../../helpers/PageTitle";
+import BannerSectionStyle3 from "../Section/BannerSection/BannerSectionStyle3";
 
 export default function MissionAndVision() {
 	pageTitle("About");
 	return (
 		<>
+		<BannerSectionStyle3
+				bgUrl="/images/about/banner_bg.svg"
+				imgUrl="/images/about/about-banner.png"
+				title="Optimize Patient Outcomes with MedicoTech Solutions"
+				subTitle="Revolutionizing Healthcare Delivery with Advanced Chronic Care Management (CCM) and Patient Care Management (PCM) Solutions"
+			  />
 			<Section topMd={130} topLg={130} topXl={130}>
 				<div className="container">
 					<h3>Join MedicoTech Solutions LLC – Where Innovation Meets Impact</h3>

@@ -29,7 +29,24 @@ const silderData = [
 		title: ["End Claim Denials - Maximize Revenue Today"],
 		subTitle:
 			"Our intelligent, AI-driven approach to medical billing & coding, RCM, and provider credentialing helps reduce claim denials by up to 30%, improve compliance, and ensure smoother reimbursements.",
-		bgUrl: "/images/home_4/hero_bg.jpeg",
+		bgUrl: "/images/healthcare-outsourcing-solutions/banner_bg_2.jpeg",
+		imgUrl: "/images/home_2/patents.png",
+		videoBtnText: "See how we work",
+		videoUrl: "https://www.youtube.com/embed/VcaAVWtP48A",
+		btnText: "MedicoTech Solutions",
+		btnUrl: "/",
+		funfactList: [
+			{ number: "20+", title: "Years of experience" },
+			{ number: "95%", title: "Patient satisfaction rating" },
+			{ number: "5000+", title: "Patients served annually" },
+			{ number: "10+", title: "Healthcare providers on staff" },
+		],
+	},
+	{
+		title: ["End Claim Denials - Maximize Revenue Today"],
+		subTitle:
+			"Our intelligent, AI-driven approach to medical billing & coding, RCM, and provider credentialing helps reduce claim denials by up to 30%, improve compliance, and ensure smoother reimbursements.",
+		bgUrl: "/images/provider-credentialing/credentialling.png",
 		imgUrl: "/images/home_2/patents.png",
 		videoBtnText: "See how we work",
 		videoUrl: "https://www.youtube.com/embed/VcaAVWtP48A",

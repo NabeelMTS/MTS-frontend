@@ -183,9 +183,21 @@ export default function ClinicalDataAnalysis() {
         title="Revolutionizing Healthcare Delivery with Telemedicine Solutions"
         subTitle="MedicoTech Solutions enables healthcare providers to extend their reach, improve patient outcomes, and reduce costs with secure, accessible, and efficient telemedicine services."
       />
-      <Cta
-        btnText="Experience Seamless Virtual Care Today"
-      ></Cta>
+
+      <Section
+        topMd={50}
+        topLg={50}
+        topXl={50}
+        bottomMd={50}
+        bottomLg={50}
+        bottomXl={50}>
+        <Cta
+          title="Experience Seamless Virtual Care Today"
+          bgUrl="/images/cta_bg.jpeg"
+          btnUrl="/appointments"
+          btnText="Request a free Demo"
+        />
+      </Section>
       <Section >
         <div className="container">
           {/* Start Introduction Section */}
@@ -246,14 +258,14 @@ export default function ClinicalDataAnalysis() {
               sectionTitle="What Our Patients and Providers Say"
             />
             <TestimonialStyle4
-              avatarImgUrl={"/images/testimonial/1.jpg"}
+              avatarImgUrl={"/images/new_images/avatar1.png"}
               avatarName="Dr. Emily Carter"
               avatarDesignation="Family Medicine Practitioner"
               text="MedicoTech’s telemedicine solutions have streamlined our practice. The platform is easy to use, and the integration with our EHR system has been seamless. Our patients appreciate the convenience, and we've seen a 30% reduction in missed appointments."
             ></TestimonialStyle4>
             <br />
             <TestimonialStyle4
-              avatarImgUrl={"/images/testimonial/1.jpg"}
+              avatarImgUrl={"/images/new_images/avatar2.png"}
               avatarName="John P."
               avatarDesignation="Chronic Disease Patient"
               text="Thanks to MedicoTech’s virtual care tools, managing my chronic condition has never been easier. I get real-time updates and have constant access to my care team, making me feel secure and supported."
@@ -293,14 +305,49 @@ export default function ClinicalDataAnalysis() {
             <FeaturesSection sectionTitle="Why MedicoTech Stands Out" data={featureListData2} />
           </Section>
           {/* CTA */}
-          <TeamSectionStyle4
-            sectionTitle="Embrace the Future of Healthcare with Telemedicine & Virtual Care "
-          />
-          <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-            <Cta btnText="Book a Demo Today" style={{ whiteSpace: 'nowrap' }} />
-            <Cta btnText="Request a free Demo" style={{ whiteSpace: 'nowrap' }} />
-            <Cta btnText="More Clinical Support Services" style={{ whiteSpace: 'nowrap' }} />
-          </div>
+          <Section
+            topMd={50}
+            topLg={50}
+            topXl={50}
+            bottomMd={50}
+            bottomLg={50}
+            bottomXl={50}>
+            <Cta
+              title="Embrace the Future of Healthcare with Telemedicine & Virtual Care"
+              bgUrl="/images/cta_bg.jpeg"
+              btnUrl="/appointments"
+              btnText="Book a Demo Today"
+            />
+          </Section>
+          <Section
+            topMd={50}
+            topLg={50}
+            topXl={50}
+            bottomMd={50}
+            bottomLg={50}
+            bottomXl={50}>
+            <Cta
+              title="Embrace the Future of Healthcare with Telemedicine & Virtual Care"
+              bgUrl="/images/cta_bg.jpeg"
+              btnUrl="/appointments"
+              btnText="Request a free Demo"
+            />
+          </Section>
+          <Section
+            topMd={50}
+            topLg={50}
+            topXl={50}
+            bottomMd={50}
+            bottomLg={50}
+            bottomXl={50}>
+            <Cta
+              title="Embrace the Future of Healthcare with Telemedicine & Virtual Care"
+              bgUrl="/images/cta_bg.jpeg"
+              btnUrl="/appointments"
+              btnText="More Clinical Support Services"
+            />
+          </Section>
+
 
 
         </div>

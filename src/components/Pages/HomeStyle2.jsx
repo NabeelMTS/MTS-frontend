@@ -63,28 +63,28 @@ const testimonialData = [
 	{
 		text: "MedicoTech Solutions (MTS) has transformed my practice, providing seamless medical billing, credentialing services, and denials management. With their expert solutions, I can focus more on patient care without the stress of administrative challenges. MTS has truly brought peace and efficiency to my practice.”",
 		ratingNumber: "5",
-		avatarImgUrl: "/images/home_1/avatar_2.png",
+		avatarImgUrl: "/images/new_images/avatar1.png",
 		avatarName: "J. Herrera ",
 		1: "Wisconsin, USA",
 	},
 	{
 		text: "Since partnering with MedicoTech Solutions (MTS), I’ve seen a significant boost in my revenue cycle management. Their tailored approach to revenue optimization and financial performance improvement has transformed my practice. I highly recommend their expert services to any healthcare provider looking to enhance their financial efficiency.”",
 		ratingNumber: "4.5",
-		avatarImgUrl: "/images/home_1/avatar_2.png",
+		avatarImgUrl: "/images/new_images/avatar2.png",
 		avatarName: "Lilly-Rose",
 		avatarDesignation: "New York, USA",
 	},
 	{
 		text: "Their innovative healthcare technology solutions have significantly improved my practice. The professional and dedicated team ensures accurate, efficient services that streamline workflows. I highly value their commitment to advancing healthcare and delivering impactful, reliable results.”",
 		ratingNumber: "5",
-		avatarImgUrl: "/images/home_1/avatar_2.png",
+		avatarImgUrl: "/images/new_images/avatar1.png",
 		avatarName: "L. Taylor",
 		avatarDesignation: "Florida, USA",
 	},
 	{
 		text: "Partnering with MedicoTech Solutions has transformed my practice. Their expert clinical analysis and detailed medication reviews have improved therapeutic outcomes, streamlined decision-making, and boosted revenue, ensuring better care for patients and enhanced practice efficiency.”",
 		ratingNumber: "4.5",
-		avatarImgUrl: "/images/home_1/avatar_2.png",
+		avatarImgUrl: "/images/new_images/avatar1.png",
 		avatarName: "K. Tamara",
 		avatarDesignation: "Maryland, USA",
 	},
@@ -136,17 +136,17 @@ const workingProcessData = [
 const blogData = [
 	{
 		title: "The Benefits of Mindfulness Meditation for Stress and Anxiety",
-		thumbUrl: "images/home_1/post_1.jpeg",
+		thumbUrl: "/images/home_2/services/1.jpg",
 		date: "May 1, 2023",
 	},
 	{
 		title: "Healthy Eating on a Budget: Tips and Strategies",
-		thumbUrl: "images/home_1/post_2.jpeg",
+		thumbUrl: "/images/home_2/services/3.jpg",
 		date: "May 4, 2023",
 	},
 	{
 		title: "The Importance of Regular Cancer Screenings and Early Detection",
-		thumbUrl: "images/home_1/post_3.jpeg",
+		thumbUrl: "/images/home_2/services/4.jpg",
 		date: "May 1, 2023",
 	},
 ];
@@ -367,7 +367,13 @@ export default function HomeStyle2() {
         />
       </Section> */}
 			{/* End FAQ Section */}
-			<Section>
+			<Section
+			topMd={190}
+			topLg={145}
+			topXl={105}
+			bottomMd={200}
+			bottomLg={150}
+			bottomXl={110}>
 				<Cta
 					title="Maximize Efficiency with Your EMR"
 					subTitle="Our billing experts turn your EHR into a revenue-driving powerhouse, ensuring clean, timely claims every time."

@@ -280,9 +280,21 @@ export default function ClinicalDataAnalysis() {
         title="Medical Scribing Services | Real-Time Documentation with AI Precision"
         subTitle="Empowering Healthcare with Next-Generation Documentation </br> Seamless Medical Scribing with Expert Precision and AI-Driven Efficiency </br> Rediscover the joy of patient care—while we take care of the documentation."
       />
-      <Cta
-        btnText="Transform Your Practice Today—Get Started with MedicoTech Solutions"
-      ></Cta>
+      <Section
+        topMd={50}
+        topLg={50}
+        topXl={50}
+        bottomMd={50}
+        bottomLg={50}
+        bottomXl={50}>
+        <Cta
+          title="Transform Your Practice Today"
+          subTitle=""
+          bgUrl="/images/cta_bg.jpeg"
+          btnUrl="/appointments"
+          btnText="Get Started with MedicoTech Solutions"
+        />
+      </Section>
       <Section >
         <div className="container">
           {/* Start Introduction Section */}
@@ -385,31 +397,27 @@ export default function ClinicalDataAnalysis() {
           </Section>
           {/* Start Testimonial */}
           <Section
-            topMd={185}
-            topLg={140}
-            topXl={100}
-            bottomMd={200}
-            bottomLg={150}
-            bottomXl={110}
+          
+            
           >
 
             <TeamSectionStyle4
               sectionTitle=" Hear From Our Happy Clients"
             />
             <TestimonialStyle4
-              avatarImgUrl={"/images/testimonial/1.jpg"}
+              avatarImgUrl={"/images/new_images/avatar1.png"}
               avatarName="Dr. Sarah Patel"
               text="MedicoTech Solutions has transformed how I manage documentation. Their combination of expertise and AI is unmatched."
             ></TestimonialStyle4>
             <br />
             <TestimonialStyle4
-              avatarImgUrl={"/images/testimonial/1.jpg"}
+              avatarImgUrl={"/images/new_images/avatar2.png"}
               avatarName="Dr. James Lewis"
               text="I save hours every week, and my patients love the extra attention I can give them. Highly recommend!"
             ></TestimonialStyle4>
             <br />
             <TestimonialStyle4
-              avatarImgUrl={"/images/testimonial/1.jpg"}
+              avatarImgUrl={"/images/new_images/avatar1.png"}
               avatarName="Dr. Emily Harris"
               text="Our telehealth practice has seen a 40% increase in efficiency. MedicoTech’s AI tools are a game-changer!"
             ></TestimonialStyle4>
@@ -425,10 +433,22 @@ export default function ClinicalDataAnalysis() {
             />
           </Section>
           {/* CTA */}
-          <Cta
-            btnText="Smooth Transition—Get Started Today"></Cta>
-          <p>Interested in transforming your clinical documentation process? Contact us today to schedule a demo or speak with our sales team about how MedicoTech’s AI Scribe can revolutionize your practice.
-          </p>
+          <Section
+            topMd={50}
+            topLg={50}
+            topXl={50}
+            bottomMd={50}
+            bottomLg={50}
+            bottomXl={50}>
+            <Cta
+              title="Interested in transforming your clinical documentation process?"
+              subTitle="Contact us today to schedule a demo or speak with our sales team about how MedicoTech’s AI Scribe can revolutionize your practice."
+              bgUrl="/images/cta_bg.jpeg"
+              btnUrl="/appointments"
+              btnText="Get Started Today"
+            />
+          </Section>
+
 
         </div>
       </Section>

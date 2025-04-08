@@ -10,6 +10,7 @@ export default function IconBoxStyle10({ title, iconUrl, subTitle }) {
       <p className="cs_iconbox_subtitle mb-0">{subTitle}</p>
       <Cta
       btnText={"Get Started"}
+      btnUrl={"/appointments"}
       ></Cta>
     </div>
   );

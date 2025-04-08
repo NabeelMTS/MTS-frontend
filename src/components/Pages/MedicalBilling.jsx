@@ -3,6 +3,7 @@ import BannerSectionStyle5 from "../Section/BannerSection/BannerSectionStyle5";
 import BannerSectionStyle6 from "../Section/BannerSection/BannerSectionStyle6";
 import DepartmentSection from "../Section/DepartmentSection";
 import FunFactSection from "../Section/FunFactSection";
+import Cta from "../Cta";
 import BrandsSectionStyle2 from "../Section/BrandsSection/BrandsSectionStyle2";
 import BannerSectionStyle8 from "../Section/BannerSection/BannerSectionStyle8";
 import { certificatesData } from "../../helpers/CommonData";
@@ -141,10 +142,22 @@ export default function MedicalBilling() {
 			</Section>
 
 			<div className="container">
-				<p className="mt-4">
-					<b>CTA:</b> Discover How Our Solutions Can Maximize Your Practice’s
-					Revenue—Start Now!
-				</p>
+				<Section
+					topMd={190}
+					topLg={145}
+					topXl={105}
+					bottomMd={200}
+					bottomLg={150}
+					bottomXl={110}>
+					<Cta
+						title="Discover How Our Solutions Can Maximize Your Practice’s
+					Revenue"
+						bgUrl="/images/cta_bg.jpeg"
+						btnUrl="/appointments"
+						btnText="Start Now"
+					/>
+				</Section>
+				
 				<h3>Medical Billing Services</h3>
 				<p>
 					Healthcare providers often struggle with the complexities of medical

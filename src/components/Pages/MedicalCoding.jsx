@@ -1,7 +1,9 @@
 import BannerSectionStyle5 from "../Section/BannerSection/BannerSectionStyle5";
 import BannerSectionStyle9 from "../Section/BannerSection/BannerSectionStyle9";
 import Section from "../Section";
+import Cta from "../Cta";
 import { pageTitle } from "../../helpers/PageTitle";
+
 
 export default function Doctors() {
   pageTitle("Doctors");
@@ -64,14 +66,23 @@ export default function Doctors() {
           for specialties like oncology, cardiology, nephrology, diabetes care,
           and more.
         </p>
-        <h4>Boost Your Practice Today!</h4>
-        <p>
-          Elevate your coding game with our proven medical billing and coding
-          solutions that put your revenue cycle in top gear.
-        </p>
-        <p>
-          <b>CTA:</b> Explore Our Medical Coding Services Today!
-        </p>
+        <Section
+					topMd={50}
+					topLg={50}
+					topXl={50}
+					bottomMd={50}
+					bottomLg={50}
+					bottomXl={50}>
+					<Cta
+						title="Boost Your Practice Today!"
+            subTitle="Elevate your coding game with our proven medical billing and coding
+          solutions that put your revenue cycle in top gear."
+						bgUrl="/images/cta_bg.jpeg"
+						btnUrl="/appointments"
+						btnText="Explore Our Medical Coding Services Today!"
+					/>
+				</Section>
+        
         {/* <div className="d-flex justify-content-center cs_banner_img">
             <img
               src="/images/medical-billing/why-choose.png"
@@ -244,9 +255,21 @@ export default function Doctors() {
           Boost your claims, revenue, and profitability—let us handle the
           coding, so you can focus on what matters most.
         </p>
-        <p>
-          <b>CTA:</b> Trust MTS with your coding, and watch your revenue soar!
-        </p>
+        <Section
+					topMd={50}
+					topLg={50}
+					topXl={50}
+					bottomMd={50}
+					bottomLg={50}
+					bottomXl={50}>
+					<Cta
+						title="Trust MTS with your coding, and watch your revenue soar!"
+						bgUrl="/images/cta_bg.jpeg"
+						btnUrl="/appointments"
+						btnText="Book a demo now!"
+					/>
+				</Section>
+        
       </div>
       <Section className="cs_footer_margin_0">
         <BannerSectionStyle9

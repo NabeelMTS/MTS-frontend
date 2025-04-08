@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import DropDown from "./DropDown";
+import Cta from "../Cta";
 
 export default function Header({ logoSrc, variant }) {
   const [isSticky, setIsSticky] = useState(false);
@@ -99,6 +100,11 @@ export default function Header({ logoSrc, variant }) {
                           <li>
                             <Link to="/services">
                               Services
+                            </Link>
+                          </li>
+                          <li>
+                            <Link to="/specialties">
+                              Specialties
                             </Link>
                           </li>
                           <li>
@@ -217,13 +223,12 @@ export default function Header({ logoSrc, variant }) {
               </div>
               <div className="cs_main_header_right">
                 <div className="cs_toolbox">
-                  <button className="cs_btn cs_style_1">
-                    <span>Request Demo</span>
-                    <i>
-                      <img src="/images/icons/arrow_white.svg" alt="Icon" />
-                      <img src="/images/icons/arrow_white.svg" alt="Icon" />
-                    </i>
-                  </button>
+                  
+                  <Cta
+                  btnText="Request Demo"
+                  btnUrl="/appointments"
+                  >
+                  </Cta>
                 </div>
               </div>
             </div>

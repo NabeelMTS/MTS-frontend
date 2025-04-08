@@ -5,12 +5,12 @@ import SocialWidget from "../Widget/SocialWidget";
 import Newsletter from "../Widget/Newsletter";
 import TextWidget from "../Widget/TextWidget";
 const menuDataOne = [
-  { title: "Medical Billing", href: "/about" },
-  { title: "Free Audit", href: "/doctors" },
-  { title: "RCM ", href: "/timetable" },
-  { title: "Clinical Services", href: "/appointments" },
-  { title: "Digital Marketing", href: "/" },
-  { title: "Training & Bootcamps", href: "/" },
+  { title: "Medical Billing", href: "/medical-billing" },
+  { title: "Free Audit", href: "/appointments" },
+  { title: "RCM ", href: "/rcm-services" },
+  { title: "Clinical Services", href: "/clinical-pharmacist-services" },
+  { title: "Digital Marketing", href: "/digital-health-marketing" },
+  { title: "Training & Bootcamps", href: "/training-bootcamps" },
 ];
 const menuDataTwo = [
   { title: "About Us", href: "/about" },

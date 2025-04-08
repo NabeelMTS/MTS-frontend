@@ -217,9 +217,20 @@ export default function ClinicalDataAnalysis() {
                 title="Revolutionizing Healthcare Documentation with Cutting-Edge Solutions"
                 subTitle="At MedicoTech Solutions, we empower healthcare providers with accurate, secure, and compliant medical documentation services, ensuring improved patient outcomes, operational efficiency, and regulatory adherence."
             />
-            <Cta
-                btnText="Streamline Your Medical Records Today"
-            ></Cta>
+            <Section
+                topMd={50}
+                topLg={50}
+                topXl={50}
+                bottomMd={50}
+                bottomLg={50}
+                bottomXl={50}>
+                <Cta
+                    title="Streamline Your Medical Records Today"
+                    bgUrl="/images/cta_bg.jpeg"
+                    btnUrl="/appointments"
+                    btnText="Get Started"
+                />
+            </Section>
             <Section >
                 <div className="container">
                     {/* Start Introduction Section */}
@@ -295,39 +306,74 @@ export default function ClinicalDataAnalysis() {
                             sectionTitle="What Our Clients Are Saying"
                         />
                         <TestimonialStyle4
-                            avatarImgUrl={"/images/testimonial/1.jpg"}
+                            avatarImgUrl={"/images/new_images/avatar1.png"}
                             avatarName="Dr. Olivia Harrison"
                             avatarDesignation="Primary Care Physician"
                             text="MedicoTech’s AI-powered tools have revolutionized our documentation process, cutting errors by 40% and saving countless hours."
                         ></TestimonialStyle4>
                         <br />
                         <TestimonialStyle4
-                            avatarImgUrl={"/images/testimonial/1.jpg"}
+                            avatarImgUrl={"/images/new_images/avatar2.png"}
                             avatarName="Dr. James Patel"
                             avatarDesignation="Orthopedic Specialist"
                             text="Their compliance monitoring system has given us peace of mind during audits. Highly recommend MedicoTech for any practice looking to modernize!"
                         ></TestimonialStyle4>
                     </Section>
                     {/* End Testimonial */}
-                    <TeamSectionStyle4
-                        sectionTitle="Ready to Elevate Your Documentation Standards? "
-                    />
-                    <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                        <Cta btnText="Get Started Today" style={{ whiteSpace: 'nowrap' }} />
-                        <Cta btnText="Request a free Demo" style={{ whiteSpace: 'nowrap' }} />
-                        <Cta btnText="Learn About CCM and PCM" style={{ whiteSpace: 'nowrap' }} />
-                    </div>
+                    <Section
+                        topMd={50}
+                        topLg={50}
+                        topXl={50}
+                        bottomMd={50}
+                        bottomLg={50}
+                        bottomXl={50}>
+                        <Cta
+                            title="Ready to Elevate Your Documentation Standards?"
+                            bgUrl="/images/cta_bg.jpeg"
+                            btnUrl="/appointments"
+                            btnText="Get Started Today"
+                        />
+                    </Section>
+                    <Section
+                        topMd={50}
+                        topLg={50}
+                        topXl={50}
+                        bottomMd={50}
+                        bottomLg={50}
+                        bottomXl={50}>
+                        <Cta
+                            title="Ready to Elevate Your Documentation Standards?"
+                            bgUrl="/images/cta_bg.jpeg"
+                            btnUrl="/appointments"
+                            btnText="Request a free Demo"
+                        />
+                    </Section>
+                    <Section
+                        topMd={50}
+                        topLg={50}
+                        topXl={50}
+                        bottomMd={50}
+                        bottomLg={50}
+                        bottomXl={50}>
+                        <Cta
+                            title="Ready to Elevate Your Documentation Standards?"
+                            bgUrl="/images/cta_bg.jpeg"
+                            btnUrl="/appointments"
+                            btnText="Learn About CCM and PCM"
+                        />
+                    </Section>
 
-                    
+
+
                 </div>
             </Section>
             <Section className="cs_footer_margin_0">
-                        <BannerSectionStyle4
-                            bgUrl="/images/footer-top.jpeg"
-                            title="Don’t Miss Out – Innovation <br/>That Drives Revenue Growth."
-                            subTitle="Take the First Step Toward Growth – Schedule <br/> Your Free Consultation Now!"
-                        />
-                    </Section>
+                <BannerSectionStyle4
+                    bgUrl="/images/footer-top.jpeg"
+                    title="Don’t Miss Out – Innovation <br/>That Drives Revenue Growth."
+                    subTitle="Take the First Step Toward Growth – Schedule <br/> Your Free Consultation Now!"
+                />
+            </Section>
         </>
     );
 }

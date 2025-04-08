@@ -12,37 +12,37 @@ const featureListData = [
     title: "Cost Savings",
     subTitle:
       " Cut overhead costs by outsourcing non-core tasks to our experienced team, improving efficiency and freeing up resources for what matters most.",
-    iconUrl: "images/icons/professional.svg",
+    iconUrl: "/images/home_3/value_icon_1.svg",
   },
   {
     title: "Scalability",
     subTitle:
       "Seamlessly expand your operations without the burden of hiring more full-time staff, allowing for flexible growth and improved resource management.",
-    iconUrl: "images/icons/comprehensive.svg",
+    iconUrl: "/images/home_3/value_icon_3.svg",
   },
   {
     title: "Expertise",
     subTitle:
       "Gain access to skilled professionals with in-depth healthcare knowledge and experience, ensuring high-quality service and optimal outcomes.",
-    iconUrl: "images/icons/patient.svg",
+    iconUrl: "/images/home_3/value_icon_2.svg",
   },
   {
     title: "Efficiency",
     subTitle:
       "Streamline your operations, reduce administrative burdens, and enhance your focus on providing high-quality patient care.",
-    iconUrl: "images/icons/facilities.svg",
+    iconUrl: "/images/home_3/value_icon_1.svg",
   },
   {
     title: "Compliance",
     subTitle:
       "Stay assured that all outsourced services are fully compliant with the latest healthcare regulations, standards, and industry best practices.",
-    iconUrl: "images/icons/facilities.svg",
+    iconUrl: "/images/home_3/value_icon_2.svg",
   },
   {
     title: "Quality Assurance",
     subTitle:
       "Our dedicated team ensures the delivery of high-quality services that enhance your practice’s efficiency, performance, and patient satisfaction.",
-    iconUrl: "images/icons/facilities.svg",
+    iconUrl: "/images/home_3/value_icon_3.svg",
   },
 ];
 const pricingData = [
@@ -117,7 +117,7 @@ export default function About() {
           titleUp="About Us"
           title="MedicoTech Solutions: Startups to Brands"
           subTitle="Our Business Growth Services empower healthcare practices to overcome today’s challenges. We streamline operations, optimize revenue, and position your practice for sustainable success. Whether enhancing patient acquisition or improving operational efficiency, we provide the expertise and tools to accelerate growth."
-          imgUrl="/images//home_2/about.jpeg"
+          imgUrl="/images/new_images/Blog1.png"
         />
       </Section>
       <Section>
