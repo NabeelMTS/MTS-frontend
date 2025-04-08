@@ -7,7 +7,7 @@ export default function Layout2() {
 	return (
 		<>
 			<Header
-				logoSrc="/images/logo.png"
+				logoSrc="/images/medicotech.jpg"
 				variant="cs_white_color"
 			/>
 			<Outlet />
