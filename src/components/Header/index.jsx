@@ -139,7 +139,7 @@ export default function Header({ logoSrc, variant }) {
                       </DropDown>
                     </li>
                     <li className="">
-                      <Link to="/">Specialties</Link>
+                      <Link to="/specialties">Specialties</Link>
                     </li>
 {/*                     <li className="">
                       <Link to="/">Expertise</Link>
