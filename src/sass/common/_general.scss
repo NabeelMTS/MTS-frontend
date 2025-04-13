@@ -250,6 +250,9 @@ hr {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  position: relative;
+  z-index: 1; // Ensure testimonial section is below the appointment section
+  margin-bottom: 60px; // Increase spacing below the testimonial section
 }
 .cs_heading_color {
   color: $primary;
@@ -313,7 +316,9 @@ hr {
   border-radius: 24px;
   box-shadow: 0px 4px 20px 0px rgba(39, 71, 96, 0.17);
   font-weight: 500;
-  color: #fff;
+  font-size: small;
+  color: #fff !important; // Ensure text color is white and visible
+  text-shadow: none; // Remove any potential text shadow that might obscure the text
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -323,6 +328,13 @@ hr {
   border: none;
   position: relative;
   background: transparent;
+  color: #fff !important; // Ensure text color is white
+  background-color: #30c455 !important; // Add a solid background color with high contrast
+  text-shadow: none !important; // Remove any text shadow that might obscure the text
+  &:hover {
+    background-color: #306027 !important; // Ensure hover state has sufficient contrast
+    color: #fff !important; // Maintain text visibility on hover
+  }
   @media (max-width: 991px) {
     padding: 12px 30px;
   }
@@ -365,10 +377,10 @@ hr {
     transition: all 0.4s ease-in-out;
   }
   &::before {
-    background-image: linear-gradient(134deg, #307bc4 0%, #274760 100%);
+    background-image: linear-gradient(134deg, #30c455 0%, #306027 100%);
   }
   &::after {
-    background-image: linear-gradient(270deg, #307bc4 0%, #274760 100%);
+    background-image: linear-gradient(270deg, #30c455 0%, #306027 100%);
     opacity: 0;
   }
   &:hover {
@@ -590,6 +602,7 @@ input::-ms-input-placeholder,
     padding: 9px;
     img {
       filter: brightness(0) invert(1);
+      fill: #30c455; // Change SVG fill color to green
     }
   }
   .cs_feature_title {
@@ -817,7 +830,7 @@ input::-ms-input-placeholder,
       content: '';
       height: 20px;
       width: 20px;
-      border: 1px solid $accent;
+      border: 1px solid #30c455; // Change radio button border color to green
       border-radius: 50%;
       position: absolute;
       top: 3px;
@@ -827,7 +840,7 @@ input::-ms-input-placeholder,
       content: '';
       height: 14px;
       width: 14px;
-      background-color: $accent;
+      background-color: #306027; // Change radio button inner circle color to green
       border-radius: 50%;
       position: absolute;
       top: 6px;
@@ -898,25 +911,41 @@ input::-ms-input-placeholder,
   }
 }
 .cs_appointment_section_1 {
+  position: relative;
+  padding: 40px 0; // Increase padding for better spacing
+  margin-top: 60px; // Add spacing above the appointment section
+  z-index: 2; // Ensure appointment section is above the testimonial section
+  overflow: visible;
+
   .container {
     position: relative;
   }
+
   .cs_appointment_img {
     position: absolute;
     bottom: 0;
     left: -9.5%;
-    width: 55%;
-    @media (max-width: 1400px) {
-      left: -16%;
-      width: 63%;
+    width: 45%;
+    max-height: 500px;
+    overflow: hidden;
+    z-index: 1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
-    @media (max-width: 1199px) {
-      left: -24%;
-      width: 72%;
-    }
+
     @media (max-width: 991px) {
       display: none;
     }
+  }
+}
+
+.cs_height_70 {
+  height: 70px; // Reduced height spacer
+  @media (max-width: 991px) {
+    height: 35px;
   }
 }
 
@@ -1004,7 +1033,7 @@ input::-ms-input-placeholder,
     width: 45px;
     color: $primary;
     &.active {
-      background-color: $accent;
+      background-color: #30c455; // Change active pagination background to green
       color: #fff;
       pointer-events: none;
     }
@@ -1020,204 +1049,131 @@ input::-ms-input-placeholder,
     }
     &:hover {
       transform: scale(1.2);
+      color: #30c455; // Change arrow hover color to green
     }
   }
 }
 
 .cs_appointment_form.cs_style_1 {
-  background-color: #fff;
-  box-shadow: 6px 4px 70px 8px rgba(48, 123, 196, 0.09);
-  padding: 60px 90px;
-  @media (max-width: 1700px) {
-    padding: 60px 50px;
-  }
-  @media (max-width: 575px) {
-    padding: 50px 25px;
-  }
-  .cs_appointment_categories {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px 70px;
-    @media (max-width: 1700px) {
-      gap: 15px 30px;
-    }
-  }
-  .cs_appointment_form_head {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 80px;
-    gap: 25px;
-    flex-wrap: wrap;
-    @media (max-width: 1400px) {
-      margin-bottom: 40px;
-      > h2 {
-        width: 100%;
-      }
-    }
-    @media (max-width: 991px) {
-      margin-bottom: 30px;
-      gap: 20px;
-      > * {
-        width: 100%;
-      }
-    }
-  }
-  .cs_appointment_form_icon {
-    flex: none;
-    height: 70px;
-    width: 70px;
-    padding: 18px;
-  }
-  label {
-    display: block;
-    color: $primary;
-    font-weight: 500;
-    margin-bottom: 5px;
-    margin-top: -5px;
-  }
-  input,
-  textarea {
-    border: 0;
-    border-bottom: 1px solid $ternary;
-    display: block;
-    width: 100%;
-    padding: 0;
-    outline: none;
-    transition: all 0.3s ease;
-    &:focus {
-      border-color: $accent;
-    }
-  }
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 15px;
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
   .cs_appointment_form_field {
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
-    gap: 25px;
-    width: 300px;
-    flex: none;
-    @media (max-width: 991px) {
-      gap: 15px;
-      width: 280px;
-    }
-    @media (max-width: 767px) {
-      width: 100%;
-    }
-  }
-  .cs_appointment_form_field_right {
-    flex: 1;
-  }
-  .cs_appointment_form_fields {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 60px 100px;
-    justify-content: space-between;
-    @media (max-width: 1400px) {
-      gap: 40px 30px;
-    }
-    @media (max-width: 991px) {
-      gap: 25px;
-    }
-    @media (max-width: 767px) {
-      flex-direction: column;
-    }
-  }
-  .cs_appointment_category {
-    position: relative;
-    span {
-      display: inline-block;
-      position: relative;
-      transition: all 0.3s ease;
-      &::before {
-        content: '';
-        position: absolute;
-        height: 1px;
-        width: 0%;
-        bottom: -5px;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: $accent;
-        transition: all 0.3s ease;
+    gap: 8px;
+
+    .cs_appointment_form_icon {
+      width: 32px;
+      height: 32px;
+      padding: 6px;
+      background-color: #30c455;
+      img {
+        width: 18px;
+        height: 18px;
+        filter: brightness(0) invert(1);
       }
     }
-    input {
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      left: 0;
-      top: 0;
-      z-index: 2;
-      opacity: 0;
-      cursor: pointer;
-      &:checked {
-        + span {
-          color: $primary;
-          &::before {
-            width: 100%;
-          }
-        }
+
+    .cs_appointment_form_field_right {
+      flex: 1;
+      input {
+        width: 100%;
+        padding: 6px 10px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        height: 32px;
+        font-size: 14px;
       }
     }
   }
-  &.cs_type_1 {
-    border-radius: 25px 25px 0px 0px;
-    border: 1px solid #fff;
-    border-bottom: 0;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(21.5px);
-    max-width: 670px;
+
+  .cs_btn.cs_style_1 {
     width: 100%;
-    padding: 45px 50px;
-    position: relative;
-    z-index: 2;
-    @media (max-width: 991px) {
-      padding: 30px 25px;
-    }
-    .cs_down_btn {
-      height: 60px;
-      width: 60px;
-      position: absolute;
-      right: -30px;
-      top: -30px;
-      background-color: #fff;
-      color: $accent;
-      &:hover {
-        transform: rotate(-20deg);
+    margin-top: 8px;
+    padding: 8px 15px;
+    height: 36px;
+    font-size: 14px;
+  }
+}
+
+// Fix section spacing
+.cs_appointment_section {
+  padding: 30px 0;
+  margin-bottom: 0;
+  overflow: hidden;
+  position: relative;
+  
+  @media (max-width: 991px) {
+    padding: 20px 0;
+  }
+}
+
+.cs_appointment_form.cs_style_1 {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 20px;
+  max-width: 450px;
+  width: 100%;
+  margin: 0 auto;
+
+  .cs_appointment_form_field {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .cs_appointment_form_icon {
+      width: 35px;
+      height: 35px;
+      padding: 8px;
+      background-color: #30c455;
+      img {
+        filter: brightness(0) invert(1);
       }
-      @media (max-width: 575px) {
-        right: 5px;
-        top: 5px;
-        transform: scale(0.6);
-        &:hover {
-          transform: scale(0.6) rotate(-20deg);
-        }
-      }
     }
-    label {
-      color: #fff;
-    }
-    .cs_appointment_form_field {
-      width: 100%;
-      margin-bottom: 35px;
-      @media (max-width: 991px) {
-        margin-bottom: 25px;
-      }
-      input,
-      textarea {
-        background-color: transparent;
-        border-color: rgba(255, 255, 255, 0.5);
-        color: #fff;
-        padding-bottom: 4px;
-        &::placeholder {
-          color: rgba(255, 255, 255, 0.6);
-        }
-        &::-ms-input-placeholder {
-          color: rgba(255, 255, 255, 0.6);
-        }
+
+    .cs_appointment_form_field_right {
+      flex: 1;
+      input {
+        width: 100%;
+        padding: 8px 12px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        height: 35px;
         &:focus {
-          border-color: #fff;
+          border-color: #30c455;
+          outline: none;
         }
       }
     }
+  }
+
+  .cs_btn.cs_style_1 {
+    width: 100%;
+    margin-top: 10px;
+    padding: 8px 20px;
+    height: 40px;
+    background-color: #30c455;
+    &:hover {
+      background-color: #306027;
+    }
+  }
+}
+
+// Reduce spacing in the overall section
+.cs_appointment_section {
+  padding: 40px 0;
+  @media (max-width: 991px) {
+    padding: 30px 0;
   }
 }
 .cs_page_heading {
@@ -1330,9 +1286,12 @@ input::-ms-input-placeholder,
   .cs_social_links a {
     height: 30px;
     width: 30px;
-    background-color: $accent;
+    background-color: #30c455; // Change social link background to green
     color: #fff;
     font-size: 14px;
+    &:hover {
+      background-color: #306027; // Change hover state to darker green
+    }
   }
   .cs_doctor_info_in {
     padding: 50px 95px 46px;
@@ -1562,9 +1521,14 @@ input::-ms-input-placeholder,
     a {
       height: 30px;
       width: 30px;
-      background-color: #fff;
+      background-color: #30c455; // Change social link background to green
       color: $accent;
       font-size: 16px;
+      &:hover {
+        background-color: #306027; // Change hover state to darker green
+        color: #fff;
+        transform: initial;
+      }
     }
   }
 }
@@ -1753,7 +1717,7 @@ input::-ms-input-placeholder,
       color: $accent;
       font-size: 18px;
       &:hover {
-        background-color: $accent;
+        background-color: #306027; // Change hover state to darker green
         color: #fff;
         transform: initial;
       }
@@ -2395,7 +2359,7 @@ a.ui-button:active,
   color: $accent;
 }
 .select2-container--default .select2-results__option[aria-selected='true'] {
-  background-color: $accent;
+  background-color: #30c455; // Change selected dropdown option background to green
   color: white;
 }
 .select2-container--default .select2-results > .select2-results__options {

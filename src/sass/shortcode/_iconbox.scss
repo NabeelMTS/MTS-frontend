@@ -20,6 +20,37 @@
       font-size: 18px;
     }
   }
+  .cs_iconbox.cs_style_3:hover .cs_iconbox_icon {
+    background-color: #30c455 !important; // Change hover background to green
+}
+.cs_iconbox.cs_style_3 .cs_iconbox_icon {
+  height: 136px;
+  width: 136px;
+  background: #306027 !important;
+  margin-left: auto;
+  transition: all 0.4s ease;
+  padding: 25px;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -80%;
+    z-index: 2;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      transparent,
+      #30c455 // Change gradient to green
+    ) !important;
+    transform: skewX(-25deg);
+    z-index: 1;
+  }
+  img {
+    filter: none; // Remove any filters
+    fill: #30c455; // Change SVG fill color to green
+  }
+}
   .cs_iconbox_icon {
     height: 120px;
     width: 120px;
@@ -34,6 +65,7 @@
     }
     img {
       max-height: 100%;
+      fill: #30c455; // Change SVG fill color to green
     }
     &:before {
       content: '';
@@ -46,8 +78,8 @@
       background: linear-gradient(
         to right,
         transparent,
-        rgba(255, 255, 255, 0.13)
-      );
+        #306027 
+      ) !important;
       transform: skewX(-25deg);
       z-index: 1;
     }
@@ -226,6 +258,10 @@
       margin-left: initial;
       padding: 20px;
       margin-bottom: 20px;
+    }
+    img {
+      filter: none; // Remove any filters
+      fill: #30c455; // Change SVG fill color to green
     }
   }
   .cs_iconbox_title {
@@ -646,7 +682,7 @@
     height: 160px;
     border-radius: 50%;
     padding: 35px;
-    background-color: #86bbf1;
+    background-color: #30c455; // Change default background to green
     transition: all 0.4s ease;
     img {
       filter: brightness(0) invert(1);
@@ -660,6 +696,9 @@
       width: 80px;
       height: 80px;
       padding: 20px;
+    }
+    &:hover {
+      background-color: #306027; // Change hover background to darker green
     }
   }
   .cs_iconbox_circle {

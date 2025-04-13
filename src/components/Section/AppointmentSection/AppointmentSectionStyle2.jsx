@@ -10,25 +10,20 @@ export default function AppointmentSectionStyle2({
   sectionTitleUp,
 }) {
   return (
-    <section
-      className="cs_appointment_section_1 cs_bg_filed"
-      style={{
-        backgroundImage: `url(${bgUrl})`,
-      }}
-    >
+    <section className="cs_appointment_section_1">
       <div className="container">
-        <div className="cs_height_132" />
-        <div className="cs_appointment_img">
-          <img src={imgUrl} alt="Appointment" />
+        <div className="cs_height_70" /> {/* Reduced height */}
+        <div className="cs_appointment_img" style={{ maxHeight: '500px' }}> {/* Added maxHeight */}
+          <img src={imgUrl} alt="Appointment" style={{ objectFit: 'contain' }} />
         </div>
         <div className="row">
           <div className="offset-lg-6 col-lg-6">
             <SectionHeading title={sectionTitle} titleUp={sectionTitleUp} />
-            <Spacing md="57" />
+            <Spacing md="30" /> {/* Reduced spacing */}
             <AppointmentForm />
           </div>
         </div>
-        <div className="cs_height_120" />
+        <div className="cs_height_70" /> {/* Reduced height */}
       </div>
     </section>
   );

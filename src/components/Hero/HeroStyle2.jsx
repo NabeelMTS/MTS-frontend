@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import VideoModal from "../VideoModal";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -9,15 +9,16 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 const silderData = [
 	{
+		
 		title: [<i>Innovation Driving</i>, <i>Revenue Growth</i>],
 		subTitle:
 			"Embrace the future of healthcare with innovative solutions. From efficient medical billing to expert IT consultation, we empower you to enhance patient care and boost revenue with cutting-edge technology.",
-		bgUrl: "/images/home_2/hero_bg.jpeg",
-		imgUrl: "/images/home_2/patents.png",
+		bgUrl: "/images/home_2/hero_3.jpg",
+
 		videoBtnText: "See how we work",
 		videoUrl: "https://www.youtube.com/embed/VcaAVWtP48A",
-		btnText: "MedicoTech Solutions",
-		btnUrl: "/",
+		btnText: " Book a Free Consultation",
+		btnUrl: "/appointments",
 		funfactList: [
 			{ number: "95%", title: "Client Satisfaction Rate" },
 			{ number: "25+", title: "Specialties Supported" },
@@ -29,12 +30,12 @@ const silderData = [
 		title: ["End Claim Denials - Maximize Revenue Today"],
 		subTitle:
 			"Our intelligent, AI-driven approach to medical billing & coding, RCM, and provider credentialing helps reduce claim denials by up to 30%, improve compliance, and ensure smoother reimbursements.",
-		bgUrl: "/images/healthcare-outsourcing-solutions/banner_bg_2.jpeg",
-		imgUrl: "/images/home_2/patents.png",
+		bgUrl: "/images/home_2/hero_2.jpg",
+
 		videoBtnText: "See how we work",
 		videoUrl: "https://www.youtube.com/embed/VcaAVWtP48A",
-		btnText: "MedicoTech Solutions",
-		btnUrl: "/",
+		btnText: " Book a Free Consultation",
+		btnUrl: "/appointments",
 		funfactList: [
 			{ number: "20+", title: "Years of experience" },
 			{ number: "95%", title: "Patient satisfaction rating" },
@@ -43,15 +44,32 @@ const silderData = [
 		],
 	},
 	{
-		title: ["End Claim Denials - Maximize Revenue Today"],
+		title: ["From Claims to Cash—Faster Than Ever"],
 		subTitle:
-			"Our intelligent, AI-driven approach to medical billing & coding, RCM, and provider credentialing helps reduce claim denials by up to 30%, improve compliance, and ensure smoother reimbursements.",
-		bgUrl: "/images/provider-credentialing/credentialling.png",
-		imgUrl: "/images/home_2/patents.png",
+			"Accurate, HIPAA-compliant medical billing solutions designed to streamline your practice and boost your cash flow.",
+		bgUrl: "/images/home_2/hero.jpg",
+
 		videoBtnText: "See how we work",
 		videoUrl: "https://www.youtube.com/embed/VcaAVWtP48A",
-		btnText: "MedicoTech Solutions",
-		btnUrl: "/",
+		btnText: " Book a Free Consultation",
+		btnUrl: "/appointments",
+		funfactList: [
+			{ number: "20+", title: "Years of experience" },
+			{ number: "95%", title: "Patient satisfaction rating" },
+			{ number: "5000+", title: "Patients served annually" },
+			{ number: "10+", title: "Healthcare providers on staff" },
+		],
+	},
+	{
+		title: ["Simplify Billing. Amplify Results!"],
+		subTitle:
+			"Our intelligent, AI-driven approach to medical billing & coding, RCM, and provider credentialing helps reduce claim denials by up to 30%, improve compliance, and ensure smoother reimbursements.",
+		bgUrl: "/images/home_2/hero_4.jpg",
+
+		videoBtnText: "See how we work",
+		videoUrl: "https://www.youtube.com/embed/VcaAVWtP48A",
+		btnText: " Book a Free Consultation",
+		btnUrl: "/appointments",
 		funfactList: [
 			{ number: "20+", title: "Years of experience" },
 			{ number: "95%", title: "Patient satisfaction rating" },
@@ -62,6 +80,8 @@ const silderData = [
 ];
 
 export default function HeroStyle2() {
+	const [videoModalOpen, setVideoModalOpen] = useState(false);
+
 	return (
 		<Swiper navigation={true} modules={[Navigation]} className="mySwiper">
 			{silderData.map((item, index) => (
@@ -70,10 +90,10 @@ export default function HeroStyle2() {
 						className="cs_hero cs_style_2 cs_bg_filed"
 						style={{ backgroundImage: `url(${item.bgUrl})` }}
 					>
+						<div className="cs_hero_overlay"></div>
 						<div className="container">
 							<div className="cs_hero_text">
-								<h1 className="cs_hero_title cs_white_color cs_fs_84">
-									{/* {item.title} */}
+								<h1 className="cs_hero_title cs_white_color">
 									{item.title.map((line, idx) => (
 										<React.Fragment key={idx}>
 											{line}
@@ -81,53 +101,53 @@ export default function HeroStyle2() {
 										</React.Fragment>
 									))}
 								</h1>
-								<div className="cs_hero_text_in">
-									<div className="cs_hero_btn cs_white_color">
-										<Link to={item.btnUrl} className="cs_text_btn">
-											{item.btnText}
+								<p className="cs_hero_subtitle cs_white_color">{item.subTitle}</p>
+								<div className="cs_hero_btns">
+										<Link
+											to="/appointments"
+											style={{
+												padding: '15px 40px',
+												fontSize: '1rem',
+												fontWeight: '600',
+												backgroundColor: '#30c455',
+												color: '#fff',
+												border: 'none',
+												borderRadius: '5px',
+												cursor: 'pointer',
+												transition: 'background-color 0.3s ease',
+												textDecoration: 'none', // Ensure it looks like a button
+												display: 'inline-block', // Maintain button-like appearance
+											}}
+										>
+											Schedule Free Consultation
 										</Link>
-									</div>
-									<p className="cs_hero_subtitle cs_white_color">
-										{item.subTitle}
-									</p>
+									<span
+										className="cs_video_open"
+										onClick={() => setVideoModalOpen(true)}
+									>
+										▶
+									</span>
 								</div>
 							</div>
-							<img src={item.imgUrl} alt="Hero" className="cs_hero_patents" />
-						</div>
-						<div className="container">
-							<div className="cs_hero_bottom">
-								<div className="cs_hero_bottom_left">
-									<div className="cs_hero_btn_wrap">
-										{/* <button className="cs_btn cs_style_1">
-					<span>Schedule a Demo</span>
-					<i>
-						<img src="/images/icons/arrow_white.svg" alt="Icon" />
-						<img src="/images/icons/arrow_white.svg" alt="Icon" />
-					</i>
-				</button> */}
-										<VideoModal
-											videoUrl={item.videoUrl}
-											videoBtnText={item.videoBtnText}
-											variant="cs_white_color"
-										/>
+							<div className="cs_hero_funfact_container">
+								{item.funfactList.map((fact, idx) => (
+									<div className="cs_hero_funfact_item" key={idx}>
+										<h3>{fact.number}</h3>
+										<p>{fact.title}</p>
 									</div>
-								</div>
-								<div className="cs_hero_bottom_right">
-									{item.funfactList?.length > 0 && (
-										<div className="cs_hero_funfact text-center">
-											{item.funfactList?.map((item, index) => (
-												<div className="cs_hero_funfact_col" key={index}>
-													<h3 className="cs_white_color cs_fs_72">
-														{item.number}
-													</h3>
-													<p className="cs_white_color mb-0">{item.title}</p>
-												</div>
-											))}
-										</div>
-									)}
-								</div>
+								))}
 							</div>
 						</div>
+
+						{/* Video Modal */}
+						{videoModalOpen && (
+							<VideoModal
+								videoUrl={item.videoUrl}
+								videoBtnText="Watch Video"
+								variant="cs_white_color"
+								onClose={() => setVideoModalOpen(false)}
+							/>
+						)}
 					</section>
 				</SwiperSlide>
 			))}

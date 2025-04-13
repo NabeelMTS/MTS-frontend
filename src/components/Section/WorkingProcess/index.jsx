@@ -11,8 +11,8 @@ export default function WorkingProcess({
   data,
 }) {
   return (
-    <div className="cs_shape_wrap">
-      <div className="cs_shape_1 cs_position_2" />
+    <div>
+      {/* Removed background shapes */}
       <div className="container">
         <SectionHeading
           title={sectionTitle}
