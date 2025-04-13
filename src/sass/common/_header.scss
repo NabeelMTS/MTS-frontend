@@ -10,11 +10,14 @@
   z-index: 1000;
   transition: all 0.4s ease;
   backdrop-filter: blur(10px);
+  background-color: white; // White background for the header
+  color: black; // Black text for contrast
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); // Subtle shadow for separation
 
   &.cs_sticky_active {
     background: white;
     color: black;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); // Slightly stronger shadow when sticky
 
     .cs_nav_list > li > a {
       color: black;
@@ -859,4 +862,12 @@
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 9998; // Ensure it's below the modal content
   cursor: pointer;
+}
+
+.cs_main_header_right {
+  .cs_toolbox {
+    @media (max-width: 991px) {
+      display: none; // Hide on tablets and mobile
+    }
+  }
 }

@@ -88,7 +88,17 @@ export default function HeroStyle2() {
 				<SwiperSlide key={index}>
 					<section
 						className="cs_hero cs_style_2 cs_bg_filed"
-						style={{ backgroundImage: `url(${item.bgUrl})` }}
+						style={{
+							backgroundImage: `url(${item.bgUrl})`,
+							marginTop: "100px", // Match header height
+							minHeight: "calc(100vh - 100px)", // Subtract header height
+							backgroundSize: "cover",
+							backgroundPosition: "center",
+							backgroundRepeat: "no-repeat",
+							position: "relative",
+							display: "flex",
+							alignItems: "center"
+						}}
 					>
 						<div className="cs_hero_overlay"></div>
 						<div className="container">

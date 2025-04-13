@@ -26,10 +26,15 @@ export default function Header({ logoSrc, variant }) {
         isSticky ? "cs_sticky_active" : ""
       } ${mobileToggle ? "cs_mobile_toggle_active" : ""} ${variant}`}
       style={{
-        background: isSticky
-          ? "white"
-          : "linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%)",
-        color: isSticky ? "black" : "white",
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100%',
+        background: "white",
+        color: "black",
+        boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
+        zIndex: 1000,
+        height: '100px'
       }}
     >
       <div className="cs_main_header">
