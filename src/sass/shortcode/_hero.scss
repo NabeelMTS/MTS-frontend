@@ -1359,40 +1359,122 @@ $main-color: #307bc4;
 }
 
 .cs_hero_funfact_container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 30px;
-  padding: 20px;
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
-  background: rgba(128, 128, 128, 0.2); // Greyish blur background
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  margin: 40px auto 0;
-  max-width: 100%;
+  padding: 0;
+  max-width: 1200px;
+  margin: 60px auto 0;
+  position: relative;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  @media (max-width: 576px) {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
 
   .cs_hero_funfact_item {
+    position: relative;
+    padding: 32px 20px;
     text-align: center;
-    padding: 10px 20px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+
+    &:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255, 255, 255, 0.15);
+
+      .highlight-bar {
+        width: 40%;
+        opacity: 1;
+      }
+
+      h3 {
+        background-position: 0% 100%;
+      }
+    }
+
+    .highlight-bar {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.8),
+        transparent
+      );
+      opacity: 0;
+      transition: all 0.5s ease;
+    }
 
     h3 {
-      font-size: 2rem;
-      margin-bottom: 10px;
-      color: #fff; // Ensure text is white
+      font-size: 3.2rem;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 12px;
+      background: linear-gradient(
+        90deg,
+        #ffffff 0%,
+        #a5f3fc 50%,
+        #ffffff 100%
+      );
+      background-size: 200% 100%;
+      background-position: 100% 0%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transition: background-position 0.6s ease;
+
+      @media (max-width: 768px) {
+        font-size: 2.8rem;
+      }
     }
 
     p {
-      font-size: 1rem;
-      color: #fff; // Ensure text is white
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      color: rgba(255, 255, 255, 0.85);
+      margin: 0;
+      text-transform: uppercase;
+      
+      // Add subtle text shadow for better readability
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     }
-  }
 
-  @media (max-width: 767px) {
-    flex-direction: column;
-    gap: 15px;
+    // Modern shine effect on hover
+    &::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.1) 0%,
+        transparent 70%
+      );
+      transform: translate(-100%, -100%);
+      transition: transform 0.6s ease;
+      z-index: 1;
+      pointer-events: none;
+      opacity: 0;
+    }
 
-    .cs_hero_funfact_item {
-      padding: 10px;
+    &:hover::after {
+      transform: translate(0, 0);
+      opacity: 1;
     }
   }
 }

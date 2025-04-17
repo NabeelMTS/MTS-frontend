@@ -90,11 +90,11 @@ export default function HeroStyle2() {
 						className="cs_hero cs_style_2"
 						style={{
 							backgroundImage: `url(${item.bgUrl})`,
-							backgroundSize: "cover",
+							backgroundSize: "right",
 							backgroundPosition: "center",
 							backgroundRepeat: "no-repeat",
-							minHeight: "calc(100vh - 100px)", // Adjust for header height
-							paddingTop: "100px", // Space for header
+							minHeight: "calc(100vh-20px)", // Adjust for header height
+							paddingTop: "120px", // Space for header
 							display: "flex",
 							flexDirection: "column",
 							justifyContent: "center",
@@ -116,7 +116,7 @@ export default function HeroStyle2() {
 								<div className="cs_hero_btns">
 									<Link
 										to={item.btnUrl}
-										className="cs_btn cs_style_1"
+										className="cs_btn"
 									>
 										{item.btnText}
 									</Link>

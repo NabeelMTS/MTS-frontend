@@ -10,3 +10,84 @@
   justify-content: center; // Horizontally center content
   color: white; // Ensure text is visible on dark backgrounds
 }
+
+.cs_hero_funfact_container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 40px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin: 40px auto 0;
+  max-width: 1200px;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 30px auto 0;
+    padding: 0 20px;
+  }
+
+  .cs_hero_funfact_item {
+    text-align: center;
+    padding: 25px 20px;
+    border-radius: 12px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15), inset 0 1px 2px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    @media (max-width: 768px) {
+      display: flex;
+      align-items: center;
+      text-align: left;
+      padding: 8px 15px;
+      background: none;
+      backdrop-filter: none;
+      border-radius: 0;
+      gap: 12px;
+
+      &::before {
+        content: '•';
+        color: #30c455;
+        font-size: 20px;
+      }
+
+      &:hover {
+        transform: none;
+        box-shadow: none;
+      }
+    }
+
+    h3 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #30c455;
+      background: linear-gradient(90deg, #30c455, #307bc4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      @media (max-width: 768px) {
+        font-size: 1.1rem;
+        margin: 0;
+        background: none;
+        -webkit-text-fill-color: #fff;
+        order: 2;
+      }
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.9);
+      margin: 0;
+
+      @media (max-width: 768px) {
+        font-size: 0.9rem;
+        order: 1;
+      }
+    }
+  }
+}
