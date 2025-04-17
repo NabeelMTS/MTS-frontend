@@ -87,17 +87,18 @@ export default function HeroStyle2() {
 			{silderData.map((item, index) => (
 				<SwiperSlide key={index}>
 					<section
-						className="cs_hero cs_style_2 cs_bg_filed"
+						className="cs_hero cs_style_2"
 						style={{
 							backgroundImage: `url(${item.bgUrl})`,
-							marginTop: "100px", // Match header height
-							minHeight: "calc(100vh - 100px)", // Subtract header height
 							backgroundSize: "cover",
 							backgroundPosition: "center",
 							backgroundRepeat: "no-repeat",
-							position: "relative",
+							minHeight: "calc(100vh - 100px)", // Adjust for header height
+							paddingTop: "100px", // Space for header
 							display: "flex",
-							alignItems: "center"
+							flexDirection: "column",
+							justifyContent: "center",
+							position: "relative",
 						}}
 					>
 						<div className="cs_hero_overlay"></div>
@@ -113,24 +114,12 @@ export default function HeroStyle2() {
 								</h1>
 								<p className="cs_hero_subtitle cs_white_color">{item.subTitle}</p>
 								<div className="cs_hero_btns">
-										<Link
-											to="/appointments"
-											style={{
-												padding: '15px 40px',
-												fontSize: '1rem',
-												fontWeight: '600',
-												backgroundColor: '#30c455',
-												color: '#fff',
-												border: 'none',
-												borderRadius: '5px',
-												cursor: 'pointer',
-												transition: 'background-color 0.3s ease',
-												textDecoration: 'none', // Ensure it looks like a button
-												display: 'inline-block', // Maintain button-like appearance
-											}}
-										>
-											Schedule Free Consultation
-										</Link>
+									<Link
+										to={item.btnUrl}
+										className="cs_btn cs_style_1"
+									>
+										{item.btnText}
+									</Link>
 									<span
 										className="cs_video_open"
 										onClick={() => setVideoModalOpen(true)}
