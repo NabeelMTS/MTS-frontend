@@ -46,7 +46,7 @@ const silderData = [
 	{
 		title: ["From Claims to Cash—Faster Than Ever"],
 		subTitle:
-			"Accurate, HIPAA-compliant medical billing solutions designed to streamline your practice and boost your cash flow.",
+			"Our intelligent, AI-driven approach to medical billing & coding, RCM, and provider credentialing helps reduce claim denials by up to 30%, improve compliance, and ensure smoother reimbursements.",
 		bgUrl: "/images/home_2/hero.jpg",
 
 		videoBtnText: "See how we work",

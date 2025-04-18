@@ -247,6 +247,19 @@ export default function HomeStyle2() {
 		<>
 			<HeroStyle2 />
 			<Section
+			topMd={30}
+			topLg={25}
+			topXl={20}
+			bottomMd={30}
+			bottomLg={25}
+			bottomXl={20}>
+				<Cta
+					subTitle="Accurate, HIPAA-compliant medical billing solutions designed to streamline your practice and boost your cash flow."
+					btnUrl="/appointments"
+					btnText="Book a Free Consultation"
+				/>
+			</Section>
+			<Section
 				className="icon-section"
 				topMd={30}
 				topLg={25}
