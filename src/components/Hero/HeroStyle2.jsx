@@ -16,7 +16,7 @@ const silderData = [
 		bgUrl: "/images/home_2/hero_3.jpg",
 
 		videoBtnText: "See how we work",
-		videoUrl: "https://www.youtube.com/embed/VcaAVWtP48A",
+		videoUrl: "https://www.youtube.com/watch?v=aK8F3kGJXyY",
 		btnText: " Book a Free Consultation",
 		btnUrl: "/appointments",
 		funfactList: [
@@ -33,7 +33,7 @@ const silderData = [
 		bgUrl: "/images/home_2/hero_2.jpg",
 
 		videoBtnText: "See how we work",
-		videoUrl: "https://www.youtube.com/embed/VcaAVWtP48A",
+		videoUrl: "https://www.youtube.com/watch?v=aK8F3kGJXyY",
 		btnText: " Book a Free Consultation",
 		btnUrl: "/appointments",
 		funfactList: [
@@ -50,7 +50,7 @@ const silderData = [
 		bgUrl: "/images/home_2/hero.jpg",
 
 		videoBtnText: "See how we work",
-		videoUrl: "https://www.youtube.com/embed/VcaAVWtP48A",
+		videoUrl: "https://www.youtube.com/watch?v=aK8F3kGJXyY",
 		btnText: " Book a Free Consultation",
 		btnUrl: "/appointments",
 		funfactList: [
@@ -67,7 +67,7 @@ const silderData = [
 		bgUrl: "/images/home_2/hero_4.jpg",
 
 		videoBtnText: "See how we work",
-		videoUrl: "https://www.youtube.com/embed/VcaAVWtP48A",
+		videoUrl: "https://www.youtube.com/watch?v=aK8F3kGJXyY",
 		btnText: " Book a Free Consultation",
 		btnUrl: "/appointments",
 		funfactList: [
