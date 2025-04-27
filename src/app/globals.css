@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom base styles */
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+}
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.loader .medical-cross {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background-color: #3498db;
+  animation: rotate 1.5s infinite linear;
+}
+
+.loader .medical-cross::before,
+.loader .medical-cross::after {
+  content: '';
+  position: absolute;
+  background-color: #3498db;
+}
+
+.loader .medical-cross::before {
+  width: 50px;
+  height: 15px;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.loader .medical-cross::after {
+  width: 15px;
+  height: 50px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
