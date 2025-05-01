@@ -9,28 +9,32 @@ const Testimonials = () => {
       name: "J. Herrera",
       location: "New York, USA",
       rating: 5,
-      content: "MedicoTech Solutions (MTS) has transformed my practice, providing seamless medical billing, credentialing services, and denials management. With their expert solutions, I can focus more on patient care without the stress of administrative challenges. MTS has truly brought peace and efficiency to my practice."
+      content: "MedicoTech Solutions (MTS) has transformed my practice, providing seamless medical billing, credentialing services, and denials management. With their expert solutions, I can focus more on patient care without the stress of administrative challenges. MTS has truly brought peace and efficiency to my practice.",
+      image: "/images/test1.png"
     },
     {
       id: 2,
       name: "Lilly-Rose",
       location: "New York, USA",
       rating: 5,
-      content: "Since partnering with MedicoTech Solutions (MTS), I've seen a significant boost in my revenue cycle management. Their tailored approach to revenue optimization and financial performance improvement has transformed my practice. I highly recommend their expert services to any healthcare provider looking to enhance their financial efficiency."
+      content: "Since partnering with MedicoTech Solutions (MTS), I've seen a significant boost in my revenue cycle management. Their tailored approach to revenue optimization and financial performance improvement has transformed my practice. I highly recommend their expert services to any healthcare provider looking to enhance their financial efficiency.",
+      image: "/images/test2.png"
     },
     {
       id: 3,
       name: "L. Taylor",
       location: "Florida, USA",
       rating: 5,
-      content: "Their innovative healthcare technology solutions have significantly improved my practice. The professional and dedicated team ensures accurate, efficient services that streamline workflows. I highly value their commitment to advancing healthcare and delivering impactful, reliable results."
+      content: "Their innovative healthcare technology solutions have significantly improved my practice. The professional and dedicated team ensures accurate, efficient services that streamline workflows. I highly value their commitment to advancing healthcare and delivering impactful, reliable results.",
+      image: "/images/test3.jpg"
     },
     {
       id: 4,
       name: "K. Tamara",
       location: "Maryland, USA",
       rating: 5,
-      content: "Partnering with MedicoTech Solutions has transformed my practice. Their expert clinical analysis and detailed medication reviews have improved therapeutic outcomes, streamlined decision-making, and boosted revenue, ensuring better care for patients and enhanced practice efficiency."
+      content: "Partnering with MedicoTech Solutions has transformed my practice. Their expert clinical analysis and detailed medication reviews have improved therapeutic outcomes, streamlined decision-making, and boosted revenue, ensuring better care for patients and enhanced practice efficiency.",
+      image: "/images/test4.jpg"
     }
   ];
 
@@ -60,6 +64,13 @@ const Testimonials = () => {
         <div className="relative max-w-3xl mx-auto">
           {/* Testimonial Card */}
           <div className="bg-white rounded-xl shadow-lg p-8 transition-all duration-300">
+            <div className="flex justify-center mb-4">
+              <img 
+                src={testimonials[currentIndex].image} 
+                alt={testimonials[currentIndex].name} 
+                className="w-24 h-24 rounded-full object-cover border-4 border-blue-500"
+              />
+            </div>
             <div className="flex justify-center mb-4">
               {[...Array(5)].map((_, i) => (
                 <svg 

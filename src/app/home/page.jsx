@@ -3,6 +3,7 @@ import HeroSlider from '@/components/HeroSlider';
 import '../globals.css';
 import CTA from '@/components/CTA';
 import Testimonials from '@/components/Testimonials';
+import CertificationsCarousel from '@/components/CertificationsCarousel';
 
 export default function Home() {
   return (
@@ -462,7 +463,14 @@ Accurate, HIPAA-compliant medical billing solutions"
 </section>
 
 <Testimonials/>
-
+<CertificationsCarousel/>
+<CTA
+  heading="
+Maximize Efficiency with Your EMR"
+  subheading="Our billing experts turn your EHR into a revenue-driving powerhouse, ensuring clean, timely claims every time."
+  buttonText="Schedule a Free Consultation"
+  buttonHref="/demo"
+/>
     </main>
   );
 }
