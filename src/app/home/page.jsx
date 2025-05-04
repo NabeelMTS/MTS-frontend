@@ -421,7 +421,7 @@ Accurate, HIPAA-compliant medical billing solutions"
               </label>
               <select
                 id="providers"
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                className="w-full text-gray-700 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
               >
                 <option>1-5</option>
                 <option>6-10</option>

@@ -133,6 +133,9 @@ const Header = () => {
                 </div>
               )}
             </div>
+            <Link href="/specialties" className="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">
+            Specialties
+            </Link>
 
             {/* Company Link */}
             <Link href="/company" className="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">
@@ -290,6 +293,9 @@ const Header = () => {
               </Link>
             </div>
           )}
+          <Link href="/specialties" className="block px-3 py-2 text-base font-medium text-gray-900 hover:text-blue-600">
+            Specialties
+          </Link>
           <Link href="/company" className="block px-3 py-2 text-base font-medium text-gray-900 hover:text-blue-600">
             Company
           </Link>
