@@ -1,9 +1,8 @@
 "use client";
 import '../app/globals.css';
 import Header from '../components/Header.jsx';
-import CTA from '../components/CTA.jsx';
 import { useState, useEffect } from 'react';
-
+import Footer from '../components/Footer.jsx';
 // Removed metadata export as it's not allowed in client components
 
 export default function RootLayout({ children }) {
@@ -27,6 +26,7 @@ export default function RootLayout({ children }) {
         ) : (
           <div>{children}</div>
         )}
+        <Footer />
       </body>
     </html>
   );
