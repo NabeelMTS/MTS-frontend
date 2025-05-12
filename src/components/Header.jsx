@@ -76,7 +76,7 @@ const Header = () => {
                           <Link href="/medical-coding" className="text-gray-900 hover:text-blue-600 text-sm block">
                             Medical Coding Services
                           </Link>
-                          <Link href="/rcm" className="text-gray-900 hover:text-blue-600 text-sm block">
+                          <Link href="/rcm-services" className="text-gray-900 hover:text-blue-600 text-sm block">
                             RCM Services
                           </Link>
                           <Link href="/credentialing" className="text-gray-900 hover:text-blue-600 text-sm block">
@@ -92,20 +92,14 @@ const Header = () => {
                           <Link href="/care-management" className="text-gray-900 hover:text-blue-600 text-sm block">
                             Care Management
                           </Link>
-                          <Link href="/clinical-pharmacist" className="text-gray-900 hover:text-blue-600 text-sm block">
+{/*                           <Link href="/clinical-pharmacist" className="text-gray-900 hover:text-blue-600 text-sm block">
                             Clinical Pharmacist Services
-                          </Link>
+                          </Link> */}
                           <Link href="/medical-scribing" className="text-gray-900 hover:text-blue-600 text-sm block">
                             Medical Scribing Services
                           </Link>
-                          <Link href="/record-keeping" className="text-gray-900 hover:text-blue-600 text-sm block">
-                            Medical Record Keeping & Documentation
-                          </Link>
                           <Link href="/telemedicine" className="text-gray-900 hover:text-blue-600 text-sm block">
                             Telemedicine & Virtual Care Services
-                          </Link>
-                          <Link href="/clinical-data" className="text-gray-900 hover:text-blue-600 text-sm block">
-                            Clinical Data Analysis & Reporting
                           </Link>
                         </div>
                       </div>
@@ -117,14 +111,8 @@ const Header = () => {
                           <Link href="/digital-marketing" className="text-gray-900 hover:text-blue-600 text-sm block">
                             Healthcare Digital Marketing
                           </Link>
-                          <Link href="/business-growth" className="text-gray-900 hover:text-blue-600 text-sm block">
-                            Business Growth Services
-                          </Link>
                           <Link href="/outsourcing" className="text-gray-900 hover:text-blue-600 text-sm block">
                             Healthcare Outsourcing Solutions
-                          </Link>
-                          <Link href="/training" className="text-gray-900 hover:text-blue-600 text-sm block">
-                            Training & Bootcamps
                           </Link>
                         </div>
                       </div>
@@ -251,10 +239,10 @@ const Header = () => {
               <Link href="/medical-coding" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">
                 Medical Coding Services
               </Link>
-              <Link href="/rcm" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">
+              <Link href="/rcm-services" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">
                 RCM Services
               </Link>
-              <Link href="/credentialing" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">
+              <Link href="/credentialingpage" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">
                 Provider Credentialing & Enrollment
               </Link>
               
@@ -262,34 +250,24 @@ const Header = () => {
               <Link href="/care-management" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">
                 Care Management
               </Link>
-              <Link href="/clinical-pharmacist" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">
+{/*               <Link href="/clinical-pharmacist" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">
                 Clinical Pharmacist Services
-              </Link>
+              </Link> */}
               <Link href="/medical-scribing" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">
                 Medical Scribing Services
               </Link>
-              <Link href="/record-keeping" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">
+  {/*             <Link href="/record-keeping" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">
                 Medical Record Keeping & Documentation
-              </Link>
+              </Link> */}
               <Link href="/telemedicine" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">
                 Telemedicine & Virtual Care Services
               </Link>
-              <Link href="/clinical-data" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">
-                Clinical Data Analysis & Reporting
-              </Link>
-              
               <h3 className="text-sm font-medium text-blue-600 px-2 mt-4">Services</h3>
               <Link href="/digital-marketing" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">
                 Healthcare Digital Marketing
               </Link>
-              <Link href="/business-growth" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">
-                Business Growth Services
-              </Link>
               <Link href="/outsourcing" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">
                 Healthcare Outsourcing Solutions
-              </Link>
-              <Link href="/training" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">
-                Training & Bootcamps
               </Link>
             </div>
           )}

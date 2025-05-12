@@ -1,3 +1,5 @@
+import { FaCheck, FaChartLine, FaShieldAlt, FaFileInvoice, FaSearch, FaCogs } from 'react-icons/fa';
+
 const RCMServicesPage = () => {
     return (
       <div className="bg-white">
@@ -194,3 +196,5 @@ const RCMServicesPage = () => {
       </div>
     );
   };
+
+  export default RCMServicesPage;   
