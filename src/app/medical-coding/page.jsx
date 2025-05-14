@@ -2,25 +2,31 @@ const MedicalCodingPage = () => {
     return (
       <div className="bg-white">
         {/* --- Hero --- */}
-        <section className="relative py-20 md:py-32 bg-gradient-to-r from-blue-900 to-blue-700 text-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+
+        <section className="relative h-screen max-h-[800px] overflow-hidden bg-gradient-to-r from-blue-900 to-blue-700 text-white">
+        <div className="absolute inset-0 opacity-20">
+          <img src="/images/coding.jpg" alt="Doctors reviewing charts" className="w-full h-full object-cover object-right" />
+        </div>
+        <div className="relative h-full flex items-center">
+          <div className="container mx-auto px-6 text-center md:text-left">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Medical Coding Service</h1>
-            <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
-              Efficient Coding. Cleaner Claims. Higher Profits.<br />
+            <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto md:mx-0">
+                 Efficient Coding. Cleaner Claims. Higher Profits.<br />
               We code it right—so you get paid right.
             </p>
             <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition">
               Get Your Free Consultation Now
             </button>
           </div>
-        </section>
+        </div>
+      </section>
   
         {/* --- Coding Errors --- */}
         <section className="py-16 bg-white">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col md:flex-row gap-12 items-center">
               <div className="md:w-1/2">
-                <img src="/coding-errors-graphic.jpg" alt="Coding errors consequences" className="rounded-lg shadow-xl" />
+                <img src="/images/coding2.jpg" alt="Coding errors consequences" className="rounded-lg shadow-xl" />
               </div>
               <div className="md:w-1/2">
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">One Mistake Can Cost You Thousands</h2>
@@ -30,15 +36,15 @@ const MedicalCodingPage = () => {
                 <div className="grid grid-cols-3 gap-4 mb-6">
                   <div className="bg-blue-50 p-4 rounded-lg text-center">
                     <p className="text-2xl font-bold text-blue-600">98%</p>
-                    <p className="text-sm">Coding Accuracy</p>
+                    <p className="text-sm text-gray-600">Coding Accuracy</p>
                   </div>
                   <div className="bg-blue-50 p-4 rounded-lg text-center">
                     <p className="text-2xl font-bold text-blue-600">40%</p>
-                    <p className="text-sm">Faster Denial Resolution</p>
+                    <p className="text-sm text-gray-600">Faster Denial Resolution</p>
                   </div>
                   <div className="bg-blue-50 p-4 rounded-lg text-center">
                     <p className="text-2xl font-bold text-blue-600">100%</p>
-                    <p className="text-sm">HIPAA-Compliant</p>
+                    <p className="text-sm text-gray-600">HIPAA-Compliant</p>
                   </div>
                 </div>
                 <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium">
@@ -69,7 +75,7 @@ const MedicalCodingPage = () => {
               ].map((service, i) => (
                 <div key={i} className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
                   <span className="text-3xl mb-3 block">{service.icon}</span>
-                  <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
+                  <h3 className="text-xl text-blue-600 font-semibold mb-2">{service.title}</h3>
                   <p className="text-gray-600">{service.desc}</p>
                 </div>
               ))}
@@ -88,12 +94,10 @@ const MedicalCodingPage = () => {
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
               {["Cardiology", "Orthopedics", "Internal Medicine", "Radiology", "Mental Health", "Pediatrics"].map((spec, i) => (
                 <div key={i} className="bg-gray-50 p-4 rounded-lg hover:bg-blue-50 transition">
-                  <p className="font-medium">{spec}</p>
+                  <p className="font-medium text-blue-600">{spec}</p>
                 </div>
               ))}
             </div>
-            
-            <img src="/medical-coding-specialties.jpg" alt="Medical coding specialties" className="mx-auto rounded-lg shadow-md max-w-full" />
           </div>
         </section>
   

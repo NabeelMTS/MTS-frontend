@@ -65,7 +65,7 @@ const MedicalBillingPage = () => {
             <div className="grid md:grid-cols-2 gap-8 mb-8">
               <div>
                 <h3 className="text-xl font-semibold mb-4 text-blue-600">What You’ll Get:</h3>
-                <ul className="space-y-3">
+                <ul className="text-gray-600 space-y-3">
                   {[
                     "Revenue Optimization – Increase collections",
                     "Claim Accuracy – Improve approval rates",
@@ -83,8 +83,8 @@ const MedicalBillingPage = () => {
                   ))}
                 </ul>
               </div>
-              <div className="bg-blue-50 p-6 rounded-lg flex items-center justify-center">
-                <img src="/billing-audit-graphic.png" alt="Billing audit process" className="max-h-64" />
+              <div className="rounded-lg flex items-center justify-center">
+                <img src="/images/audit.jpg" alt="Billing audit process" className="rounded-lg max-h-80" />
               </div>
             </div>
             
@@ -128,7 +128,7 @@ const MedicalBillingPage = () => {
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">Simplify Your Billing. Amplify Your Practice with MTS</h2>
-          <img src="/medical-billing-dashboard.png" alt="Billing dashboard" className="mx-auto mb-8 rounded-lg shadow-xl max-w-full" />
+          <img src="/images/audit2.jpg" alt="Billing dashboard" className="mx-auto mb-8 rounded-lg shadow-xl max-w-full" />
           <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-bold">
             Start Your Risk-Free Trial
           </button>

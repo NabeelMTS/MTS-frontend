@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import Footer from '../components/Footer.jsx';
 // Removed metadata export as it's not allowed in client components
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children, title = "MedicoTech Solutions" }) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -15,7 +15,12 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/logo/icon.png" />
+        <title>{title}</title>
+      </head>
       <body className="min-h-screen">
+
         <Header />
         {isLoading ? (
           <div className="fixed inset-0 flex items-center justify-center bg-white z-50">

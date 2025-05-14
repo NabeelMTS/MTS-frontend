@@ -5,17 +5,24 @@ import { FaCheck } from 'react-icons/fa';
 const MarketingServicesPage = () => {
   return (
     <div className="bg-white">
-      {/* --- Hero Section --- */}
-      <section className="relative py-20 md:py-32 bg-gradient-to-r from-blue-900 to-blue-700 text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Marketing. Content. Growth.</h1>
-          <h2 className="text-2xl md:text-3xl mb-6">Handled by Experts Who Understand Healthcare</h2>
-          <p className="text-xl mb-8 max-w-3xl mx-auto">
-            From content strategy to daily social media management—we help healthcare providers grow their brand and drive real patient engagement.
-          </p>
-          <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition">
-            Unlock Your Growth Now
-          </button>
+
+                        <section className="relative py-20 md:py-32 bg-gradient-to-r from-blue-900 to-blue-700 text-white">
+           <div className="absolute inset-0 opacity-30">
+          <img src="/images/hero.jpg" alt="Doctors reviewing charts" className="w-full h-full object-cover" />
+        </div>
+        <div className="relative h-full flex items-center">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Marketing. Content. Growth.</h1>
+            <p className="text-3xl md:text-2xl mb-8">
+       Handled by Experts Who Understand Healthcare
+            </p>
+            <p className="text-m md:text-l mb-8"> From content strategy to daily social media management—we help healthcare providers grow their brand and drive real patient engagement.</p>
+            <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition">
+              Unlock Your Growth Now
+            </button>
+          </div>
+        </div>
         </div>
       </section>
 
@@ -29,7 +36,7 @@ const MarketingServicesPage = () => {
           
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-blue-50 p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-3">Strategic Visibility</h3>
+              <h3 className="text-blue-600 text-xl font-semibold mb-3">Strategic Visibility</h3>
               <div className="flex flex-wrap gap-3 mb-4">
                 <FaLinkedin className="w-6 h-6 text-blue-600" />
                 <FaTwitter className="w-6 h-6 text-blue-600" />
@@ -42,17 +49,17 @@ const MarketingServicesPage = () => {
             </div>
             
             <div className="bg-blue-50 p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-3">Expert Content Creation</h3>
+              <h3 className="text-blue-600 text-xl font-semibold mb-3">Expert Content Creation</h3>
               <p className="text-gray-700">Tailored content that resonates with medical audiences</p>
             </div>
             
             <div className="bg-blue-50 p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-3">Patient Engagement</h3>
+              <h3 className="text-blue-600 text-xl font-semibold mb-3">Patient Engagement</h3>
               <p className="text-gray-700">Build credibility and trust with your audience</p>
             </div>
             
             <div className="bg-blue-50 p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-3">Conversion-Focused Copy</h3>
+              <h3 className="text-blue-600 text-xl font-semibold mb-3">Conversion-Focused Copy</h3>
               <p className="text-gray-700">Copy that turns readers into patients</p>
             </div>
           </div>
@@ -84,7 +91,7 @@ const MarketingServicesPage = () => {
               }
             ].map((service, i) => (
               <div key={i} className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
-                <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
+                <h3 className="text-blue-600 text-xl font-semibold mb-3">{service.title}</h3>
                 <p className="text-gray-600">{service.desc}</p>
               </div>
             ))}
@@ -116,7 +123,7 @@ const MarketingServicesPage = () => {
                   ["Authority Plan", "180 Days", "$76.055/day", "$13,690", "Establishing presence"],
                   ["Legacy Plan", "354 Days", "$61.805/day", "$21,879", "Full-scale management"]
                 ].map((row, i) => (
-                  <tr key={i} className={i % 2 === 0 ? "bg-gray-50" : "bg-white"}>
+                  <tr key={i} className={i % 2 === 0 ? "bg-gray-50 text-blue-600 " : "bg-white text-blue-600 "}>
                     {row.map((cell, j) => (
                       <td key={j} className="p-4 border-b border-gray-200">
                         {cell}
@@ -175,13 +182,13 @@ const MarketingServicesPage = () => {
             </div>
             
             <div className="max-w-2xl mx-auto text-left">
-              <h3 className="font-semibold text-lg mb-4">FAQs</h3>
+              <h3 className="text-blue-600 font-semibold text-lg mb-4">FAQs</h3>
               <div className="mb-4">
-                <p className="font-medium">Can I customize a plan?</p>
+                <p className="text-blue-600 font-medium">Can I customize a plan?</p>
                 <p className="text-gray-600">Yes, all packages can be tailored to your needs.</p>
               </div>
               <div>
-                <p className="font-medium">Is there a refund policy?</p>
+                <p className="text-blue-600 font-medium">Is there a refund policy?</p>
                 <p className="text-gray-600">Partial refunds available within 14 days.</p>
               </div>
             </div>

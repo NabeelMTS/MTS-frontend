@@ -26,15 +26,10 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0 flex items-center">
-              <svg
+              <img
+                src="/Logo/icon.png"
                 className="h-8 w-8 text-blue-600"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.8L20 9v6l-8 4-8-4V9l8-4.2z" />
-                <path d="M12 16l-4-2v-4l4 2 4-2v4l-4 2z" />
-              </svg>
+              />
               <span className="ml-2 text-xl font-bold text-gray-900">MedicoTechSolutions</span>
             </Link>
           </div>

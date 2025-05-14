@@ -3,22 +3,32 @@ import { FaCheck, FaChartLine, FaShieldAlt, FaFileInvoice, FaSearch, FaCogs } fr
 const RCMServicesPage = () => {
     return (
       <div className="bg-white">
-        {/* --- Hero --- */}
-        <section className="relative py-20 md:py-32 bg-gradient-to-r from-blue-900 to-blue-700 text-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Optimize Your Revenue Cycle with MTS</h1>
-            <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
-              Precision, Compliance, and Results
-            </p>
-            <p className="text-lg mb-8">
-              Streamlined RCM solutions tailored for U.S. healthcare providers to enhance cash flow and reduce denials.
-            </p>
-            <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition">
-              Request a Free RCM Consultation
-            </button>
+
+        <section className="relative h-screen max-h-[800px] overflow-hidden bg-gradient-to-r from-blue-900 to-blue-700 text-white">
+          <div className="absolute inset-0 opacity-20">
+            <img src="/images/coding.jpg" alt="Doctors reviewing charts" className="w-full h-full object-cover object-right" />
+          </div>
+          <div className="relative h-full flex items-center">
+            <div className="container mx-auto px-6 text-center md:text-left">
+              <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+                Optimize Your Revenue Cycle<br className="hidden md:inline" />
+                <span className="block md:inline">with MTS:</span>
+                <br className="md:hidden" />
+                <span className="text-blue-200">Precision, Compliance,</span>
+                <br className="hidden md:inline" />
+                <span className="text-blue-200">and Results</span>
+              </h1>
+              <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto md:mx-0 leading-relaxed">
+                Streamlined RCM solutions tailored for U.S. healthcare providers<br className="hidden md:inline" />
+                to enhance cash flow and reduce denials.
+              </p>
+              <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition">
+                Request a Free RCM Consultation
+              </button>
+            </div>
           </div>
         </section>
-  
+
         {/* --- Why RCM Matters --- */}
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -57,7 +67,7 @@ const RCMServicesPage = () => {
               ].map((item, i) => (
                 <div key={i} className="bg-gray-50 p-6 rounded-xl hover:shadow-md transition">
                   <span className="text-3xl mb-3 block">{item.icon}</span>
-                  <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                  <h3 className="text-xl text-blue-600 font-semibold mb-2">{item.title}</h3>
                   <p className="text-gray-600">{item.desc}</p>
                 </div>
               ))}
@@ -91,7 +101,7 @@ const RCMServicesPage = () => {
                   <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold mb-3">
                     {i + 1}
                   </div>
-                  <h3 className="font-semibold text-lg">{step}</h3>
+                  <h3 className="text-blue-600 font-semibold text-lg">{step}</h3>
                 </div>
               ))}
             </div>
@@ -107,23 +117,23 @@ const RCMServicesPage = () => {
             
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-blue-50 p-8 rounded-xl">
-                <h3 className="text-xl font-semibold mb-4">Customized Solution For Every Practice</h3>
+                <h3 className="text-blue-600 text-xl font-semibold mb-4">Customized Solution For Every Practice</h3>
                 <p className="text-gray-700">We tailor our RCM services to your specialty, size, and workflow.</p>
               </div>
               <div className="bg-blue-50 p-8 rounded-xl">
-                <h3 className="text-xl font-semibold mb-4">Advanced Technology Integration</h3>
+                <h3 className="text-blue-600 text-xl font-semibold mb-4">Advanced Technology Integration</h3>
                 <p className="text-gray-700">Seamless EHR/EMR integration with real-time analytics.</p>
               </div>
               <div className="bg-blue-50 p-8 rounded-xl">
-                <h3 className="text-xl font-semibold mb-4">Compliance at the Core</h3>
+                <h3 className="text-blue-600 text-xl font-semibold mb-4">Compliance at the Core</h3>
                 <p className="text-gray-700">HIPAA-compliant processes with regular audits.</p>
               </div>
               <div className="bg-blue-50 p-8 rounded-xl">
-                <h3 className="text-xl font-semibold mb-4">Maximized Revenue Potential</h3>
+                <h3 className="text-blue-600 text-xl font-semibold mb-4">Maximized Revenue Potential</h3>
                 <p className="text-gray-700">Proactive denial management to recover lost revenue.</p>
               </div>
               <div className="bg-blue-50 p-8 rounded-xl">
-                <h3 className="text-xl font-semibold mb-4">Certified Professionals</h3>
+                <h3 className="text-blue-600 text-xl font-semibold mb-4">Certified Professionals</h3>
                 <p className="text-gray-700">AAPC/AHIMA-certified coders and billing specialists.</p>
               </div>
             </div>
@@ -177,7 +187,7 @@ const RCMServicesPage = () => {
                   <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-4 mx-auto">
                     <FaShieldAlt className="w-6 h-6" />
                   </div>
-                  <h3 className="font-semibold text-center">{item}</h3>
+                  <h3 className="text-blue-600 font-semibold text-center">{item}</h3>
                 </div>
               ))}
             </div>
@@ -197,4 +207,4 @@ const RCMServicesPage = () => {
     );
   };
 
-  export default RCMServicesPage;   
+  export default RCMServicesPage;

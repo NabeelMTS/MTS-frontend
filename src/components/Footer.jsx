@@ -6,44 +6,28 @@ import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaFacebookF, FaTwitter, FaLinkedin
 const Footer = () => {
   const logoRef = useRef(null);
 
-  useEffect(() => {
-    const logo = logoRef.current;
-    let rotation = 0;
-
-    const rotateLogo = () => {
-      rotation = (rotation + 0.5) % 360;
-      logo.style.transform = `rotateY(${rotation}deg)`;
-      requestAnimationFrame(rotateLogo);
-    };
-
-    const animationId = requestAnimationFrame(rotateLogo);
-    
-    return () => cancelAnimationFrame(animationId);
-  }, []);
 
   return (
     <footer className="bg-gradient-to-b from-blue-900 to-blue-950 text-white pt-16 pb-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Logo and Contact Info */}
-          <div className="flex flex-col items-center md:items-start">
-            <div className="mb-6 perspective-1000">
-              <div 
+          <div className="">
+            <div className="mb-6 flex p-3 bg-white rounded-lg items-left">
+              <img
                 ref={logoRef}
-                className="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-lg transition-transform duration-1000"
-              >
-                <svg
-                  className="w-12 h-12 text-blue-600"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.8L20 9v6l-8 4-8-4V9l8-4.2z" />
-                  <path d="M12 16l-4-2v-4l4 2 4-2v4l-4 2z" />
-                </svg>
-              </div>
+                src="/Logo/logo.png"
+                alt="MedicoTech Solutions Logo"
+                className="rounded-lg object-contain"
+                style={{
+                  display: 'block',
+                  margin: '0 auto',
+                  transition: 'transform 0.5s',
+                  willChange: 'transform',
+                }}
+                draggable={false}
+              />
             </div>
-            <h2 className="text-2xl font-bold mb-4">MedicoTech Solutions</h2>
             
             <div className="space-y-3">
               <div className="flex items-start">
@@ -120,17 +104,8 @@ const Footer = () => {
           </div>
           
           <div className="flex space-x-6">
-            <a href="#" className="w-10 h-10 rounded-full bg-blue-800 flex items-center justify-center hover:bg-blue-700 transition-colors">
-              <FaFacebookF className="text-blue-300 hover:text-white" />
-            </a>
-            <a href="#" className="w-10 h-10 rounded-full bg-blue-800 flex items-center justify-center hover:bg-blue-700 transition-colors">
-              <FaTwitter className="text-blue-300 hover:text-white" />
-            </a>
-            <a href="#" className="w-10 h-10 rounded-full bg-blue-800 flex items-center justify-center hover:bg-blue-700 transition-colors">
+            <a href="https://www.linkedin.com/company/medicotechsolutions/" className="w-10 h-10 rounded-full bg-blue-800 flex items-center justify-center hover:bg-blue-700 transition-colors">
               <FaLinkedinIn className="text-blue-300 hover:text-white" />
-            </a>
-            <a href="#" className="w-10 h-10 rounded-full bg-blue-800 flex items-center justify-center hover:bg-blue-700 transition-colors">
-              <FaInstagram className="text-blue-300 hover:text-white" />
             </a>
           </div>
           

@@ -5,7 +5,11 @@ const CredentialingPage = () => {
     <div className="bg-white">
       {/* --- Hero Section --- */}
       <section className="relative py-20 md:py-32 bg-gradient-to-r from-blue-900 to-blue-700 text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="absolute inset-0 opacity-30 z-0">
+          <img src="/images/hero_2.jpg" alt="Doctors reviewing charts" className="w-full h-full object-cover" />
+        </div>
+     <div className="relative h-full flex items-center">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 z-10000000000">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Streamlining Provider Credentialing & Enrollment</h1>
             <p className="text-xl md:text-2xl mb-8">
@@ -18,6 +22,7 @@ const CredentialingPage = () => {
               Get Your Free Consultation Now
             </button>
           </div>
+        </div>
         </div>
       </section>
 
@@ -56,7 +61,7 @@ const CredentialingPage = () => {
                 <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto">
                   {item.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-center mb-2">{item.title}</h3>
+                <h3 className="text-blue-600 text-xl font-semibold text-center mb-2">{item.title}</h3>
                 <p className="text-gray-600 text-center">{item.desc}</p>
               </div>
             ))}
@@ -84,7 +89,7 @@ const CredentialingPage = () => {
               <div key={i} className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:border-blue-200 transition">
                 <div className="flex items-start">
                   <FaCheck className="text-green-500 mt-1 mr-3 flex-shrink-0" />
-                  <span>{service}</span>
+                  <span className='text-gray-500'>{service}</span>
                 </div>
               </div>
             ))}
@@ -124,16 +129,6 @@ const CredentialingPage = () => {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* --- Final CTA --- */}
-      <section className="py-16 bg-blue-600 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-6">Ready to Simplify Your Credentialing Process?</h2>
-          <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition">
-            Start Your Free Consultation
-          </button>
         </div>
       </section>
     </div>
