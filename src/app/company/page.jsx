@@ -1,10 +1,12 @@
-"use client"
+'use client';
+import { useState, useEffect, createContext, useContext } from 'react';
 
-import { useState } from 'react';
 
 const CompanyPage = () => {
   const [activeTab, setActiveTab] = useState('story');
-
+  useEffect(() => {
+    document.title = "Company - MedicoTech Solutions";
+  }, []);
   return (
     <div className="bg-white">
       {/* Hero Section */}

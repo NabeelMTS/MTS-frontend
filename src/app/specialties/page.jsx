@@ -1,7 +1,13 @@
+'use client';
+
 import CTA from '@/components/CTA';
 import { FaCheck, FaChartLine, FaShieldAlt, FaFileInvoice, FaSearch, FaCogs } from 'react-icons/fa';
-
+import { useState, useEffect, createContext, useContext } from 'react';
+ 
 const Specialties = () => {
+   useEffect(() => {
+    document.title = "Specialties - MedicoTech Solutions";
+  }, []);
   return (
     <div className="bg-white">
       {/* Hero Section */}

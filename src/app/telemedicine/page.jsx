@@ -1,7 +1,13 @@
+'use client';
+import { useState, useEffect, createContext, useContext } from 'react';
 import { FaCheck } from 'react-icons/fa';
 
 
+
 const TelemedicinePage = () => {
+    useEffect(() => {
+    document.title = "Telemedicine - MedicoTech Solutions";
+  }, []);
   return (
     <div className="bg-white">
       {/* --- Hero Section --- */}

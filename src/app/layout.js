@@ -1,38 +1,60 @@
 "use client";
 import '../app/globals.css';
 import Header from '../components/Header.jsx';
-import { useState, useEffect } from 'react';
 import Footer from '../components/Footer.jsx';
-// Removed metadata export as it's not allowed in client components
+import { useState, useEffect, createContext, useContext } from 'react';
+import { usePathname } from 'next/navigation';
 
-export default function RootLayout({ children, title = "MedicoTech Solutions" }) {
-  const [isLoading, setIsLoading] = useState(true);
+const LoadingContext = createContext();
 
+export function useLoading() {
+  return useContext(LoadingContext);
+}
+
+function LoadingProvider({ children }) {
+  const [isLoading, setIsLoading] = useState(false);
+  const pathname = usePathname();
+
+  // Hide loading after route change
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 1000); // Simulate loading delay
-    return () => clearTimeout(timer);
-  }, []);
+    setIsLoading(false);
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, [pathname]);
 
   return (
-    <html lang="en">
-      <head>
-        <link rel="icon" href="/logo/icon.png" />
-        <title>{title}</title>
-      </head>
-      <body className="min-h-screen">
+    <LoadingContext.Provider value={{ isLoading, setIsLoading }}>
+      {children}
+    </LoadingContext.Provider>
+  );
+}
 
-        <Header />
-        {isLoading ? (
-          <div className="fixed inset-0 flex items-center justify-center bg-white z-50">
-            <div className="loader">
-              <div className="medical-cross"></div>
-            </div>
-          </div>
-        ) : (
+export default function RootLayout({ children, title = "MedicoTech Solutions" }) {
+  return (
+    <LoadingProvider>
+      <html lang="en">
+        <head>
+          <link rel="icon" href="/logo/icon.png" />
+          <title>{title}</title>
+        </head>
+        <body className="min-h-screen">
+          <Header />
+          <LoadingOverlay />
           <div>{children}</div>
-        )}
-        <Footer />
-      </body>
-    </html>
+          <Footer />
+        </body>
+      </html>
+    </LoadingProvider>
+  );
+}
+
+function LoadingOverlay() {
+  const { isLoading } = useLoading();
+  if (!isLoading) return null;
+  return (
+    <div className="fixed inset-0 flex items-center justify-center bg-white z-50 transition-opacity duration-200">
+      <div className="loader">
+        <div className="medical-cross"></div>
+      </div>
+    </div>
   );
 }

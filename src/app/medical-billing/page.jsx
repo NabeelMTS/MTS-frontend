@@ -1,6 +1,14 @@
+'use client';
+
 import { FaCheck, FaChartLine, FaShieldAlt, FaFileInvoice, FaSearch, FaCogs } from 'react-icons/fa';
+import { useState, useEffect, createContext, useContext } from 'react';
+
 
 const MedicalBillingPage = () => {
+    useEffect(() => {
+    document.title = "Medical Billing - MedicoTech Solutions";
+  }, []);
+
   return (
     <div className="bg-white">
       {/* --- Hero Slider --- */}

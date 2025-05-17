@@ -1,4 +1,11 @@
+'use client';
+import { useState, useEffect, createContext, useContext } from 'react';
+
 const MedicalScribingPage = () => {
+  useEffect(() => {
+    document.title = "Medical Scribing - MedicoTech Solutions";
+  }, []);
+
   return (
     <div className="bg-white">
                   <section className="relative py-20 md:py-32 bg-gradient-to-r from-blue-900 to-blue-700 text-white">

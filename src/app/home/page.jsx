@@ -4,8 +4,14 @@ import '../globals.css';
 import CTA from '@/components/CTA';
 import Testimonials from '@/components/Testimonials';
 import CertificationsCarousel from '@/components/CertificationsCarousel';
+import { useState, useEffect, createContext, useContext } from 'react';
+
+
 
 export default function Home() {
+    useEffect(() => {
+    document.title = "Home - MedicoTech Solutions";
+  }, []);
   return (
     <main>
       <HeroSlider />

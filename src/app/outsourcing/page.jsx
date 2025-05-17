@@ -1,6 +1,15 @@
+'use client';
+
 import { FaCheck } from 'react-icons/fa';
+import { useState, useEffect, createContext, useContext } from 'react';
+
+
+
 
 const OutsourcingPage = () => {
+useEffect(() => {
+    document.title = "Outsourcing - MedicoTech Solutions";
+  }, []);
   return (
     <div className="bg-white">
                         <section className="relative py-20 md:py-32 bg-gradient-to-r from-blue-900 to-blue-700 text-white">

@@ -1,23 +1,42 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useLoading } from '../app/layout';
 
 const Header = () => {
   const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
   const [isResourcesOpen, setIsResourcesOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const router = useRouter();
+  const { setIsLoading } = useLoading();
+
+  // Close all menus
+  const closeAllMenus = useCallback(() => {
+    setIsSolutionsOpen(false);
+    setIsResourcesOpen(false);
+    setIsMobileMenuOpen(false);
+  }, []);
+
+  // Close menus and show loading on click of any link or menu item
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    closeAllMenus();
+    setIsLoading(true);
+    router.push(href);
+  };
 
   const toggleSolutions = () => {
     setIsResourcesOpen(false);
-    setIsSolutionsOpen(!isSolutionsOpen);
+    setIsSolutionsOpen((open) => !open);
   };
-  
+
   const toggleResources = () => {
     setIsSolutionsOpen(false);
-    setIsResourcesOpen(!isResourcesOpen);
+    setIsResourcesOpen((open) => !open);
   };
-  
-  const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+
+  const toggleMobileMenu = () => setIsMobileMenuOpen((open) => !open);
 
   return (
     <header className="bg-white shadow-md sticky top-0 z-50">
@@ -25,7 +44,7 @@ const Header = () => {
         <div className="flex justify-between h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/" className="flex-shrink-0 flex items-center">
+            <Link href="/" className="flex-shrink-0 flex items-center" onClick={closeAllMenus}>
               <img
                 src="/Logo/icon.png"
                 className="h-8 w-8 text-blue-600"
@@ -36,7 +55,7 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
-            <Link href="/" className="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">
+            <Link href="/" className="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium" onClick={closeAllMenus}>
               Home
             </Link>
 
@@ -65,18 +84,18 @@ const Header = () => {
                       <div>
                         <h3 className="text-sm font-medium text-blue-600 mb-4">Billing Solutions</h3>
                         <div className="space-y-4">
-                          <Link href="/medical-billing" className="text-gray-900 hover:text-blue-600 text-sm">
+                          <a href="/medical-billing" className="text-gray-900 hover:text-blue-600 text-sm" onClick={e => handleNavClick(e, '/medical-billing')}>
                             Medical Billing Services
-                          </Link>
-                          <Link href="/medical-coding" className="text-gray-900 hover:text-blue-600 text-sm block">
+                          </a>
+                          <a href="/medical-coding" className="text-gray-900 hover:text-blue-600 text-sm block" onClick={e => handleNavClick(e, '/medical-coding')}>
                             Medical Coding Services
-                          </Link>
-                          <Link href="/rcm-services" className="text-gray-900 hover:text-blue-600 text-sm block">
+                          </a>
+                          <a href="/rcm-services" className="text-gray-900 hover:text-blue-600 text-sm block" onClick={e => handleNavClick(e, '/rcm-services')}>
                             RCM Services
-                          </Link>
-                          <Link href="/credentialing" className="text-gray-900 hover:text-blue-600 text-sm block">
+                          </a>
+                          <a href="/credentialing" className="text-gray-900 hover:text-blue-600 text-sm block" onClick={e => handleNavClick(e, '/credentialing')}>
                             Provider Credentialing & Enrollment
-                          </Link>
+                          </a>
                         </div>
                       </div>
 
@@ -84,18 +103,18 @@ const Header = () => {
                       <div>
                         <h3 className="text-sm font-medium text-blue-600 mb-4">Clinical Services</h3>
                         <div className="space-y-4">
-                          <Link href="/care-management" className="text-gray-900 hover:text-blue-600 text-sm block">
+                          <a href="/care-management" className="text-gray-900 hover:text-blue-600 text-sm block" onClick={e => handleNavClick(e, '/care-management')}>
                             Care Management
-                          </Link>
-{/*                           <Link href="/clinical-pharmacist" className="text-gray-900 hover:text-blue-600 text-sm block">
+                          </a>
+                          {/* <a href="/clinical-pharmacist" className="text-gray-900 hover:text-blue-600 text-sm block" onClick={e => handleNavClick(e, '/clinical-pharmacist')}>
                             Clinical Pharmacist Services
-                          </Link> */}
-                          <Link href="/medical-scribing" className="text-gray-900 hover:text-blue-600 text-sm block">
+                          </a> */}
+                          <a href="/medical-scribing" className="text-gray-900 hover:text-blue-600 text-sm block" onClick={e => handleNavClick(e, '/medical-scribing')}>
                             Medical Scribing Services
-                          </Link>
-                          <Link href="/telemedicine" className="text-gray-900 hover:text-blue-600 text-sm block">
+                          </a>
+                          <a href="/telemedicine" className="text-gray-900 hover:text-blue-600 text-sm block" onClick={e => handleNavClick(e, '/telemedicine')}>
                             Telemedicine & Virtual Care Services
-                          </Link>
+                          </a>
                         </div>
                       </div>
 
@@ -103,12 +122,12 @@ const Header = () => {
                       <div>
                         <h3 className="text-sm text-900 font-medium text-blue-600 mb-4">Services</h3>
                         <div className="space-y-4">
-                          <Link href="/digital-marketing" className="text-gray-900 hover:text-blue-600 text-sm block">
+                          <a href="/digital-marketing" className="text-gray-900 hover:text-blue-600 text-sm block" onClick={e => handleNavClick(e, '/digital-marketing')}>
                             Healthcare Digital Marketing
-                          </Link>
-                          <Link href="/outsourcing" className="text-gray-900 hover:text-blue-600 text-sm block">
+                          </a>
+                          <a href="/outsourcing" className="text-gray-900 hover:text-blue-600 text-sm block" onClick={e => handleNavClick(e, '/outsourcing')}>
                             Healthcare Outsourcing Solutions
-                          </Link>
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -116,12 +135,12 @@ const Header = () => {
                 </div>
               )}
             </div>
-            <Link href="/specialties" className="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">
-            Specialties
+            <Link href="/specialties" className="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium" onClick={closeAllMenus}>
+              Specialties
             </Link>
 
             {/* Company Link */}
-            <Link href="/company" className="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">
+            <Link href="/company" className="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium" onClick={closeAllMenus}>
               Company
             </Link>
 
@@ -148,12 +167,12 @@ const Header = () => {
                     <div className="relative bg-white px-5 py-6">
                       <div>
                         <div className="space-y-4">
-                          <Link href="/blog" className="text-gray-900 hover:text-blue-600 text-sm block">
+                          <a href="/blog" className="text-gray-900 hover:text-blue-600 text-sm block" onClick={e => handleNavClick(e, '/blog')}>
                             Blog
-                          </Link>
-                          <Link href="/case-studies" className="text-gray-900 hover:text-blue-600 text-sm block">
+                          </a>
+                          <a href="/case-studies" className="text-gray-900 hover:text-blue-600 text-sm block" onClick={e => handleNavClick(e, '/case-studies')}>
                             Case Studies
-                          </Link>
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -168,6 +187,7 @@ const Header = () => {
             <Link
               href="/contact"
               className="ml-8 px-6 py-3 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors duration-200"
+              onClick={closeAllMenus}
             >
               Get Started
             </Link>
@@ -192,7 +212,7 @@ const Header = () => {
               className={`${isMobileMenuOpen ? 'block' : 'hidden'} h-6 w-6`}
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
-              viewBox="0 0 24 24"
+              viewBox="0 24 24"
               stroke="currentColor"
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -204,13 +224,13 @@ const Header = () => {
       {/* Mobile menu */}
       <div className={`${isMobileMenuOpen ? 'block' : 'hidden'} md:hidden`}>
         <div className="pt-2 pb-3 space-y-1 px-4">
-          <Link 
+          <a 
             href="/" 
             className="block px-3 py-2 text-base font-medium text-gray-900 hover:text-blue-600"
-            onClick={() => setIsMobileMenuOpen(false)}
+            onClick={e => handleNavClick(e, '/')}
           >
             Home
-          </Link>
+          </a>
           <button
             onClick={toggleSolutions}
             className="w-full text-left px-3 py-2 text-base font-medium text-gray-900 hover:text-blue-600 flex justify-between items-center"
@@ -228,50 +248,50 @@ const Header = () => {
           {isSolutionsOpen && (
             <div className="px-4 py-2 space-y-2 bg-gray-50">
               <h3 className="text-sm font-medium text-blue-600 px-2">Billing Solutions</h3>
-              <Link href="/medical-billing" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">
+              <a href="/medical-billing" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600" onClick={e => handleNavClick(e, '/medical-billing')}>
                 Medical Billing Services
-              </Link>
-              <Link href="/medical-coding" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">
+              </a>
+              <a href="/medical-coding" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600" onClick={e => handleNavClick(e, '/medical-coding')}>
                 Medical Coding Services
-              </Link>
-              <Link href="/rcm-services" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">
+              </a>
+              <a href="/rcm-services" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600" onClick={e => handleNavClick(e, '/rcm-services')}>
                 RCM Services
-              </Link>
-              <Link href="/credentialingpage" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">
+              </a>
+              <a href="/credentialingpage" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600" onClick={e => handleNavClick(e, '/credentialingpage')}>
                 Provider Credentialing & Enrollment
-              </Link>
+              </a>
               
               <h3 className="text-sm font-medium text-blue-600 px-2 mt-4">Clinical Services</h3>
-              <Link href="/care-management" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">
+              <a href="/care-management" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600" onClick={e => handleNavClick(e, '/care-management')}>
                 Care Management
-              </Link>
-{/*               <Link href="/clinical-pharmacist" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">
+              </a>
+              {/* <a href="/clinical-pharmacist" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600" onClick={e => handleNavClick(e, '/clinical-pharmacist')}>
                 Clinical Pharmacist Services
-              </Link> */}
-              <Link href="/medical-scribing" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">
+              </a> */}
+              <a href="/medical-scribing" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600" onClick={e => handleNavClick(e, '/medical-scribing')}>
                 Medical Scribing Services
-              </Link>
-  {/*             <Link href="/record-keeping" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">
+              </a>
+              {/* <a href="/record-keeping" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600" onClick={e => handleNavClick(e, '/record-keeping')}>
                 Medical Record Keeping & Documentation
-              </Link> */}
-              <Link href="/telemedicine" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">
+              </a> */}
+              <a href="/telemedicine" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600" onClick={e => handleNavClick(e, '/telemedicine')}>
                 Telemedicine & Virtual Care Services
-              </Link>
+              </a>
               <h3 className="text-sm font-medium text-blue-600 px-2 mt-4">Services</h3>
-              <Link href="/digital-marketing" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">
+              <a href="/digital-marketing" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600" onClick={e => handleNavClick(e, '/digital-marketing')}>
                 Healthcare Digital Marketing
-              </Link>
-              <Link href="/outsourcing" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">
+              </a>
+              <a href="/outsourcing" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600" onClick={e => handleNavClick(e, '/outsourcing')}>
                 Healthcare Outsourcing Solutions
-              </Link>
+              </a>
             </div>
           )}
-          <Link href="/specialties" className="block px-3 py-2 text-base font-medium text-gray-900 hover:text-blue-600">
+          <a href="/specialties" className="block px-3 py-2 text-base font-medium text-gray-900 hover:text-blue-600" onClick={e => handleNavClick(e, '/specialties')}>
             Specialties
-          </Link>
-          <Link href="/company" className="block px-3 py-2 text-base font-medium text-gray-900 hover:text-blue-600">
+          </a>
+          <a href="/company" className="block px-3 py-2 text-base font-medium text-gray-900 hover:text-blue-600" onClick={e => handleNavClick(e, '/company')}>
             Company
-          </Link>
+          </a>
           <button
             onClick={toggleResources}
             className="w-full text-left px-3 py-2 text-base font-medium text-gray-900 hover:text-blue-600 flex justify-between items-center"
@@ -288,22 +308,23 @@ const Header = () => {
           </button>
           {isResourcesOpen && (
             <div className="px-4 py-2 space-y-2 bg-gray-50">
-              <Link href="/blog" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">
+              <a href="/blog" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600" onClick={e => handleNavClick(e, '/blog')}>
                 Blog
-              </Link>
-              <Link href="/case-studies" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600">
+              </a>
+              <a href="/case-studies" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600" onClick={e => handleNavClick(e, '/case-studies')}>
                 Case Studies
-              </Link>
+              </a>
             </div>
           )}
         </div>
         <div className="px-5 py-4 border-t border-gray-200">
-          <Link
+          <a
             href="/contact"
             className="w-full flex items-center justify-center px-4 py-3 text-base font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors duration-200"
+            onClick={e => handleNavClick(e, '/contact')}
           >
             Get Started
-          </Link>
+          </a>
         </div>
       </div>
     </header>

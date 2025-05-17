@@ -1,6 +1,15 @@
+'use client';
+import { useState, useEffect, createContext, useContext } from 'react';
 import { FaCheck, FaChartLine, FaShieldAlt, FaFileInvoice, FaSearch, FaCogs } from 'react-icons/fa';
 
+
+
+
+
 const RCMServicesPage = () => {
+    useEffect(() => {
+    document.title = "RCM - MedicoTech Solutions";
+  }, []);
     return (
       <div className="bg-white">
 

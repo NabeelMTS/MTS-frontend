@@ -1,6 +1,12 @@
+'use client';
 import { FaCheck, FaClock, FaHandsHelping, FaUserCog, FaComments } from 'react-icons/fa';
+import { useState, useEffect, createContext, useContext } from 'react';
+
 
 const CredentialingPage = () => {
+    useEffect(() => {
+    document.title = "Credentialing - MedicoTech Solutions";
+  }, []);
   return (
     <div className="bg-white">
       {/* --- Hero Section --- */}

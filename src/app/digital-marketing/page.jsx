@@ -1,8 +1,16 @@
+'use client';
+import { useState, useEffect, createContext, useContext } from 'react';
 import { FaLinkedin, FaTwitter, FaYoutube, FaFacebook, FaInstagram, FaTiktok } from 'react-icons/fa';
 import { FaCheck } from 'react-icons/fa';
 
 
+
 const MarketingServicesPage = () => {
+
+  useEffect(() => {
+    document.title = "Marketing - MedicoTech Solutions";
+  }, []);
+  
   return (
     <div className="bg-white">
 

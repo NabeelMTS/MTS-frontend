@@ -1,4 +1,11 @@
-const MedicalCodingPage = () => {
+'use client';
+import { useState, useEffect, createContext, useContext } from 'react';
+
+
+const MedicalCodingPage = () => {  
+  useEffect(() => {
+    document.title = "Medical Coding - MedicoTech Solutions";
+  }, []);
     return (
       <div className="bg-white">
         {/* --- Hero --- */}
