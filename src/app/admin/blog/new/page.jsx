@@ -7,7 +7,9 @@ import { BlogEditor } from '@/app/components/Blog/BlogEditor';
 export default function NewBlogPost() {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
-  const [image, setImage] = useState('');
+  const [featuredImage, setFeaturedImage] = useState('');
+  const [tags, setTags] = useState('');
+  const [status, setStatus] = useState('draft');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const router = useRouter();
 
@@ -25,7 +27,7 @@ export default function NewBlogPost() {
     }
     
     const { url } = await response.json();
-    setImage(url);
+    setFeaturedImage(url);
     return url;
   };
 
@@ -42,17 +44,22 @@ export default function NewBlogPost() {
         body: JSON.stringify({
           title,
           content,
-          image,
+          featuredImage,
+          tags: tags.split(',').map(tag => tag.trim()).filter(Boolean),
+          status,
+          author: 'Admin' // Default author
         }),
       });
       
       if (!response.ok) {
-        throw new Error('Failed to create blog post');
+        const error = await response.json();
+        throw new Error(error.message || 'Failed to create blog post');
       }
       
       router.push('/admin/blog');
     } catch (error) {
       console.error(error);
+      alert(error.message);
     } finally {
       setIsSubmitting(false);
     }
@@ -87,6 +94,35 @@ export default function NewBlogPost() {
               onContentChange={setContent} 
               onImageUpload={handleImageUpload} 
             />
+          </div>
+
+          <div>
+            <label htmlFor="tags" className="block text-sm font-medium text-gray-700 mb-1">
+              Tags (comma-separated)
+            </label>
+            <input
+              type="text"
+              id="tags"
+              value={tags}
+              onChange={(e) => setTags(e.target.value)}
+              className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+              placeholder="e.g., technology, healthcare, news"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="status" className="block text-sm font-medium text-gray-700 mb-1">
+              Status
+            </label>
+            <select
+              id="status"
+              value={status}
+              onChange={(e) => setStatus(e.target.value)}
+              className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+            >
+              <option value="draft">Draft</option>
+              <option value="published">Published</option>
+            </select>
           </div>
           
           <div className="flex justify-end">

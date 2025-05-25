@@ -10,24 +10,54 @@ export const authOptions = {
         password: { label: 'Password', type: 'password' },
       },
       async authorize(credentials) {
-        // You should implement your own logic here to verify the credentials
-        // For demo purposes, we're using hardcoded credentials
-        const user = { id: '1', name: 'Admin', email: 'admin@medicotech.com' };
-        
-        if (
-          credentials?.username === process.env.ADMIN_USERNAME && 
-          credentials?.password === process.env.ADMIN_PASSWORD
-        ) {
-          return user;
+        try {
+          if (!credentials?.username || !credentials?.password) {
+            throw new Error('Please enter both username and password');
+          }
+
+          if (
+            credentials.username === 'admin' && 
+            credentials.password === 'admin123'
+          ) {
+            return {
+              id: '1',
+              name: 'Admin',
+              email: 'admin@medicotech.com',
+              role: 'admin'
+            };
+          }
+          
+          throw new Error('Invalid credentials');
+        } catch (error) {
+          throw new Error(error.message || 'Authentication failed');
         }
-        
-        return null;
       },
     }),
   ],
   pages: {
     signIn: '/admin/login',
+    error: '/admin/login',
   },
+  session: {
+    strategy: 'jwt',
+    maxAge: 30 * 24 * 60 * 60, // 30 days
+  },
+  callbacks: {
+    async jwt({ token, user }) {
+      if (user) {
+        token.role = user.role;
+      }
+      return token;
+    },
+    async session({ session, token }) {
+      if (token) {
+        session.user.role = token.role;
+      }
+      return session;
+    },
+  },
+  secret: process.env.NEXTAUTH_SECRET,
+  debug: process.env.NODE_ENV === 'development',
 };
 
 const handler = NextAuth(authOptions);
