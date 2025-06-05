@@ -16,8 +16,8 @@ export const authOptions = {
           }
 
           if (
-            credentials.username === 'admin' && 
-            credentials.password === 'admin123'
+            credentials.username === process.env.ADMIN_USERNAME &&
+            credentials.password === process.env.ADMIN_PASSWORD
           ) {
             return {
               id: '1',
