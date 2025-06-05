@@ -109,10 +109,11 @@ const Specialties = () => {
         Maximize Reimbursements. Stay 100% Compliant. Skip the Headaches.
         </h2>
         <button 
+          onClick={() => window.location.href = '/contact'}
           className="bg-white text-blue-600 font-semibold px-6 py-2 rounded-full shadow hover:bg-gray-100 transition focus:outline-none focus:ring-2 focus:ring-white"
           aria-label="Book a Demo"
         >
-          Book a demo
+          Unlock Your Growth Now
         </button>
       </div>
       <p className="text-sm text-left text-gray-200">

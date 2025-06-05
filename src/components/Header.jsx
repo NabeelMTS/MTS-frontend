@@ -242,7 +242,7 @@ const Header = () => {
               <a href="/rcm-services" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600" onClick={e => handleNavClick(e, '/rcm-services')}>
                 RCM Services
               </a>
-              <a href="/credentialingpage" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600" onClick={e => handleNavClick(e, '/credentialingpage')}>
+              <a href="/credentialing" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600" onClick={e => handleNavClick(e, '/credentialingpage')}>
                 Provider Credentialing & Enrollment
               </a>
               
