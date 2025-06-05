@@ -12,7 +12,7 @@ export default function Home() {
     document.title = "Home - MedicoTech Solutions";
   }, []);
   return (
-    <main>
+    <main className="overflow-x-hidden">
       <HeroSlider />
       <CTA
   heading="
