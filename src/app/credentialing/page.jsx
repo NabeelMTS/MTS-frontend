@@ -24,8 +24,8 @@ const CredentialingPage = () => {
             <p className="text-lg mb-8">
               At MedicoTech Solutions, we specialize in simplifying the complex process of provider credentialing and enrollment. Our comprehensive services ensure that healthcare professionals can join insurance networks swiftly and efficiently.
             </p>
-            <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition">
-              Get Your Free Consultation Now
+            <button onClick={() => window.location.href = '/contact'} className="bg-white text-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition">
+              Unlock Your Growth Now
             </button>
           </div>
         </div>
@@ -92,11 +92,11 @@ const CredentialingPage = () => {
               "State License & DEA Registration - Guidance through application and renewal processes",
               "Hospital Privileges Application - Assist in securing hospital privileges"
             ].map((service, i) => (
-              <div key={i} className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:border-blue-200 transition">
-                <div className="flex items-start">
-                  <FaCheck className="text-green-500 mt-1 mr-3 flex-shrink-0" />
-                  <span className='text-gray-500'>{service}</span>
-                </div>
+             <div key={i} className="group hover:bg-blue-600 hover:text-white bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:border-blue-200 transition">
+            <div className="flex items-start">
+            <FaCheck className="text-green-500 mt-1 mr-3 flex-shrink-0" />
+          <span className="text-gray-500 group-hover:text-white">{service}</span>
+            </div>
               </div>
             ))}
           </div>
@@ -129,7 +129,7 @@ const CredentialingPage = () => {
                 desc: "Our expertise ensures applications meet the latest regulatory standards."
               }
             ].map((benefit, i) => (
-              <div key={i} className="bg-blue-50 p-6 rounded-xl">
+              <div key={i} className="hover:shadow-md bg-blue-50 p-6 rounded-xl">
                 <h3 className="text-xl font-semibold text-blue-800 mb-3">{benefit.title}</h3>
                 <p className="text-gray-700">{benefit.desc}</p>
               </div>

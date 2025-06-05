@@ -23,8 +23,8 @@ useEffect(() => {
             <p className="text-3xl md:text-2xl mb-8">
       Your all-in-one medical billing partner for growth, compliance, and peace of mind.
             </p>
-            <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition">
-              Get Your Free Consultation Now
+            <button onClick={() => window.location.href = '/contact'} className="bg-white text-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition">
+              Unlock Your Growth Now
             </button>
           </div>
         </div>
@@ -154,7 +154,7 @@ useEffect(() => {
                       </li>
                     ))}
                   </ul>
-                  <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium">
+                  <button onClick={() => window.location.href = '/contact'} className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-medium">
                     {plan.cta}
                   </button>
                 </div>

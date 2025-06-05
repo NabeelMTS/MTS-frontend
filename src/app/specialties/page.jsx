@@ -30,11 +30,12 @@ const Specialties = () => {
               <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-lg">
                 Eliminate denials with coding that fits your exact practice type.
               </p>
-              <button 
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition-transform focus:outline-none focus:ring-2 focus:ring-blue-500"
+              <button
+                onClick={() => window.location.href = '/contact'}  
+                className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-medium transition-transform focus:outline-none focus:ring-2 focus:ring-blue-500"
                 aria-label="Get Started with Precision Billing"
               >
-                Get Started
+                Unlock Your Growth Now
               </button>
             </div>
           </div>
@@ -188,8 +189,8 @@ const Specialties = () => {
         heading="
         Ready to Elevate Your Medical Billing?"
           subheading="Streamline operations, boost revenue, and ensure compliance with MedicoTech Solutions."
-          buttonText="Schedule a Free Consultation"
-          buttonHref="/demo"/>
+          buttonText="Unlock Your Growth Now"
+          buttonHref="/contact"/>
     </div>
   );
 };

@@ -31,7 +31,7 @@ const RCMServicesPage = () => {
                 Streamlined RCM solutions tailored for U.S. healthcare providers<br className="hidden md:inline" />
                 to enhance cash flow and reduce denials.
               </p>
-              <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition">
+              <button onClick={() => window.location.href = '/contact'} className="bg-white text-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition">
                 Request a Free RCM Consultation
               </button>
             </div>
@@ -106,7 +106,7 @@ const RCMServicesPage = () => {
                 "Denial & Coding Review",
                 "Quality Assurance Checks",
               ].map((step, i) => (
-                <div key={i} className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:border-blue-200 transition">
+                <div key={i} className="hover:shadow-md bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:border-blue-200 transition">
                   <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold mb-3">
                     {i + 1}
                   </div>
@@ -125,25 +125,27 @@ const RCMServicesPage = () => {
             </div>
             
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-blue-50 p-8 rounded-xl">
+              <div className="hover:shadow-md bg-blue-50 p-8 rounded-xl">
                 <h3 className="text-blue-600 text-xl font-semibold mb-4">Customized Solution For Every Practice</h3>
                 <p className="text-gray-700">We tailor our RCM services to your specialty, size, and workflow.</p>
               </div>
-              <div className="bg-blue-50 p-8 rounded-xl">
+              <div className="hover:shadow-md bg-blue-50 p-8 rounded-xl">
                 <h3 className="text-blue-600 text-xl font-semibold mb-4">Advanced Technology Integration</h3>
                 <p className="text-gray-700">Seamless EHR/EMR integration with real-time analytics.</p>
               </div>
-              <div className="bg-blue-50 p-8 rounded-xl">
+              <div className="hover:shadow-md bg-blue-50 p-8 rounded-xl">
                 <h3 className="text-blue-600 text-xl font-semibold mb-4">Compliance at the Core</h3>
                 <p className="text-gray-700">HIPAA-compliant processes with regular audits.</p>
               </div>
-              <div className="bg-blue-50 p-8 rounded-xl">
+              <div className="hover:shadow-md bg-blue-50 p-8 rounded-xl">
                 <h3 className="text-blue-600 text-xl font-semibold mb-4">Maximized Revenue Potential</h3>
                 <p className="text-gray-700">Proactive denial management to recover lost revenue.</p>
               </div>
-              <div className="bg-blue-50 p-8 rounded-xl">
+              <div className='md:col-span-2 flex justify-center'>
+              <div className="hover:shadow-md bg-blue-50 p-8 rounded-xl">
                 <h3 className="text-blue-600 text-xl font-semibold mb-4">Certified Professionals</h3>
                 <p className="text-gray-700">AAPC/AHIMA-certified coders and billing specialists.</p>
+              </div>
               </div>
             </div>
           </div>
@@ -207,8 +209,8 @@ const RCMServicesPage = () => {
         <section className="py-16 bg-gray-50">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Ready to Transform Your Revenue Cycle?</h2>
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-bold">
-              Schedule Your Free RCM Consultation Today
+            <button onClick={() => window.location.href = '/contact'} className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-bold">
+              Unlock Your Growth Now
             </button>
           </div>
         </section>

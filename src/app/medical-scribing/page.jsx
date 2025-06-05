@@ -20,8 +20,8 @@ const MedicalScribingPage = () => {
        Empowering Providers. Enhancing Outcomes.
             </p>
             <p className="text-m md:text-l mb-8"> At MedicoTech Solutions, we leverage advanced AI technology to transform clinical documentation. Our platform streamlines workflows, improves compliance, and ensures better outcomes.</p>
-            <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition">
-              Get Your Free Consultation Now
+            <button onClick={() => window.location.href = '/contact'} className="bg-white text-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition">
+              Unlock Your Growth Now
             </button>
           </div>
         </div>
@@ -35,7 +35,7 @@ const MedicalScribingPage = () => {
           <p className="text-xl text-gray-600">
             From small clinics to large healthcare networks, our scalable solution adapts to your needs.
           </p>
-          <img src="/images/audit2.jpg" alt="AI Scribing dashboard" className="mt-8 mx-auto rounded-lg shadow-xl max-w-full" />
+          <img src="/images/scribe.jpg" alt="AI Scribing dashboard" className="mt-8 mx-auto rounded-lg shadow-xl max-w-full" />
         </div>
       </section>
 

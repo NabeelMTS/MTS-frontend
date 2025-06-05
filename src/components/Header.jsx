@@ -186,10 +186,10 @@ const Header = () => {
           <div className="hidden md:flex items-center">
             <Link
               href="/contact"
-              className="ml-8 px-6 py-3 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors duration-200"
+              className="ml-8 px-6 py-3 text-sm font-medium text-white bg-green-600 hover:bg-green-700 rounded-lg transition-colors duration-200"
               onClick={closeAllMenus}
             >
-              Get Started
+              Unlock Your Growth Now
             </Link>
           </div>
 
@@ -299,19 +299,16 @@ const Header = () => {
               <a href="/blog" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600" onClick={e => handleNavClick(e, '/blog')}>
                 Blog
               </a>
-              <a href="/case-studies" className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-600" onClick={e => handleNavClick(e, '/case-studies')}>
-                Case Studies
-              </a>
             </div>
           )}
         </div>
         <div className="px-5 py-4 border-t border-gray-200">
           <a
             href="/contact"
-            className="w-full flex items-center justify-center px-4 py-3 text-base font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors duration-200"
+            className="w-full flex items-center justify-center px-4 py-3 text-base font-medium text-white bg-green-600 hover:bg-green-700 rounded-lg transition-colors duration-200"
             onClick={e => handleNavClick(e, '/contact')}
           >
-            Get Started
+            Unlock Your Growth Now
           </a>
         </div>
       </div>

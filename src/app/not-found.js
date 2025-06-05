@@ -7,7 +7,7 @@ export default function NotFound() {
       <p className="text-xl text-gray-700 mb-8">
         Oops! The page you&#39;re looking for is under construction or doesn&#39;t exist.
       </p>
-      <Link href="/home" className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition">
+      <Link href="/home" className="bg-green-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-green-700 transition">
         Go Back Home
       </Link>
     </div>

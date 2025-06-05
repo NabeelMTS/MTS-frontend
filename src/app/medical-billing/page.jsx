@@ -22,8 +22,8 @@ const MedicalBillingPage = () => {
             <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto md:mx-0">
               Streamline operations and boost collections—without the stress.
             </p>
-            <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition">
-              Get Your Free Consultation Now
+            <button onClick={() => window.location.href = '/contact'} className="bg-white text-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition">
+              Unlock Your Growth Now
             </button>
           </div>
         </div>
@@ -96,8 +96,8 @@ const MedicalBillingPage = () => {
               </div>
             </div>
             
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-bold">
-              Start Your Free Audit Today
+            <button onClick={() => window.location.href = '/contact'} className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-bold">
+              Unlock Your Growth Now
             </button>
           </div>
         </div>
@@ -126,8 +126,8 @@ const MedicalBillingPage = () => {
             <p className="mt-4 text-blue-100">No hidden costs. Just real support to help new practices thrive.</p>
           </div>
           
-          <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition">
-            Get Your Free Consultation Now
+          <button onClick={() => window.location.href = '/contact'} className="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition">
+            Unlock Your Growth Now
           </button>
         </div>
       </section>
@@ -137,8 +137,8 @@ const MedicalBillingPage = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">Simplify Your Billing. Amplify Your Practice with MTS</h2>
           <img src="/images/audit2.jpg" alt="Billing dashboard" className="mx-auto mb-8 rounded-lg shadow-xl max-w-full" />
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-bold">
-            Start Your Risk-Free Trial
+          <button onClick={() => window.location.href = '/contact'} className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-bold">
+            Unlock Your Growth Now
           </button>
         </div>
       </section>

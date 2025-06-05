@@ -26,7 +26,7 @@ const MarketingServicesPage = () => {
        Handled by Experts Who Understand Healthcare
             </p>
             <p className="text-m md:text-l mb-8"> From content strategy to daily social media management—we help healthcare providers grow their brand and drive real patient engagement.</p>
-            <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition">
+            <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition" onClick={() => window.location.href = '/contact'}>
               Unlock Your Growth Now
             </button>
           </div>
@@ -178,7 +178,7 @@ const MarketingServicesPage = () => {
           <p className="text-xl text-gray-600 mb-8">
             Focus on patient care while we handle your marketing strategy.
           </p>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-bold">
+          <button onClick={() => window.location.href = '/contact'} className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-bold">
             Unlock Your Growth Strategy Now
           </button>
           

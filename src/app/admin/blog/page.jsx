@@ -81,21 +81,27 @@ export default function AdminBlogPage() {
             New Post
           </Link>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {blogs.map((blog) => (
-            <BlogCard
-              key={blog._id}
-              _id={blog._id}
-              title={blog.title}
-              excerpt={blog.excerpt}
-              slug={blog.slug}
-              image={blog.featuredImage}
-              date={blog.createdAt}
-              isAdmin={true}
-              onDelete={handleDelete}
-            />
-          ))}
-        </div>
+        {blogs.length === 0 ? (
+          <div className="text-center text-gray-500 py-12 text-lg font-medium">
+            No blogs added.
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {blogs.map((blog) => (
+              <BlogCard
+                key={blog._id}
+                _id={blog._id}
+                title={blog.title}
+                excerpt={blog.excerpt}
+                slug={blog.slug}
+                image={blog.featuredImage}
+                date={blog.createdAt}
+                isAdmin={true}
+                onDelete={handleDelete}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

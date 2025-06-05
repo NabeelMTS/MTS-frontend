@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 const CTA = ({
   heading,
   subheading,
-  buttonText = "Get Started",
-  buttonHref = "#",
+  buttonText = "Unlock Your Growth Now",
+  buttonHref = "/contact",
   secondaryButtonText,
   secondaryButtonHref
 }) => {
@@ -32,7 +32,7 @@ const CTA = ({
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a
               href={buttonHref}
-              className="relative px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg overflow-hidden transition-all duration-300 group"
+              className="relative px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg overflow-hidden transition-all duration-300 group"
             >
               <span className="relative z-10 flex items-center justify-center gap-2">
                 {buttonText}
@@ -45,7 +45,7 @@ const CTA = ({
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                 </svg>
               </span>
-              <span className="absolute inset-0 bg-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+              <span className="absolute inset-0 bg-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
             </a>
             
             {secondaryButtonText && (

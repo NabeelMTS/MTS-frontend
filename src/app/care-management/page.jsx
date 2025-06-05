@@ -19,8 +19,8 @@ const CareManagementPage = () => {
             <p className="text-xl md:text-2xl mb-8">
                Empowering providers, patients, and care teams through comprehensive, tech-enabled solutions
             </p>
-            <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition">
-              Get Your Free Consultation Now
+            <button onClick={() => window.location.href = '/contact'} className="bg-white text-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition">
+              Unlock Your Growth Now
             </button>
           </div>
         </div>

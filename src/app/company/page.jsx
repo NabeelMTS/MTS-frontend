@@ -220,8 +220,8 @@ const CompanyPage = () => {
             <br />
             👉 Contact Us Today and see the difference real partnership makes.
           </p>
-          <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition">
-            Get Your Free Consultation Now
+          <button onClick={() => window.location.href = '/contact'} className="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition">
+            Unlock Your Growth Now
           </button>
         </div>
       </section>

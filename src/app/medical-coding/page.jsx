@@ -21,8 +21,8 @@ const MedicalCodingPage = () => {
                  Efficient Coding. Cleaner Claims. Higher Profits.<br />
               We code it right—so you get paid right.
             </p>
-            <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition">
-              Get Your Free Consultation Now
+            <button onClick={() => window.location.href = '/contact'} className="bg-white text-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition">
+              Unlock Your Growth Now
             </button>
           </div>
         </div>
@@ -54,8 +54,8 @@ const MedicalCodingPage = () => {
                     <p className="text-sm text-gray-600">HIPAA-Compliant</p>
                   </div>
                 </div>
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium">
-                  Get Your Free Audit Now
+                <button onClick={() => window.location.href = '/contact'} className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium">
+                  Unlock Your Growth Now
                 </button>
               </div>
             </div>
@@ -144,8 +144,8 @@ const MedicalCodingPage = () => {
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
               Partner with MedicoTech Solutions and experience stress-free, results-driven medical coding.
             </p>
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-bold">
-              Get Your Free Consultation Now
+            <button onClick={() => window.location.href = '/contact'} className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-bold">
+              Unlock Your Growth Now
             </button>
           </div>
         </section>

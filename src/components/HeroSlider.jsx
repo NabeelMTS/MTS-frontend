@@ -10,7 +10,7 @@ const HeroSlider = () => {
     {
       heading: "Innovation Driving Revenue Growth",
       subheading: "Embrace the future of healthcare with innovative solutions. From efficient medical billing to expert IT consultation, we empower you to enhance patient care and boost revenue with cutting-edge technology.",
-      bgImage: "images/hero.jpg" // Replace with your image paths
+      bgImage: "images/hero.jpg"
     },
     {
       heading: "End Claim Denials - Maximize Revenue Today",
@@ -58,7 +58,6 @@ const HeroSlider = () => {
     }
   }, [imagesLoaded, slides.length]);
 
-  // Add escape key handler
   useEffect(() => {
     const handleEscape = (e) => {
       if (e.key === 'Escape') {
@@ -72,7 +71,6 @@ const HeroSlider = () => {
     };
   }, []);
 
-  // Add click outside handler
   const handleModalClick = (e) => {
     if (e.target === e.currentTarget) {
       setShowVideo(false);
@@ -103,7 +101,7 @@ const HeroSlider = () => {
           {showVideo && (
             <div 
               className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
-              onClick={handleModalClick} // Add click outside handler
+              onClick={handleModalClick}
             >
               <div className="relative w-full max-w-4xl">
                 <button 
@@ -115,7 +113,7 @@ const HeroSlider = () => {
                 <div className="aspect-w-16 aspect-h-9">
                   <iframe 
                     className="w-full h-96 md:h-[500px]"
-                    src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
+                    src="https://www.youtube.com/embed/aK8F3kGJXyY?si=TmCuR2zGTLAzQQ5b" 
                     title="Demo Video"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     allowFullScreen
@@ -154,17 +152,14 @@ const HeroSlider = () => {
                       </p>
                       
                       <div className="flex flex-wrap gap-4 mb-12">
-                        <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition-all transform hover:scale-105">
-                          Get Started
+                        <button className=" onClick={() => window.location.href = '/contact'} bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-medium transition-all transform hover:scale-105">
+                          Unlock Your Growth Now
                         </button>
                         <button 
                           onClick={() => setShowVideo(true)}
                           className="flex items-center gap-3 text-blue-600 hover:text-blue-800 font-medium group"
                         >
-                          <div className="w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center group-hover:bg-blue-200 transition-all shadow-md">
-                            <i className="fa-solid fa-play text-2xl text-blue-600 group-hover:text-blue-800"></i>
-                          </div>
-                          See how we work?
+                          <span className="text-green-600 group-hover:text-blue-800">See how we work</span>
                         </button>
                       </div>
 

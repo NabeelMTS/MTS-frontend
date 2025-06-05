@@ -18,8 +18,8 @@ export default function Home() {
   heading="
 Accurate, HIPAA-compliant medical billing solutions"
   subheading="Designed to streamline your practice and boost your cash flow."
-  buttonText="Schedule a Free Consultation"
-  buttonHref="/demo"
+  buttonText="Unlock Your Growth Now"
+  buttonHref="/contact"
 />
 <section className="py-16 bg-white">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -44,7 +44,7 @@ Accurate, HIPAA-compliant medical billing solutions"
         <h3 className="ml-4 text-lg font-medium text-gray-900">Dedicated Billing Specialists</h3>
       </div>
 
-      {/* Item 3 - HIPAA Compliance */}
+      {/* Item 3 - HIPAA Compliance */}cta
       <div className="flex items-center p-6 border border-gray-100 rounded-xl hover:shadow-sm transition-all">
         <div className="flex-shrink-0 bg-blue-50 p-2.5 rounded-lg">
           <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -360,8 +360,8 @@ Accurate, HIPAA-compliant medical billing solutions"
   heading="
 Maximize Efficiency with Your EMR"
   subheading="Our billing experts turn your EHR into a revenue-driving powerhouse, ensuring clean, timely claims every time."
-  buttonText="Schedule a Free Consultation"
-  buttonHref="/demo"
+  buttonText="Unlock Your Growth Now"
+  buttonHref="/contact"
 />
     </main>
   );
