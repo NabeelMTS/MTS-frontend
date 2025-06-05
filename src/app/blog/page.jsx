@@ -5,7 +5,7 @@ export const metadata = {
   description: 'Read our latest articles on medical billing, coding, and healthcare IT solutions.',
 };
 
-async function getBlogs() {  const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}api/blogs`, {
+async function getBlogs() {  const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/blogs`, {
     next: { revalidate: 60 },
   });
   
