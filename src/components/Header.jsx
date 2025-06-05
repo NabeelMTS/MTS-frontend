@@ -170,9 +170,6 @@ const Header = () => {
                           <a href="/blog" className="text-gray-900 hover:text-blue-600 text-sm block" onClick={e => handleNavClick(e, '/blog')}>
                             Blog
                           </a>
-                          <a href="/case-studies" className="text-gray-900 hover:text-blue-600 text-sm block" onClick={e => handleNavClick(e, '/case-studies')}>
-                            Case Studies
-                          </a>
                         </div>
                       </div>
                     </div>
