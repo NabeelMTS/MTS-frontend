@@ -1,11 +1,44 @@
 'use client';
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
+import { toast } from 'react-hot-toast';
 
 const Footer = () => {
   const logoRef = useRef(null);
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const handleSubscribe = async (e) => {
+    e.preventDefault();
+    if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+      toast.error('Please enter a valid email address');
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.error || 'Subscription failed');
+      }
+
+      toast.success('Thank you for subscribing!');
+      setEmail('');
+    } catch (error) {
+      toast.error(error.message);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <footer className="bg-gradient-to-b from-blue-900 to-blue-950 text-white pt-16 pb-8 px-4 sm:px-6 lg:px-8">
@@ -70,24 +103,37 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Newsletter */}
+          {/* Newsletter Section */}
           <div className="text-center md:text-left">
             <h3 className="text-lg font-semibold mb-6 pb-2 border-b border-blue-700">Newsletter</h3>
             <p className="mb-4 text-blue-100">
               Stay updated with the latest in medical billing solutions and healthcare innovations - delivered straight to your inbox!
             </p>
-            <form className="flex flex-col space-y-4">
+            <form onSubmit={handleSubscribe} className="flex flex-col space-y-4">
               <input
                 type="email"
                 placeholder="Your email address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="px-4 py-3 rounded-lg bg-blue-800 border border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 text-white placeholder-blue-300"
                 required
               />
               <button
                 type="submit"
-                className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-medium rounded-lg transition-colors duration-300 transform hover:scale-[1.02]"
+                disabled={isSubmitting}
+                className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-medium rounded-lg transition-colors duration-300 transform hover:scale-[1.02] disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center"
               >
-                Subscribe
+                {isSubmitting ? (
+                  <>
+                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Processing...
+                  </>
+                ) : (
+                  'Subscribe'
+                )}
               </button>
             </form>
           </div>

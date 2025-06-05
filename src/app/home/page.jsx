@@ -5,8 +5,7 @@ import CTA from '@/components/CTA';
 import Testimonials from '@/components/Testimonials';
 import CertificationsCarousel from '@/components/CertificationsCarousel';
 import { useState, useEffect, createContext, useContext } from 'react';
-
-
+import ConsultationForm from '@/components/ConsultationForm';
 
 export default function Home() {
     useEffect(() => {
@@ -354,120 +353,7 @@ Accurate, HIPAA-compliant medical billing solutions"
   </div>
 </section>
 
-<section className="py-16 bg-gray-50">
-  <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-      {/* Form Header */}
-      <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-8 text-white">
-        <h2 className="text-2xl font-bold">Schedule</h2>
-        <h3 className="text-3xl font-bold mt-1">Free Consultation</h3>
-        <div className="w-16 h-1 bg-blue-300 mt-4"></div>
-      </div>
-
-      {/* Form Body */}
-      <div className="p-8">
-        <form className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Name Field */}
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                placeholder="David John"
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
-              />
-            </div>
-
-            {/* Business Name Field */}
-            <div>
-              <label htmlFor="business" className="block text-sm font-medium text-gray-700 mb-1">
-                Business Name
-              </label>
-              <input
-                type="text"
-                id="business"
-                placeholder="Business Name"
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
-              />
-            </div>
-
-            {/* Email Field */}
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                placeholder="Email"
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
-              />
-            </div>
-
-            {/* Phone Field */}
-            <div>
-              <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                Phone Number
-              </label>
-              <input
-                type="tel"
-                id="phone"
-                placeholder="Phone Number"
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
-              />
-            </div>
-
-            {/* Providers Field */}
-            <div>
-              <label htmlFor="providers" className="block text-sm font-medium text-gray-700 mb-1">
-                Providers
-              </label>
-              <select
-                id="providers"
-                className="w-full text-gray-700 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
-              >
-                <option>1-5</option>
-                <option>6-10</option>
-                <option>11-20</option>
-                <option>20+</option>
-              </select>
-            </div>
-          </div>
-
-          {/* Message Field */}
-          <div>
-            <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-              Message
-            </label>
-            <textarea
-              id="message"
-              rows={4}
-              placeholder="Enter your message here"
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
-            ></textarea>
-          </div>
-
-          {/* Submit Button */}
-          <div className="pt-2">
-            <button
-              type="submit"
-              className="w-full flex items-center justify-center px-6 py-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg shadow-md transition-all duration-300 transform hover:scale-[1.02]"
-            >
-              Submit
-              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-              </svg>
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
+<ConsultationForm/>
 <Testimonials/>
 <CertificationsCarousel/>
 <CTA

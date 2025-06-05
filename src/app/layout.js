@@ -4,6 +4,7 @@ import Header from '../components/Header.jsx';
 import Footer from '../components/Footer.jsx';
 import { useState, useEffect, createContext, useContext } from 'react';
 import { usePathname } from 'next/navigation';
+import ToastProvider from '@/components/ToastProvider';
 
 const LoadingContext = createContext();
 
@@ -29,6 +30,9 @@ function LoadingProvider({ children }) {
 }
 
 export default function RootLayout({ children, title = "MedicoTech Solutions" }) {
+  const pathname = usePathname();
+  const isAdminPage = pathname?.startsWith('/admin');
+
   return (
     <LoadingProvider>
       <html lang="en">
@@ -37,10 +41,11 @@ export default function RootLayout({ children, title = "MedicoTech Solutions" })
           <title>{title}</title>
         </head>
         <body className="min-h-screen">
-          <Header />
+          {!isAdminPage && <Header />}
           <LoadingOverlay />
           <div>{children}</div>
-          <Footer />
+          {!isAdminPage && <Footer />}
+          <ToastProvider />
         </body>
       </html>
     </LoadingProvider>

@@ -162,7 +162,7 @@ const HeroSlider = () => {
                           className="flex items-center gap-3 text-blue-600 hover:text-blue-800 font-medium group"
                         >
                           <div className="w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center group-hover:bg-blue-200 transition-all shadow-md">
-                            <i className="fa-solid fa-play text-2xl text-blue-600 group-hover:text-blue-800"></i> {/* Adjusted icon size and color */}
+                            <i className="fa-solid fa-play text-2xl text-blue-600 group-hover:text-blue-800"></i>
                           </div>
                           See how we work?
                         </button>
