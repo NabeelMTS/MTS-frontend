@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { format } from 'date-fns';
 
-export default function BlogCard({ title, excerpt, slug, image, date, isAdmin = false, onDelete }) {
+export default function BlogCard({ title, excerpt, slug, image, date, _id, isAdmin = false, onDelete }) {
   const formattedDate = format(new Date(date), 'MMMM dd, yyyy');
 
   return (
@@ -22,27 +22,18 @@ export default function BlogCard({ title, excerpt, slug, image, date, isAdmin = 
         
         <div className="flex justify-between items-center">
           <Link
-            href={isAdmin ? `/admin/blog/${slug}` : `/blog/${slug}`}
+            href={isAdmin ? `/admin/blog/${_id}` : `/blog/${slug}`}
             className="text-blue-600 hover:text-blue-800 font-medium"
           >
-            Read More
+            {isAdmin ? 'Edit' : 'Read More'}
           </Link>
-          
-          {isAdmin && (
-            <div className="space-x-2">
-              <Link
-                href={`/admin/blog/${slug}/edit`}
-                className="text-green-600 hover:text-green-800"
-              >
-                Edit
-              </Link>
-              <button
-                onClick={() => onDelete && onDelete(slug)}
-                className="text-red-600 hover:text-red-800"
-              >
-                Delete
-              </button>
-            </div>
+          {isAdmin && onDelete && (
+            <button
+              onClick={() => onDelete(_id)}
+              className="text-red-600 hover:text-red-800"
+            >
+              Delete
+            </button>
           )}
         </div>
       </div>

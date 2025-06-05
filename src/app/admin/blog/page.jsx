@@ -3,10 +3,12 @@
 import BlogCard from '@/app/components/Blog/BlogCard';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { toast } from 'react-hot-toast';
 
 export default function AdminBlogPage() {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [deleting, setDeleting] = useState(null);
 
   const fetchBlogs = async () => {
     try {
@@ -26,7 +28,46 @@ export default function AdminBlogPage() {
     fetchBlogs();
   }, []);
 
-  if (loading) return <div>Loading...</div>;
+  const handleDelete = async (blogId) => {
+    if (!window.confirm('Are you sure you want to delete this blog post?')) {
+      return;
+    }
+
+    setDeleting(blogId);
+    try {
+      const response = await fetch('/api/blogs', {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ _id: blogId }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to delete blog post');
+      }
+
+      toast.success('Blog post deleted successfully');
+      // Remove the deleted blog from the state
+      setBlogs(blogs.filter((blog) => blog._id !== blogId));
+    } catch (error) {
+      console.error('Delete error:', error);
+      toast.error('Failed to delete blog post');
+    } finally {
+      setDeleting(null);
+    }
+  };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-16 h-16 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto"></div>
+          <p className="mt-4 text-gray-600">Loading blog posts...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="py-8 px-4 sm:px-6 lg:px-8">
@@ -40,38 +81,20 @@ export default function AdminBlogPage() {
             New Post
           </Link>
         </div>
-
-        <div className="bg-white shadow rounded-lg overflow-hidden">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
-            {blogs.map((blog) => (
-              <div key={blog._id} className="border rounded-lg overflow-hidden">
-                <BlogCard
-                  title={blog.title}
-                  excerpt={blog.excerpt}
-                  slug={blog.slug}
-                  image={blog.image}
-                  date={blog.createdAt}
-                />
-                <div className="p-4 border-t flex justify-end space-x-2">
-                  <Link
-                    href={`/admin/blog/${blog._id}`}
-                    className="inline-flex items-center px-3 py-1.5 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                  >
-                    Edit
-                  </Link>
-                  <form action={`/api/blogs`} method="DELETE">
-                    <input type="hidden" name="_id" value={blog._id} />
-                    <button
-                      type="submit"
-                      className="inline-flex items-center px-3 py-1.5 border border-transparent text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
-                    >
-                      Delete
-                    </button>
-                  </form>
-                </div>
-              </div>
-            ))}
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {blogs.map((blog) => (
+            <BlogCard
+              key={blog._id}
+              _id={blog._id}
+              title={blog.title}
+              excerpt={blog.excerpt}
+              slug={blog.slug}
+              image={blog.featuredImage}
+              date={blog.createdAt}
+              isAdmin={true}
+              onDelete={handleDelete}
+            />
+          ))}
         </div>
       </div>
     </div>

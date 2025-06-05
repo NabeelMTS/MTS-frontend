@@ -63,40 +63,41 @@ export function BlogEditor({ content = '', onContentChange, onImageUpload }) {
           onClick={() => editor.chain().focus().toggleBold().run()}
           className={`p-2 rounded ${editor.isActive('bold') ? 'bg-blue-100 text-blue-600' : 'hover:bg-gray-100'}`}
         >
-          <strong>B</strong>
+          <strong className='text-gray-800'>B</strong>
         </button>
         <button
           type="button"
           onClick={() => editor.chain().focus().toggleItalic().run()}
           className={`p-2 rounded ${editor.isActive('italic') ? 'bg-blue-100 text-blue-600' : 'hover:bg-gray-100'}`}
         >
-          <em>I</em>
+          <em className='text-gray-800'>I</em>
         </button>
         <button
           type="button"
           onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
-          className={`p-2 rounded ${editor.isActive('heading', { level: 1 }) ? 'bg-blue-100 text-blue-600' : 'hover:bg-gray-100'}`}
+          className={`text-gray-800 p-2 rounded ${editor.isActive('heading', { level: 1 }) ? 'bg-blue-100 text-blue-600' : 'hover:bg-gray-100'}`}
         >
           H1
         </button>
         <button
           type="button"
           onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
-          className={`p-2 rounded ${editor.isActive('heading', { level: 2 }) ? 'bg-blue-100 text-blue-600' : 'hover:bg-gray-100'}`}
+          className={`text-gray-800 p-2 rounded ${editor.isActive('heading', { level: 2 }) ? 'bg-blue-100 text-blue-600' : 'hover:bg-gray-100'}`}
+
         >
           H2
         </button>
         <button
           type="button"
           onClick={() => editor.chain().focus().toggleBulletList().run()}
-          className={`p-2 rounded ${editor.isActive('bulletList') ? 'bg-blue-100 text-blue-600' : 'hover:bg-gray-100'}`}
+          className={`text-gray-800 p-2 rounded ${editor.isActive('bulletList') ? 'bg-blue-100 text-blue-600' : 'hover:bg-gray-100'}`}
         >
           List
         </button>
         <button
           type="button"
           onClick={() => editor.chain().focus().toggleOrderedList().run()}
-          className={`p-2 rounded ${editor.isActive('orderedList') ? 'bg-blue-100 text-blue-600' : 'hover:bg-gray-100'}`}
+          className={`text-gray-800 p-2 rounded ${editor.isActive('orderedList') ? 'bg-blue-100 text-blue-600' : 'hover:bg-gray-100'}`}
         >
           Ordered
         </button>
@@ -104,8 +105,10 @@ export function BlogEditor({ content = '', onContentChange, onImageUpload }) {
       </div>
       <EditorContent 
         editor={editor} 
-        className="border rounded-lg p-4 min-h-[300px] bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+        className="text-gray-800 border rounded-lg p-4 min-h-[300px] bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
       />
     </div>
   );
 }
+
+export default BlogEditor;

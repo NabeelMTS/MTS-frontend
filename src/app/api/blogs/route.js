@@ -15,8 +15,26 @@ const blogSchema = Joi.object({
   slug: Joi.string().optional(), // Slug is auto-generated
 });
 
-export async function GET() {
+export async function GET(request) {
   await dbConnect();
+  
+  const { searchParams } = new URL(request.url);
+  const id = searchParams.get('id');
+  
+  if (id) {
+    try {
+      const blog = await Blog.findById(id);
+      if (!blog) {
+        return NextResponse.json({ error: 'Blog not found' }, { status: 404 });
+      }
+      return NextResponse.json(blog);
+    } catch (error) {
+      console.error('Error fetching blog:', error);
+      return NextResponse.json({ error: 'Error fetching blog' }, { status: 500 });
+    }
+  }
+  
+  // If no ID is provided, return all blogs (existing functionality)
   const blogs = await Blog.find().sort({ createdAt: -1 });
   return NextResponse.json(blogs);
 }
@@ -88,17 +106,27 @@ export async function PUT(request) {
 
 export async function DELETE(request) {
   const session = await getServerSession(authOptions);
-  
   if (!session) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
   await dbConnect();
-  const { _id } = await request.json();
-  
+
   try {
-    await Blog.findByIdAndDelete(_id);
-    return NextResponse.json({ success: true });
+    const data = await request.json();
+    const { _id } = data;
+
+    if (!_id) {
+      return NextResponse.json({ error: 'Blog ID is required' }, { status: 400 });
+    }
+
+    const deletedBlog = await Blog.findByIdAndDelete(_id);
+    
+    if (!deletedBlog) {
+      return NextResponse.json({ error: 'Blog not found' }, { status: 404 });
+    }
+
+    return NextResponse.json({ message: 'Blog deleted successfully' });
   } catch (error) {
     console.error('Error deleting blog:', error);
     return NextResponse.json({ error: 'Error deleting blog' }, { status: 500 });

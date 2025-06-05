@@ -8,9 +8,20 @@ const BlogSchema = new mongoose.Schema({
   content: {
     type: String,
     required: true,
-  },
-  image: {
+  },  featuredImage: {
     type: String,
+  },
+  tags: [{
+    type: String
+  }],
+  status: {
+    type: String,
+    enum: ['draft', 'published'],
+    default: 'draft'
+  },
+  author: {
+    type: String,
+    required: true
   },
   slug: {
     type: String,

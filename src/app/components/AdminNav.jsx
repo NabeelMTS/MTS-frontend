@@ -13,7 +13,7 @@ export default function AdminNav() {
         <div className="flex justify-between h-16">
           <div className="flex">
             <div className="flex-shrink-0 flex items-center">
-              <Link href="/admin" className="text-lg font-bold text-gray-900">
+              <Link href="/admin/blog" className="text-lg font-bold text-gray-900">
                 MedicoTech Admin
               </Link>
             </div>

@@ -2,10 +2,9 @@
 
 import { useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
-import { BlogEditor } from '@/components/BlogEditor';
+import BlogEditor from '../../../../components/BlogEditor';
 import Image from 'next/image';
 import { toast } from 'react-hot-toast';
-
 export default function NewBlogPost() {
   const [formData, setFormData] = useState({
     title: '',
@@ -136,7 +135,7 @@ export default function NewBlogPost() {
               <div>
                 <label
                   htmlFor="title"
-                  className="block text-sm font-medium text-gray-700"
+                  className="text-gray-800 block text-sm font-medium text-gray-700"
                 >
                   Title <span className="text-red-500">*</span>
                 </label>
@@ -146,15 +145,15 @@ export default function NewBlogPost() {
                   name="title"
                   value={formData.title}
                   onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                  className="text-gray-800 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                   required
                 />
               </div>
 
               {/* Featured Image Upload */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Featured Image
+                <label className="text-gray-800 block text-sm font-medium text-gray-700 mb-2">
+                  Featured Image<span className="text-red-500">*</span>
                 </label>
                 <div
                   className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-lg"
@@ -280,7 +279,7 @@ export default function NewBlogPost() {
                   name="status"
                   value={formData.status}
                   onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                  className="text-gray-800 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                 >
                   <option value="draft">Draft</option>
                   <option value="published">Published</option>
