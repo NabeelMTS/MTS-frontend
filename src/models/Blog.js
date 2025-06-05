@@ -52,15 +52,17 @@ blogSchema.pre('save', function(next) {
   next();
 });
 
-// Create excerpt from content if not provided
-blogSchema.pre('save', function(next) {
-  if (!this.excerpt && this.content) {
-    this.excerpt = this.content
-      .replace(/<[^>]*>/g, '') // Remove HTML tags
-      .substring(0, 160) // Limit to 160 characters
-      .trim();
+// Prevent duplicate slugs
+blogSchema.pre('validate', async function(next) {
+  if (this.isModified('slug')) {
+    const slugRegEx = new RegExp(`^(${this.slug})((-[0-9]*$)?)$`, 'i');
+    const blogsWithSlug = await this.constructor.find({ slug: slugRegEx });
+    if (blogsWithSlug.length > 0) {
+      this.slug = `${this.slug}-${blogsWithSlug.length + 1}`;
+    }
   }
   next();
 });
 
-export default mongoose.models.Blog || mongoose.model('Blog', blogSchema); 
+const Blog = mongoose.models.Blog || mongoose.model('Blog', blogSchema);
+export default Blog;

@@ -8,19 +8,21 @@ export default function AdminBlogPage() {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const fetchBlogs = async () => {
+    try {
+      const res = await fetch('/api/blogs', { cache: 'no-store' });
+      if (!res.ok) throw new Error('Failed to fetch blogs');
+      const data = await res.json();
+      setBlogs(data);
+    } catch (e) {
+      toast.error('Failed to fetch blogs');
+      setBlogs([]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
-    const fetchBlogs = async () => {
-      try {
-        const res = await fetch('/api/blogs', { cache: 'no-store' });
-        if (!res.ok) throw new Error('Failed to fetch blogs');
-        const data = await res.json();
-        setBlogs(data);
-      } catch (e) {
-        setBlogs([]);
-      } finally {
-        setLoading(false);
-      }
-    };
     fetchBlogs();
   }, []);
 

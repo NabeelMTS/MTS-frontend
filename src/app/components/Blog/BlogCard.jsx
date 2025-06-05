@@ -1,34 +1,50 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { format } from 'date-fns';
 
-export default function BlogCard({ title, excerpt, slug, image, date }) {
+export default function BlogCard({ title, excerpt, slug, image, date, isAdmin = false, onDelete }) {
+  const formattedDate = format(new Date(date), 'MMMM dd, yyyy');
+
   return (
-    <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-      {image && (
-        <div className="h-48 relative">
-          <Image 
-            src={image} 
-            alt={title} 
-            fill
-            className="object-cover"
-          />
+    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <div className="relative h-48 w-full">
+        <Image
+          src={image || '/images/placeholder.jpg'}
+          alt={title}
+          fill
+          className="object-cover"
+        />
+      </div>
+      <div className="p-4">
+        <h3 className="text-xl font-semibold text-gray-900 mb-2">{title}</h3>
+        <p className="text-gray-600 text-sm mb-4">{formattedDate}</p>
+        <p className="text-gray-700 mb-4">{excerpt}</p>
+        
+        <div className="flex justify-between items-center">
+          <Link
+            href={isAdmin ? `/admin/blog/${slug}` : `/blog/${slug}`}
+            className="text-blue-600 hover:text-blue-800 font-medium"
+          >
+            Read More
+          </Link>
+          
+          {isAdmin && (
+            <div className="space-x-2">
+              <Link
+                href={`/admin/blog/${slug}/edit`}
+                className="text-green-600 hover:text-green-800"
+              >
+                Edit
+              </Link>
+              <button
+                onClick={() => onDelete && onDelete(slug)}
+                className="text-red-600 hover:text-red-800"
+              >
+                Delete
+              </button>
+            </div>
+          )}
         </div>
-      )}
-      <div className="p-6">
-        <div className="text-sm text-gray-500 mb-2">{new Date(date).toLocaleDateString()}</div>
-        <h3 className="text-xl font-semibold text-gray-900 mb-2 hover:text-blue-600 transition-colors">
-          <Link href={`/blog/${slug}`}>{title}</Link>
-        </h3>
-        <p className="text-gray-600">{excerpt}</p>
-        <Link 
-          href={`/blog/${slug}`} 
-          className="mt-4 inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors"
-        >
-          Read more
-          <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
-          </svg>
-        </Link>
       </div>
     </div>
   );

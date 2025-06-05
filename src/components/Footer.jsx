@@ -16,7 +16,7 @@ const Footer = () => {
             <div className="mb-6 flex p-3 bg-white rounded-lg items-left">
               <img
                 ref={logoRef}
-                src="/Logo/logo.png"
+                src="/logo/logo.png"
                 alt="MedicoTech Solutions Logo"
                 className="rounded-lg object-contain"
                 style={{

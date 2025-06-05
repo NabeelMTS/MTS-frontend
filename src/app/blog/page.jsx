@@ -6,7 +6,7 @@ export const metadata = {
 };
 
 async function getBlogs() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/blogs`, {
+  const res = await fetch('https://your-api-domain.com/api/blogs', { // Replace with production URL
     next: { revalidate: 60 },
   });
   

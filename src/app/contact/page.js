@@ -1,6 +1,6 @@
 'use client';
 
-
+import { useEffect } from 'react'; // Add this import
 
 export default function Contact() {
 
