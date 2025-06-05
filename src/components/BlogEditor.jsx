@@ -2,7 +2,94 @@ import { useEditor, EditorContent } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import Image from '@tiptap/extension-image';
 import Link from '@tiptap/extension-link';
-import { useState, useEffect, useRef } from 'react';
+import Placeholder from '@tiptap/extension-placeholder';
+import { useState, useEffect, useRef, useCallback } from 'react';
+
+const MenuBar = ({ editor }) => {
+  if (!editor) {
+    return null;
+  }
+
+  const addImage = useCallback(() => {
+    const url = window.prompt('Enter the image URL');
+    if (url) {
+      editor.chain().focus().setImage({ src: url }).run();
+    }
+  }, [editor]);
+
+  const setLink = useCallback(() => {
+    const url = window.prompt('Enter the URL');
+    if (url) {
+      editor.chain().focus().setLink({ href: url }).run();
+    }
+  }, [editor]);
+
+  return (
+    <div className="border-b border-gray-200 p-4 flex flex-wrap gap-2 bg-white rounded-t-lg">
+      <button
+        onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
+        className={`editor-btn ${
+          editor.isActive('heading', { level: 1 }) ? 'is-active' : ''
+        }`}
+      >
+        H1
+      </button>
+      <button
+        onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
+        className={`editor-btn ${
+          editor.isActive('heading', { level: 2 }) ? 'is-active' : ''
+        }`}
+      >
+        H2
+      </button>
+      <button
+        onClick={() => editor.chain().focus().toggleBold().run()}
+        className={`editor-btn ${editor.isActive('bold') ? 'is-active' : ''}`}
+      >
+        Bold
+      </button>
+      <button
+        onClick={() => editor.chain().focus().toggleItalic().run()}
+        className={`editor-btn ${editor.isActive('italic') ? 'is-active' : ''}`}
+      >
+        Italic
+      </button>
+      <button
+        onClick={() => editor.chain().focus().toggleStrike().run()}
+        className={`editor-btn ${editor.isActive('strike') ? 'is-active' : ''}`}
+      >
+        Strike
+      </button>
+      <button
+        onClick={() => editor.chain().focus().toggleBlockquote().run()}
+        className={`editor-btn ${editor.isActive('blockquote') ? 'is-active' : ''}`}
+      >
+        Quote
+      </button>
+      <button
+        onClick={() => editor.chain().focus().toggleBulletList().run()}
+        className={`editor-btn ${editor.isActive('bulletList') ? 'is-active' : ''}`}
+      >
+        Bullet List
+      </button>
+      <button
+        onClick={() => editor.chain().focus().toggleOrderedList().run()}
+        className={`editor-btn ${editor.isActive('orderedList') ? 'is-active' : ''}`}
+      >
+        Ordered List
+      </button>
+      <button
+        onClick={setLink}
+        className={`editor-btn ${editor.isActive('link') ? 'is-active' : ''}`}
+      >
+        Link
+      </button>
+      <button onClick={addImage} className="editor-btn">
+        Image
+      </button>
+    </div>
+  );
+};
 
 const BlogEditor = ({ content, onChange }) => {
   const [mounted, setMounted] = useState(false);
@@ -36,6 +123,12 @@ const BlogEditor = ({ content, onChange }) => {
       Image,
       Link.configure({
         openOnClick: false,
+        HTMLAttributes: {
+          class: 'text-blue-600 hover:text-blue-800 underline',
+        },
+      }),
+      Placeholder.configure({
+        placeholder: 'Write your blog post here...',
       }),
     ],
     content,
@@ -90,41 +183,28 @@ const BlogEditor = ({ content, onChange }) => {
         )}
       </div>
       {/* Editor Toolbar */}
-      <div className="text-gray-950 mb-4 flex gap-2">
-        <button
-          onClick={() => editor?.chain().focus().toggleBold().run()}
-          className={`text-gray-950 px-3 py-1 rounded border border-gray-400 hover:bg-gray-200 ${
-            editor?.isActive('bold') ? 'bg-gray-400' : 'bg-gray-100'
-          }`}
-        >
-          Bold
-        </button>
-        <button
-          onClick={() => editor?.chain().focus().toggleItalic().run()}
-          className={`text-gray-950 px-3 py-1 rounded border border-gray-400 hover:bg-gray-200 ${
-            editor?.isActive('italic') ? 'bg-gray-400' : 'bg-gray-100'
-          }`}
-        >
-          Italic
-        </button>
-        <button
-          onClick={() => editor?.chain().focus().toggleHeading({ level: 2 }).run()}
-          className={`text-gray-950 px-3 py-1 rounded border border-gray-400 hover:bg-gray-200 ${
-            editor?.isActive('heading', { level: 2 }) ? 'bg-gray-400' : 'bg-gray-100'
-          }`}
-        >
-          H2
-        </button>
-        <button
-          onClick={() => editor?.chain().focus().toggleBulletList().run()}
-          className={`text-gray-950 px-3 py-1 rounded border border-gray-400 hover:bg-gray-200 ${
-            editor?.isActive('bulletList') ? 'bg-gray-400' : 'bg-gray-100'
-          }`}
-        >
-          Bullet List
-        </button>
-      </div>
+      <MenuBar editor={editor} />
       <EditorContent className='text-gray-950' editor={editor} />
+      <style jsx global>{`
+        .editor-btn {
+          @apply px-3 py-1.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500;
+        }
+        .editor-btn.is-active {
+          @apply bg-gray-100 text-gray-900;
+        }
+        .ProseMirror p.is-editor-empty:first-child::before {
+          content: attr(data-placeholder);
+          float: left;
+          color: #adb5bd;
+          pointer-events: none;
+          height: 0;
+        }
+        .ProseMirror {
+          > * + * {
+            margin-top: 0.75em;
+          }
+        }
+      `}</style>
     </div>
   );
 };

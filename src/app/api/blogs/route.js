@@ -12,6 +12,7 @@ const blogSchema = Joi.object({
   tags: Joi.array().items(Joi.string()).optional(),
   status: Joi.string().valid('draft', 'published').required(),
   author: Joi.string().required(),
+  slug: Joi.string().optional(), // Slug is auto-generated
 });
 
 export async function GET() {
@@ -38,7 +39,19 @@ export async function POST(request) {
   }
 
   try {
-    const blog = new Blog(data);
+    // Generate slug from title
+    const slug = data.title
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)/g, '');
+
+    // Add slug to data
+    const blogData = {
+      ...data,
+      slug
+    };
+
+    const blog = new Blog(blogData);
     await blog.save();
     return NextResponse.json(blog);
   } catch (error) {
