@@ -152,7 +152,7 @@ const HeroSlider = () => {
                       </p>
                       
                       <div className="flex flex-wrap gap-4 mb-12">
-                        <button className=" onClick={() => window.location.href = '/contact'} bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-medium transition-all transform hover:scale-105">
+                        <button onClick={() => window.location.href = '/contact'}  className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-medium transition-all transform hover:scale-105">
                           Unlock Your Growth Now
                         </button>
                         <button 
