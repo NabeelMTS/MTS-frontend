@@ -46,7 +46,7 @@ const Header = () => {
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0 flex items-center" onClick={closeAllMenus}>
               <img
-                src="logo/icon.png"
+                src="/logo/icon.png"
                 className="h-8 w-8 text-blue-600"
               />
               <span className="ml-2 text-xl font-bold text-gray-900">MedicoTechSolutions</span>
