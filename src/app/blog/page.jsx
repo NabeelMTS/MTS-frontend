@@ -1,7 +1,7 @@
 import BlogCard from '@/app/components/Blog/BlogCard';
 
 export const metadata = {
-  title: 'Blog - MedicoTech Solutions',
+  title: 'Blogs - MedicoTech Solutions',
   description: 'Read our latest articles on medical billing, coding, and healthcare IT solutions.',
 };
 
@@ -33,18 +33,25 @@ export default async function BlogPage() {
         </div>
 
         {/* Blogs Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogs.map((blog) => (
-            <BlogCard
-              key={blog._id}
-              title={blog.title}
-              excerpt={blog.excerpt}
-              slug={blog.slug}
-              image={blog.image}
-              date={blog.createdAt}
-            />
-          ))}
-        </div>
+        {blogs.length === 0 ? (
+          <div className="text-center col-span-full py-20">
+            <h4 className="text-2xl font-semibold text-gray-700 mb-2">Coming Soon</h4>
+            <p className="text-gray-500">We are preparing insightful blog content. Please check back soon!</p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {blogs.map((blog) => (
+              <BlogCard
+                key={blog._id}
+                title={blog.title}
+                excerpt={blog.excerpt}
+                slug={blog.slug}
+                image={blog.featuredImage}
+                date={blog.createdAt}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

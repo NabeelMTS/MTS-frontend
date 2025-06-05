@@ -18,8 +18,6 @@ export default function BlogCard({ title, excerpt, slug, image, date, _id, isAdm
       <div className="p-4">
         <h3 className="text-xl font-semibold text-gray-900 mb-2">{title}</h3>
         <p className="text-gray-600 text-sm mb-4">{formattedDate}</p>
-        <p className="text-gray-700 mb-4">{excerpt}</p>
-        
         <div className="flex justify-between items-center">
           <Link
             href={isAdmin ? `/admin/blog/${_id}` : `/blog/${slug}`}

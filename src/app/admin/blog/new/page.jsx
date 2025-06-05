@@ -2,7 +2,7 @@
 
 import { useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
-import BlogEditor from '../../../../components/BlogEditor';
+import BlogEditor from '@/app/components/Blog/BlogEditor';
 import Image from 'next/image';
 import { toast } from 'react-hot-toast';
 export default function NewBlogPost() {
@@ -258,7 +258,7 @@ export default function NewBlogPost() {
                   name="tags"
                   value={formData.tags}
                   onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                  className="text-gray-800 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                   placeholder="Enter tags separated by commas"
                 />
                 <p className="mt-1 text-sm text-gray-500">

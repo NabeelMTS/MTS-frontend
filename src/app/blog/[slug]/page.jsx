@@ -2,9 +2,10 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 
 export async function generateMetadata({ params }) {
+  const { slug } = await params;
   const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/blogs`);
   const blogs = await res.json();
-  const blog = blogs.find((b) => b.slug === params.slug);
+  const blog = blogs.find((b) => b.slug === slug);
 
   return {
     title: `${blog?.title || 'Blog Post'} - MedicoTech Solutions`,
@@ -19,7 +20,8 @@ async function getBlog(slug) {
 }
 
 export default async function BlogPost({ params }) {
-  const blog = await getBlog(params.slug);
+  const { slug } = await params;
+  const blog = await getBlog(slug);
 
   if (!blog) {
     return <div>Blog post not found</div>;

@@ -5,6 +5,9 @@ import { useEditor, EditorContent } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import Image from '@tiptap/extension-image';
 import { Dropzone } from './Dropzone';
+import BulletList from '@tiptap/extension-bullet-list';
+import OrderedList from '@tiptap/extension-ordered-list';
+import ListItem from '@tiptap/extension-list-item';
 
 export function BlogEditor({ content = '', onContentChange, onImageUpload }) {
   const [isUploading, setIsUploading] = useState(false);
@@ -17,44 +20,59 @@ export function BlogEditor({ content = '', onContentChange, onImageUpload }) {
   const editor = useEditor({
     extensions: [
       StarterKit,
+      ListItem.configure({
+        HTMLAttributes: {
+          class: 'list-item',
+        },
+      }),
+      BulletList.configure({
+        HTMLAttributes: {
+          class: 'bullet-list',
+        },
+        keepMarks: true,
+        keepAttributes: true,
+      }),
+      OrderedList.configure({
+        HTMLAttributes: {
+          class: 'ordered-list',
+        },
+        keepMarks: true,
+        keepAttributes: true,
+      }),
       Image.configure({
         inline: true,
       }),
     ],
-    content,
+    content: content,
     onUpdate: ({ editor }) => {
       onContentChange(editor.getHTML());
     },
     editorProps: {
       attributes: {
-        class: 'prose prose-sm sm:prose lg:prose-lg xl:prose-2xl mx-auto focus:outline-none',
+        class: 'prose prose-sm sm:prose lg:prose-lg xl:prose-2xl focus:outline-none',
       },
     },
-    immediatelyRender: false,
   });
 
-  const addImage = useCallback(async (file) => {
-    if (!editor) return;
-    
-    setIsUploading(true);
-    try {
-      const url = await onImageUpload(file);
-      editor.chain().focus().setImage({ src: url }).run();
-    } catch (error) {
-      console.error('Error uploading image:', error);
-    } finally {
-      setIsUploading(false);
-    }
-  }, [editor, onImageUpload]);
+  const addImage = useCallback(
+    async (file) => {
+      if (!editor) return;
+      setIsUploading(true);
+      try {
+        const url = await onImageUpload(file);
+        editor.chain().focus().setImage({ src: url }).run();
+      } catch (error) {
+        console.error('Error uploading image:', error);
+      } finally {
+        setIsUploading(false);
+      }
+    },
+    [editor, onImageUpload]
+  );
 
   if (!mounted) {
     return <div className="border rounded-lg p-4 min-h-[200px] bg-white">Loading editor...</div>;
   }
-
-  if (!editor) {
-    return <div className="border rounded-lg p-4 min-h-[200px] bg-white">Loading editor...</div>;
-  }
-
   return (
     <div className="space-y-4">
       <div className="flex flex-wrap gap-2 border-b pb-2">
@@ -83,7 +101,6 @@ export function BlogEditor({ content = '', onContentChange, onImageUpload }) {
           type="button"
           onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
           className={`text-gray-800 p-2 rounded ${editor.isActive('heading', { level: 2 }) ? 'bg-blue-100 text-blue-600' : 'hover:bg-gray-100'}`}
-
         >
           H2
         </button>
@@ -107,6 +124,29 @@ export function BlogEditor({ content = '', onContentChange, onImageUpload }) {
         editor={editor} 
         className="text-gray-800 border rounded-lg p-4 min-h-[300px] bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
       />
+      <style jsx global>{`
+        .ProseMirror ul {
+          list-style-type: disc;
+          padding-left: 1.5em;
+          margin: 0.5em 0;
+        }
+        .ProseMirror ol {
+          list-style-type: decimal;
+          padding-left: 1.5em;
+          margin: 0.5em 0;
+        }
+        .ProseMirror li {
+          margin: 0.2em 0;
+          display: list-item;
+        }
+        .ProseMirror li p {
+          margin: 0;
+          display: inline;
+        }
+        .bullet-list, .ordered-list {
+          white-space: normal;
+        }
+      `}</style>
     </div>
   );
 }

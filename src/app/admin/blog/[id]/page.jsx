@@ -2,12 +2,13 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import BlogEditor from '../../../../components/BlogEditor';
+import { use } from 'react'; // Import React.use for unwrapping params
+import BlogEditor from '@/app/components/Blog/BlogEditor';
 import { toast } from 'react-hot-toast';
 
-export default function EditBlogPost({ params }) {
-  // Use params.id directly in client components
-  const blogId = params.id;
+export default function EditBlogPost({ params: paramsPromise }) {
+  const params = use(paramsPromise); // Unwrap params using React.use()
+  const blogId = params?.id; // Safely access the id
   const [formData, setFormData] = useState({
     title: '',
     content: '',
@@ -21,6 +22,12 @@ export default function EditBlogPost({ params }) {
   const router = useRouter();
 
   useEffect(() => {
+    if (!blogId) {
+      toast.error('Invalid blog ID');
+      router.push('/admin/blog');
+      return;
+    }
+
     const fetchBlog = async () => {
       try {
         const response = await fetch(`/api/blogs?id=${blogId}`);
@@ -285,7 +292,7 @@ export default function EditBlogPost({ params }) {
                   name="tags"
                   value={formData.tags}
                   onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                  className="text-gray-800 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                   placeholder="Enter tags separated by commas"
                 />
                 <p className="mt-1 text-sm text-gray-500">
@@ -303,7 +310,7 @@ export default function EditBlogPost({ params }) {
                   name="status"
                   value={formData.status}
                   onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                  className="text-gray-800 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                 >
                   <option value="draft">Draft</option>
                   <option value="published">Published</option>
