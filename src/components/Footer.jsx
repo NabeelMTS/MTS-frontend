@@ -83,7 +83,7 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-6 pb-2 border-b border-blue-700">Services</h3>
             <ul className="space-y-3">
               <li><Link href="/medical-billing" className="hover:text-blue-300 transition-colors">Medical Billing</Link></li>
-              <li><Link href="/free-audit" className="hover:text-blue-300 transition-colors">Free Audit</Link></li>
+              <li><Link href="/contact" className="hover:text-blue-300 transition-colors">Free Audit</Link></li>
               <li><Link href="/rcm" className="hover:text-blue-300 transition-colors">RCM</Link></li>
               <li><Link href="/clinical-services" className="hover:text-blue-300 transition-colors">Clinical Services</Link></li>
               <li><Link href="/digital-marketing" className="hover:text-blue-300 transition-colors">Digital Marketing</Link></li>
@@ -97,8 +97,6 @@ const Footer = () => {
             <ul className="space-y-3">
               <li><Link href="/about" className="hover:text-blue-300 transition-colors">About Us</Link></li>
               <li><Link href="/contact" className="hover:text-blue-300 transition-colors">Contact Us</Link></li>
-              <li><Link href="/faqs" className="hover:text-blue-300 transition-colors">FAQs</Link></li>
-              <li><Link href="/testimonials" className="hover:text-blue-300 transition-colors">Testimonials</Link></li>
               <li><Link href="/blog" className="hover:text-blue-300 transition-colors">Blog</Link></li>
             </ul>
           </div>

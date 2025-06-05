@@ -1,6 +1,7 @@
 'use client';
 import { FaCheck, FaClock, FaHandsHelping, FaUserCog, FaComments } from 'react-icons/fa';
 import { useState, useEffect, createContext, useContext } from 'react';
+import CTA from '@/components/CTA';
 
 
 const CredentialingPage = () => {
@@ -137,6 +138,12 @@ const CredentialingPage = () => {
           </div>
         </div>
       </section>
+      <CTA 
+              heading="
+              Ready to Elevate Your Medical Billing?"
+                subheading="Streamline operations, boost revenue, and ensure compliance with MedicoTech Solutions."
+                buttonText="Unlock Your Growth Now"
+                buttonHref="/contact"/>
     </div>
   );
 };

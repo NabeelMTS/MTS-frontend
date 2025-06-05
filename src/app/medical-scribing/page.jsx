@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect, createContext, useContext } from 'react';
+import CTA from '@/components/CTA';
 
 const MedicalScribingPage = () => {
   useEffect(() => {
@@ -105,7 +106,12 @@ const MedicalScribingPage = () => {
           </div>
         </div>
       </section>
-
+      <CTA 
+              heading="
+              Ready to Elevate Your Medical Billing?"
+                subheading="Streamline operations, boost revenue, and ensure compliance with MedicoTech Solutions."
+                buttonText="Unlock Your Growth Now"
+                buttonHref="/contact"/>
     </div>
   );
 };
