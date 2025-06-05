@@ -44,7 +44,7 @@ Accurate, HIPAA-compliant medical billing solutions"
         <h3 className="ml-4 text-lg font-medium text-gray-900">Dedicated Billing Specialists</h3>
       </div>
 
-      {/* Item 3 - HIPAA Compliance */}cta
+      {/* Item 3 - HIPAA Compliance */}
       <div className="flex items-center p-6 border border-gray-100 rounded-xl hover:shadow-sm transition-all">
         <div className="flex-shrink-0 bg-blue-50 p-2.5 rounded-lg">
           <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
