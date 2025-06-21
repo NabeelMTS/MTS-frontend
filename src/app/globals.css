@@ -2,12 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom base styles */
+/* Optimized base styles */
 @layer base {
   html {
     @apply scroll-smooth;
   }
+  
+  body {
+    @apply antialiased;
+  }
+  
+  /* Optimize animations */
+  * {
+    animation-duration: 0.15s;
+    animation-fill-mode: both;
+  }
 }
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -31,25 +42,28 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-  width: 100%; /* Ensure full width */
+  overflow-x: hidden;
+  width: 100%;
 }
 
+/* Optimized loading animation */
 .loader {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
 }
 
 .loader .medical-cross {
   position: relative;
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   background-color: #3498db;
-  animation: rotate 1.5s infinite linear;
+  border-radius: 3px;
+  animation: rotate 1s infinite ease-in-out;
+  transform-origin: center;
 }
 
 .loader .medical-cross::before,
@@ -57,19 +71,20 @@ body {
   content: '';
   position: absolute;
   background-color: #3498db;
+  border-radius: 2px;
 }
 
 .loader .medical-cross::before {
-  width: 50px;
-  height: 15px;
+  width: 30px;
+  height: 8px;
   top: 50%;
   left: 0;
   transform: translateY(-50%);
 }
 
 .loader .medical-cross::after {
-  width: 15px;
-  height: 50px;
+  width: 8px;
+  height: 30px;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -77,9 +92,36 @@ body {
 
 @keyframes rotate {
   0% {
-    transform: rotate(0deg);
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.05);
   }
   100% {
-    transform: rotate(360deg);
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+/* Optimized transitions */
+* {
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+}
+
+/* Performance optimizations */
+.loader,
+.loader * {
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

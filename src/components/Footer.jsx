@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import { toast } from 'react-hot-toast';
 
 const Footer = () => {
@@ -65,15 +65,19 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-start">
                 <FaMapMarkerAlt className="mt-1 mr-3 flex-shrink-0 text-blue-300" />
-                <p>3600 Balcones Drive, #18270 Austin, TX</p>
+                <p>5900 Balcones Drive, #18270 Austin, TX, 78731</p>
               </div>
               <div className="flex items-center">
                 <FaPhone className="mr-3 text-blue-300" />
-                <p>+1 (297) 263-792</p>
+                <p>+1 (737) 222-7845</p>
               </div>
               <div className="flex items-center">
-                <FaEnvelope className="mr-3 text-blue-300" />
-                <p>info@medicotechsolutions.com</p>
+                <FaWhatsapp className="mr-3 text-blue-300" />
+                <p>+1 (512) 325 5672</p>
+              </div>
+              <div className="flex items-center">
+                <FaEnvelope className="mt-1 mr-3 flex-shrink-0 text-blue-300" />
+                <p>support@medicotechsolutions.com</p>
               </div>
             </div>
           </div>

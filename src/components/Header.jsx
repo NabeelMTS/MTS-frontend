@@ -1,15 +1,24 @@
 "use client"
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { useLoading } from '../app/layout';
+import { useLoading } from './LoadingProvider';
 
 const Header = () => {
   const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
   const [isResourcesOpen, setIsResourcesOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isReady, setIsReady] = useState(false);
   const router = useRouter();
   const { setIsLoading } = useLoading();
+
+  // Faster ready state
+  useEffect(() => {
+    // Use requestAnimationFrame for better performance
+    requestAnimationFrame(() => {
+      setIsReady(true);
+    });
+  }, []);
 
   // Close all menus
   const closeAllMenus = useCallback(() => {
@@ -18,25 +27,52 @@ const Header = () => {
     setIsMobileMenuOpen(false);
   }, []);
 
-  // Close menus and show loading on click of any link or menu item
-  const handleNavClick = (e, href) => {
+  // Optimized navigation handler
+  const handleNavClick = useCallback((e, href) => {
     e.preventDefault();
     closeAllMenus();
-    setIsLoading(true);
-    router.push(href);
-  };
+    
+    // Only show loading for actual page changes
+    if (window.location.pathname !== href) {
+      setIsLoading(true);
+    }
+    
+    // Use replace for faster navigation
+    router.replace(href);
+  }, [closeAllMenus, setIsLoading, router]);
 
-  const toggleSolutions = () => {
+  const toggleSolutions = useCallback(() => {
     setIsResourcesOpen(false);
     setIsSolutionsOpen((open) => !open);
-  };
+  }, []);
 
-  const toggleResources = () => {
+  const toggleResources = useCallback(() => {
     setIsSolutionsOpen(false);
     setIsResourcesOpen((open) => !open);
-  };
+  }, []);
 
-  const toggleMobileMenu = () => setIsMobileMenuOpen((open) => !open);
+  const toggleMobileMenu = useCallback(() => setIsMobileMenuOpen((open) => !open), []);
+
+  // Minimal skeleton loading
+  if (!isReady) {
+    return (
+      <header className="bg-white shadow-md sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between h-20">
+            <div className="flex items-center">
+              <div className="h-8 w-8 bg-gray-200 rounded animate-pulse"></div>
+              <div className="ml-2 h-6 w-32 bg-gray-200 rounded animate-pulse"></div>
+            </div>
+            <div className="hidden md:flex items-center space-x-4">
+              {[...Array(3)].map((_, i) => (
+                <div key={i} className="h-4 w-12 bg-gray-200 rounded animate-pulse"></div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </header>
+    );
+  }
 
   return (
     <header className="bg-white shadow-md sticky top-0 z-50">

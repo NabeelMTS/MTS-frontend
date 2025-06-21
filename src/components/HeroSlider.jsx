@@ -37,26 +37,32 @@ const HeroSlider = () => {
   ];
 
   useEffect(() => {
-    const imagePromises = slides.map((slide) => {
-      return new Promise((resolve) => {
-        const img = new Image();
-        img.src = slide.bgImage;
-        img.onload = resolve;
+    // Preload images in the background without blocking the UI
+    const preloadImages = async () => {
+      const imagePromises = slides.map((slide) => {
+        return new Promise((resolve) => {
+          const img = new Image();
+          img.src = slide.bgImage;
+          img.onload = resolve;
+          img.onerror = resolve; // Continue even if image fails to load
+        });
       });
-    });
 
-    Promise.all(imagePromises).then(() => setImagesLoaded(true));
+      await Promise.all(imagePromises);
+      setImagesLoaded(true);
+    };
+
+    preloadImages();
   }, [slides]);
 
   useEffect(() => {
-    if (imagesLoaded) {
-      const interval = setInterval(() => {
-        setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-      }, 7000);
+    // Start slider immediately, don't wait for images
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+    }, 7000);
 
-      return () => clearInterval(interval);
-    }
-  }, [imagesLoaded, slides.length]);
+    return () => clearInterval(interval);
+  }, [slides.length]);
 
   useEffect(() => {
     const handleEscape = (e) => {
@@ -89,111 +95,102 @@ const HeroSlider = () => {
         />
       </Head>
 
-      {!imagesLoaded ? (
-        <div className="fixed inset-0 flex items-center justify-center bg-white z-50">
-          <div className="loader">
-            <div className="medical-cross"></div>
+      {/* Video Modal */}
+      {showVideo && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
+          onClick={handleModalClick}
+        >
+          <div className="relative w-full max-w-4xl">
+            <button 
+              onClick={() => setShowVideo(false)}
+              className="absolute -top-12 right-0 text-white text-2xl hover:text-blue-400 transition"
+            >
+              <i className="fas fa-times"></i>
+            </button>
+            <div className="aspect-w-16 aspect-h-9">
+              <iframe 
+                className="w-full h-96 md:h-[500px]"
+                src="https://www.youtube.com/embed/aK8F3kGJXyY?si=TmCuR2zGTLAzQQ5b" 
+                title="Demo Video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowFullScreen
+              ></iframe>
+            </div>
           </div>
         </div>
-      ) : (
-        <>
-          {/* Video Modal */}
-          {showVideo && (
-            <div 
-              className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
-              onClick={handleModalClick}
-            >
-              <div className="relative w-full max-w-4xl">
-                <button 
-                  onClick={() => setShowVideo(false)}
-                  className="absolute -top-12 right-0 text-white text-2xl hover:text-blue-400 transition"
-                >
-                  <i className="fas fa-times"></i>
-                </button>
-                <div className="aspect-w-16 aspect-h-9">
-                  <iframe 
-                    className="w-full h-96 md:h-[500px]"
-                    src="https://www.youtube.com/embed/aK8F3kGJXyY?si=TmCuR2zGTLAzQQ5b" 
-                    title="Demo Video"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowFullScreen
-                  ></iframe>
-                </div>
-              </div>
+      )}
+
+      {/* Hero Slider */}
+      <section className="relative h-screen max-h-[800px] overflow-hidden">
+        {slides.map((slide, index) => (
+          <div 
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+          >
+            {/* Background Image with Gradient Overlay */}
+            <div className="absolute inset-0">
+              <img 
+                src={slide.bgImage} 
+                alt="" 
+                className="w-full h-full object-cover object-right"
+                loading={index === 0 ? "eager" : "lazy"}
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent"></div>
             </div>
-          )}
 
-          {/* Hero Slider */}
-          <section className="relative h-screen max-h-[800px] overflow-hidden">
-            {slides.map((slide, index) => (
-              <div 
-                key={index}
-                className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
-              >
-                {/* Background Image with Gradient Overlay */}
-                <div className="absolute inset-0">
-                  <img 
-                    src={slide.bgImage} 
-                    alt="" 
-                    className="w-full h-full object-cover object-right"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent"></div>
-                </div>
+            {/* Content */}
+            <div className="relative h-full flex items-center">
+              <div className="container mx-auto px-6 z-10">
+                <div className="max-w-2xl">
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 leading-tight">
+                    {slide.heading}
+                  </h1>
+                  <p className="text-lg md:text-xl text-gray-700 mb-8 max-w-lg">
+                    {slide.subheading}
+                  </p>
+                  
+                  <div className="flex flex-wrap gap-4 mb-12">
+                    <button onClick={() => window.location.href = '/contact'}  className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-medium transition-all transform hover:scale-105">
+                      Unlock Your Growth Now
+                    </button>
+                    <button 
+                      onClick={() => setShowVideo(true)}
+                      className="flex items-center gap-3 text-blue-600 hover:text-blue-800 font-medium group"
+                    >
+                      <span className="text-green-600 group-hover:text-blue-800">See how we work</span>
+                    </button>
+                  </div>
 
-                {/* Content */}
-                <div className="relative h-full flex items-center">
-                  <div className="container mx-auto px-6 z-10">
-                    <div className="max-w-2xl">
-                      <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 leading-tight">
-                        {slide.heading}
-                      </h1>
-                      <p className="text-lg md:text-xl text-gray-700 mb-8 max-w-lg">
-                        {slide.subheading}
-                      </p>
-                      
-                      <div className="flex flex-wrap gap-4 mb-12">
-                        <button onClick={() => window.location.href = '/contact'}  className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-medium transition-all transform hover:scale-105">
-                          Unlock Your Growth Now
-                        </button>
-                        <button 
-                          onClick={() => setShowVideo(true)}
-                          className="flex items-center gap-3 text-blue-600 hover:text-blue-800 font-medium group"
-                        >
-                          <span className="text-green-600 group-hover:text-blue-800">See how we work</span>
-                        </button>
-                      </div>
-
-                      {/* Fun Facts Widget */}
-                      <div className="bg-white/90 backdrop-blur-sm p-6 rounded-xl shadow-lg max-w-2xl">
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                          {funFacts.map((fact, idx) => (
-                            <div key={idx} className="text-center p-2">
-                              <p className="text-3xl font-bold text-blue-600">{fact.number}</p>
-                              <p className="text-sm text-gray-600 mt-1">{fact.title}</p>
-                            </div>
-                          ))}
+                  {/* Fun Facts Widget */}
+                  <div className="bg-white/90 backdrop-blur-sm p-6 rounded-xl shadow-lg max-w-2xl">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                      {funFacts.map((fact, idx) => (
+                        <div key={idx} className="text-center p-2">
+                          <p className="text-3xl font-bold text-blue-600">{fact.number}</p>
+                          <p className="text-sm text-gray-600 mt-1">{fact.title}</p>
                         </div>
-                      </div>
+                      ))}
                     </div>
                   </div>
                 </div>
               </div>
-            ))}
-
-            {/* Slider Controls */}
-            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
-              {slides.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all ${index === currentSlide ? 'bg-blue-600 w-6' : 'bg-gray-300 hover:bg-gray-400'}`}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
-              ))}
             </div>
-          </section>
-        </>
-      )}
+          </div>
+        ))}
+
+        {/* Slider Controls */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-3 h-3 rounded-full transition-all ${index === currentSlide ? 'bg-blue-600 w-6' : 'bg-gray-300 hover:bg-gray-400'}`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
+      </section>
     </>
   );
 };

@@ -66,7 +66,7 @@ const CompanyPage = () => {
                     <p className="text-gray-700 mt-2">Claims Processed</p>
                   </div>
                   <div className="bg-blue-50 p-6 rounded-xl text-center">
-                    <p className="text-4xl font-bold text-blue-600">96%</p>
+                    <p className="text-4xl font-bold text-blue-600">98%</p>
                     <p className="text-gray-700 mt-2">Claim Acceptance</p>
                   </div>
                   <div className="bg-blue-50 p-6 rounded-xl text-center">
