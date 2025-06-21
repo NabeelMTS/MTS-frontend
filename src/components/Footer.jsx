@@ -91,7 +91,6 @@ const Footer = () => {
               <li><Link href="/rcm" className="hover:text-blue-300 transition-colors">RCM</Link></li>
               <li><Link href="/clinical-services" className="hover:text-blue-300 transition-colors">Clinical Services</Link></li>
               <li><Link href="/digital-marketing" className="hover:text-blue-300 transition-colors">Digital Marketing</Link></li>
-              <li><Link href="/training" className="hover:text-blue-300 transition-colors">Training & Bootcamp</Link></li>
             </ul>
           </div>
 
