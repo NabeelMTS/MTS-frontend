@@ -21,7 +21,6 @@ const nextConfig = {
     removeConsole: process.env.NODE_ENV === 'production',
   },
   // Aggressive performance optimizations
-  swcMinify: true,
   compress: true,
   poweredByHeader: false,
   reactStrictMode: false, // Disable for better performance
