@@ -69,7 +69,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center">
                 <FaPhone className="mr-3 text-blue-300" />
-                <p>+1 (737) 222-7845</p>
+                <p>+1 (512) 612-5815</p>
               </div>
               <div className="flex items-center">
                 <FaWhatsapp className="mr-3 text-blue-300" />
@@ -164,5 +164,6 @@ const Footer = () => {
     </footer>
   );
 };
+
 
 export default Footer;
